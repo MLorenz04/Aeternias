@@ -1,36 +1,32 @@
 <?php
 // Include databáze a souboru s globálními proměnnými
 $config = include("../../../config.php");
+require $config["root"] . "/vendor/autoload.php";
+//Připojení do databáze a kolekce
+$client = new MongoDB\Client($config["mongo_db"]);
+$collection = $client->Aeternias->users;
 //Data z formuláře 
 $nickname = $_POST["username"];
 $password = $_POST["password"];
 //Proměnná kontrolující, jestli už takové jméno existuje.
 $same_password = false;
-//Připojení do databáze
-$con = new mysqli($config['db_name'], $config['db_username'], $config['db_password'], $config['db_dbname']);
-//Sql příkazy
-$sql_check_usernames = "select nickname from users";
-//Vezmu všechny výsledky
-$result = $con -> query($sql_check_usernames);
-while($row = $result -> fetch_assoc()) {
-   if($row["nickname"] == $nickname) {
-      $existing_nickname = true; //Pokud se jméno schoduje se záznamem v databázi
-   }
+//Hledání dat v databázi
+$cursor = $collection -> find(["username" => $nickname]);
+if($cursor -> isDead()) {
+   header("location: /Omega/Index.php"); //Pokud špatné heslo, zpět na login
 }
-//Připojení a provedení sql příkazu
-if($existing_nickname == true) { 
-   $sql_get_password = "select password, id from users where nickname='$nickname'";
-   $result = $con -> query($sql_get_password);
-   $passArray = $result -> fetch_assoc();
-   $hash = $passArray["password"];
-   $id_user = $passArray["id"];
-   if(password_verify($password, $hash)) {
+foreach($cursor as $k => $row) {
+   //Nejdříve vezmeme data z databáze a zakódujeme je do JSONU
+   $json = json_encode($row);
+   //Vezmeme JSON a uděláme z něj objekt, ke kterému budeme moci přistupovat
+   $json = json_decode($json);
+   if(password_verify($password,$json -> password)) {
       session_start();
       $_SESSION["is_logged"] = true;
       $_SESSION["username"] = $nickname;
-      $_SESSION["id_user"] = $id_user;
-      header("location: ../../Wall/wall.php"); //Pokud správné heslo, jde na zeď
-  } else {
-      header("location: ../../../Index.php"); //Pokud špatné heslo, zpět na login
-  }
+      $_SESSION["id_user"] = ($json -> id);
+      header("location: /Omega/Components/Wall/wall.php"); //Pokud správné heslo, jde na zeď
+   } else {
+      header("location: /Omega/Index.php"); //Pokud špatné heslo, zpět na login
+   }
 }

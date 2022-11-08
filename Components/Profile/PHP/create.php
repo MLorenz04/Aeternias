@@ -1,26 +1,29 @@
 <?php
 // Include databáze a souboru s globálními proměnnými
-$vars = include("../../../config.php");
+require $config["root"] . "/vendor/autoload.php";
+$config = include("../../../config.php");
+//Připojení do databáze a kolekce
+$client = new MongoDB\Client($config["mongo_db"]);
+$collection = $client->Aeternias->users;
+$count = $client->Aeternias->counters;
 //Data z formuláře
 $nickname = $_POST["username"];
-$password = $password = password_hash($_POST["password"], PASSWORD_DEFAULT);
+$password = password_hash($_POST["password"], PASSWORD_DEFAULT);
 //Proměnná kontrolující, jestli už takové jméno existuje.
 $existingNickname = false;
 //Připojení do databáze
-$con = new mysqli($config['db_name'], $config['db_username'], $config['db_password'], $config['db_dbname']);
-//Sql příkazy
-$sql_create_profile = "insert into users(nickname,password) values('$nickname','$password')";
-$sql_check_usernames = "select nickname from users";
-$result = $con -> query($sql_check_usernames);
-while($row = $result -> fetch_assoc()) {
-   if($row["nickname"] == $nickname) {
-      $existingNickname = true;
-   }
-}
-//Připojení a provedení sql příkazu
-if($existingNickname == false) { 
-   $con -> query($sql_create_profile);
-   header("location: /Omega/Wall.php");
-} else { 
-   header("location: /Omega/Index.php");
+$cursor = $collection->find(["username" => $nickname]);
+if (!$cursor->isDead()) { //Jestli není cursor prázdný
+   header("location: /Omega/Components/Profile/Page/createAccount.php");
+} else {
+   $_SESSION["table"] = "users";
+   $current_id = require $config["root"] . "/Components/Helpers/get_id.php";
+   $insertOneResult = $collection->insertOne([
+      "username" => $nickname,
+      "id" => $current_id,
+      "password" => $password,
+      "gender" => ""
+   ]);
+   require $config["root"] . "/Components/Helpers/update_id.php";
+   header("location: /Omega/Components/Wall/Wall.php");
 }

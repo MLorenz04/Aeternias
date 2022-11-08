@@ -1,43 +1,32 @@
 <?php
-$config = require "../../../config.php";
-$con = new mysqli($config['db_name'], $config['db_username'], $config['db_password'], $config['db_dbname']);
 session_start();
-$name = $_POST["world_name"];
-$desc = $_POST["desc"];
-$owner_id = $_SESSION["id_user"];
-$json = [
-   "id" => 0, 
+//Konfigurační soubor
+$config = require "../../../config.php"; //Conf
+require $config["root"] . "/vendor/autoload.php"; //Mongo
+/* Proměnné */
+$owner_id = $_SESSION["id_user"]; //ID aktivního uživatele
+$world_name = $_POST["world_name"]; //Název světa
+$world_desc = $_POST["desc"]; //Popisek světa
+$_SESSION["table"] = "world"; //Měníme tabulku, po které budeme chtít vrátit ID.
+/* Databáze a kolekce */
+$client = new MongoDB\Client($config["mongo_db"]);
+$collection = $client->Aeternias->world; //Světy
+$count = $client->Aeternias->counters; //Počítadlo idček
+/* Skript vkládající nový svět */
+$cursor =  $collection->find(["name" => $world_name]);
+if (!$cursor->isDead()) { //Jestli není cursor prázdný
+   header("location: /Omega/Components/Wall/wall.php");
+} else {
+$current_id = require $config["root"] . "/Components/Helpers/get_id.php"; //Získat ID
+$collection->insertOne([
+   "id" => $current_id, 
    "owner_id" => $owner_id, 
-   "name" => $name, 
-   "desc" => $desc, 
-   "permissions" => [
-         [
-            "id_user" => 0
-         ],
-      ], 
-   "warriors" => [
-               [
-                  "name" => "Lučistník", 
-                  "id_warrior" => 0, 
-                  "stats" => [
-                     "attack" => 3, 
-                     "health" => 4 
-                  ] 
-                  ],
-                  [
-                     "name" => "Kopijník", 
-                     "id_warrior" => 1, 
-                     "stats" => [
-                        "attack" => 4, 
-                        "health" => 5
-                     ] 
-                  ] 
-            ] 
-];
-$json_encoded = json_encode($json,JSON_UNESCAPED_UNICODE);
-$sql = "insert into world(name,init,id_owner) values('$name','$json_encoded',$owner_id)";
-if($con -> query($sql)) {
-   header("location: ../../Wall/wall.php#worlds");
+   "name" => $world_name, 
+   "desc" => $world_desc, 
+   "permissions_id" => [], 
+   "warriors_id" => []
+]);
+header("location: /Omega/Components/Wall/wall.php");
+require $config["root"] . "/Components/Helpers/update_id.php"; //Zvednou ID o jedno
 }
-
 ?>

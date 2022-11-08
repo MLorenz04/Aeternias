@@ -1,6 +1,6 @@
 <?php
-require "../../../Components/Elements/head.php";
 $config = include("../../../config.php");
+require $config["root"] . "/Components/Elements/head.php";
 ?>
 <main>
   <div class="container">
@@ -11,7 +11,7 @@ $config = include("../../../config.php");
             <div class="row flex text-center main-color card-title">
               <h1> <?php echo $config['project_name'] ?> </h1>
             </div>
-            <form action="<?php echo $profiles ?>/login.php" method="POST">
+            <form action="../PHP/create.php" method="POST">
               <div class="mb-3">
                 <label for="username" class="form-label">Přezdívka</label>
                 <input type="text" class="form-control" id="username" name="username">
