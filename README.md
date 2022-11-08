@@ -7,7 +7,7 @@ Projekt je zcela free-to-use a i v budoucnu se bude co nejvíce snažit jím zů
 
 Odkaz: **Aeternias.cz**
 
-Momentální verze: **1.0.0**
+Momentální verze: **1.0.1**
 
 Vývojář: **Matyáš Lorenz**
 
