@@ -27,7 +27,7 @@ require $config["root"] . "/Components/Elements/head.php";
               <button type="submit" class="btn btn-primary px-4 b">Zaregistrovat</button>
             </form>
             <div class="">
-              Máte již účet? <a href="../../../Index.php">Přihlaste se!</a>
+              Máte již účet? <a href="../../../index.php">Přihlaste se!</a>
             </div>
           </div>
         </div>
