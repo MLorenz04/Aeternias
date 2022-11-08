@@ -13,7 +13,7 @@ $same_password = false;
 //Hledání dat v databázi
 $cursor = $collection -> find(["username" => $nickname]);
 if($cursor -> isDead()) {
-   header("location: /Omega/Index.php"); //Pokud špatné heslo, zpět na login
+   header("location: /Omega/index.php"); //Pokud špatné heslo, zpět na login
 }
 foreach($cursor as $k => $row) {
    //Nejdříve vezmeme data z databáze a zakódujeme je do JSONU
@@ -27,6 +27,6 @@ foreach($cursor as $k => $row) {
       $_SESSION["id_user"] = ($json -> id);
       header("location: /Omega/Components/Wall/wall.php"); //Pokud správné heslo, jde na zeď
    } else {
-      header("location: /Omega/Index.php"); //Pokud špatné heslo, zpět na login
+      header("location: /Omega/index.php"); //Pokud špatné heslo, zpět na login
    }
 }
