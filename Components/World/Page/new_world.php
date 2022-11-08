@@ -19,13 +19,9 @@ $config = require "../../../config.php";
                            <input type="text" required class="form-control" id="world_name" name="world_name">
                         </div>
                         <div class="mb-3 col-sm">
-                           <label for="image" class="form-label">Náhledová fotka</label>
-                           <input type="file" class="form-control" id="image" name="image" accept="image/png, image/jpeg">
+                           <label for="desc" class="form-label">Krátká poznámka</label>
+                           <input type="text" class="form-control" id="desc" name="desc" required>
                         </div>
-                     </div>
-                     <div class="mb-3 col-sm">
-                        <label for="desc" class="form-label">Krátká poznámka</label>
-                        <input type="text" class="form-control" id="desc" name="desc" required>
                      </div>
                      <button type="submit" class="btn btn-primary px-4 b">Vytvořit!</button>
                </form>
