@@ -1,7 +1,7 @@
 <?php
 // Include databáze a souboru s globálními proměnnými
-require $config["root"] . "/vendor/autoload.php";
 $config = include("../../../config.php");
+require $config["root"] . "/vendor/autoload.php";
 //Připojení do databáze a kolekce
 $client = new MongoDB\Client($config["mongo_db"]);
 $collection = $client->Aeternias->users;
