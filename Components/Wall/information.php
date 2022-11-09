@@ -1,4 +1,5 @@
-<?php 
+<?php
+/* Konfigurační soubor */
 require "../../config.php";
 ?>
 <h1 class="text-center wall-header"> Informace </h1>

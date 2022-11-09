@@ -1,9 +1,14 @@
 <?php
-session_start();
-$nickname = $_SESSION["username"];
-require "../Security/check_login.php";
-require "../Elements/head.php";
+/* Konfigurační soubory */
 $config = require "../../config.php";
+/* Založení session */
+session_start();
+/* Proměnné */
+$nickname = $_SESSION["username"];
+/* Kontrola přihlášení */
+require "../Security/check_login.php";
+/* Hlavička */
+require "../Elements/head.php";
 ?>
 
 <nav class="navbar navbar-expand-lg bg-light">

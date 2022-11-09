@@ -1,4 +1,5 @@
 <?php
+/* Konfigurační soubor */
 $config = require "../../../config.php";
 ?>
 <div class="container">
