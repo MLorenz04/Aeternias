@@ -1,5 +1,5 @@
 <footer>
-<script src="/Omega/Source/JS/Ajax/Reload_wall.js"></script>
+<script src="<?php echo $config['root_url'] ?>Source/JS/Ajax/Reload_wall.js"></script>
 </footer>
 </body>
 </html>

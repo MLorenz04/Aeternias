@@ -32,7 +32,7 @@ require "Components/Elements/head.php";
                 <button type="submit" class="btn btn-primary px-4 b">Přihlásit</button>
               </form>
               <div class="">
-                Nemáte účet? <a href="/Omega/Components/Profile/Page/createAccount.php"> Zaregistrujte se! </a>
+                Nemáte účet? <a href="<?php echo $config["root_url"] ?>Components/Profile/Page/createAccount.php"> Zaregistrujte se! </a>
               </div>
             </div>
           </div>
