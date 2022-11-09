@@ -7,6 +7,7 @@
   </div>
 </div>
 <?php
+/* Výpis všech uživatelových světů */
 require "./your_world.php";
 ?>
 </div>

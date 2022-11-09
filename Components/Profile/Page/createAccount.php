@@ -1,5 +1,7 @@
 <?php
+/* Konfigurační soubor */
 $config = include("../../../config.php");
+/* Hlavička */
 require $config["root"] . "/Components/Elements/head.php";
 ?>
 <main>

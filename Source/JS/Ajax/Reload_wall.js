@@ -1,3 +1,4 @@
+/* Načte zkrácené info */
 function load_brief() {
    $.ajax({
      url: "../../Components/Wall/brief_wall.php",
@@ -7,7 +8,7 @@ function load_brief() {
    });
 }
 
-
+/* Načte tutoriál */
 function load_tutorial() {
    $.ajax({
      url: "../../Components/Wall/tutorial.php",
@@ -17,6 +18,7 @@ function load_tutorial() {
    });
 }
 
+/* Načte informace */
 function load_help() {
    $.ajax({
      url: "../../Components/Wall/information.php",
@@ -26,6 +28,7 @@ function load_help() {
    });
 }
 
+/* Načte světy */
 function load_worlds() {
    $.ajax({
      url: "../../Components/Wall/worlds.php",
@@ -35,6 +38,7 @@ function load_worlds() {
    });
 }
 
+/* Načte formulář pro vytvoření nového světa */
 function load_create_new_world() {
   $.ajax({
     url: "../../Components/World/Page/new_world.php",
@@ -44,7 +48,7 @@ function load_create_new_world() {
   });
 }
 
-
+/* Načte jednotky */
 function load_warriors() {
    $.ajax({
      url: "../../Components/Wall/warriors.php",

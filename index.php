@@ -1,6 +1,9 @@
 <?php
-require "Components/Elements/head.php";
+/* Konfigurační soubory */
 $config = include("./config.php");
+/* Hlavička */
+require "Components/Elements/head.php";
+
 ?>
 
 <body>
