@@ -1,4 +1,5 @@
 <?php
+$config = require "../../../config.php";
 /* Začátek session */
 if (session_status() === PHP_SESSION_NONE) {
    session_start();
@@ -7,5 +8,5 @@ if (session_status() === PHP_SESSION_NONE) {
 unset($_SESSION["is_logged"]);
 session_destroy();
 if(!(isset($_SESSION["is_logged"]))) { 
-header("location: /Omega/index.php");
+header("location:" . $config["root_url"] . "index.php");
 }

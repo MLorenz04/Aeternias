@@ -6,27 +6,16 @@ require $config["root"] . "/vendor/autoload.php";
 session_start();
 /* Proměnné */
 $owner_id = $_SESSION["id_user"]; 
-$world_name = $_POST["world_name"]; 
+$world_name = $_POST["world_name"];
 $world_desc = $_POST["desc"]; 
-$_SESSION["table"] = "world"; 
 /* Databáze a kolekce */
-$client = new MongoDB\Client($config["mongo_db"]);
-$collection = $client->Aeternias->world; 
-/* Skript vkládající nový svět */
-$cursor =  $collection->find(["name" => $world_name]);
-if (!$cursor->isDead()) { //Jestli není cursor prázdný
-   header("location: /Omega/Components/Wall/wall.php");
-} else {
-$current_id = require $config["root"] . "/Components/Helpers/get_id.php"; //Získat ID
-$collection->insertOne([ //Insert dat
-   "id" => $current_id, 
-   "owner_id" => $owner_id, 
-   "name" => $world_name, 
-   "desc" => $world_desc, 
-   "permissions_id" => [], 
-   "warriors_id" => []
-]);
-header("location: /Omega/Components/Wall/wall.php");
-require $config["root"] . "/Components/Helpers/update_id.php"; //Zvednou ID o jedno
+$con = $config ["db"];
+/* SQL příkazy */
+$sql_check_name = "select name from world where name='$world_name'";
+$sql_insert_your_world = "insert into world(id_owner,name,description) values($owner_id,'$world_name','$world_desc')";
+/* Zjištění, jestli název světa už neexistuje, případně vytvoření světa */
+if(mysqli_num_rows($con->query($sql_check_name))==0) {
+   $con-> query($sql_insert_your_world);
 }
-?>
+   header("location:" . $config["root_url"] . "/Components/Wall/wall.php"); //Odkaz na zeď
+   

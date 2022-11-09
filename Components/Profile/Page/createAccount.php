@@ -2,7 +2,7 @@
 /* Konfigurační soubor */
 $config = include("../../../config.php");
 /* Hlavička */
-require $config["root"] . "/Components/Elements/head.php";
+require "../../Elements/head.php"
 ?>
 <main>
   <div class="container">
