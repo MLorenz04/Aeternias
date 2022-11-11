@@ -10,5 +10,5 @@ Odkaz: **Aeternias.cz**
 
 Momentální verze: **1.0.4**
 
-Vývojář: **Matyáš Lorenz**
+Vývojář: **Matyáš Lorenz <3**
 
