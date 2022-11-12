@@ -3,7 +3,10 @@
 $config = include("./config.php");
 /* Hlavička */
 require "Components/Elements/head.php";
-
+session_start();
+if(isset($_SESSION["is_logged"])){
+  header("location: Components/Wall/wall.php");
+}
 ?>
 
 <body>
@@ -29,6 +32,28 @@ require "Components/Elements/head.php";
                   <input type="checkbox" class="form-check-input" id="rememberMe">
                   <label class="form-check-label" for="rememberMe">Zapamatovat</label>
                 </div>
+
+                  <?php
+                  if (isset($_SESSION["error_mess_login"])) { ?>
+                    <div class="error_message pb-3 alert alert-danger" id="error_mess_login">
+                      <?php
+                    echo $_SESSION["error_mess_login"];
+                    unset($_SESSION["error_mess_login"]);
+                    ?>
+                    </div>
+                    <?php
+                  }
+                  if (isset($_SESSION["info_mess_success_register"])) { ?>
+                    <div class="error_message pb-3 alert alert-success" id="info_mess_success_register">
+                      <?php
+                    echo $_SESSION["info_mess_success_register"];
+                    unset($_SESSION["info_mess_success_register"]);
+                    ?>
+                    </div>
+                    <?php
+                  }
+                  ?>
+               
                 <button type="submit" class="btn btn-primary px-4 b">Přihlásit</button>
               </form>
               <div class="">

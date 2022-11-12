@@ -1,6 +1,7 @@
 <?php
 /* Konfigurační soubor */
 $config = require "../../../config.php";
+session_start();
 ?>
 <div class="container">
    <div class="row justify-content-center">
@@ -24,6 +25,17 @@ $config = require "../../../config.php";
                            <input type="text" class="form-control" id="desc" name="desc" required>
                         </div>
                      </div>
+                     <?php
+                     if (isset($_SESSION["error_mess_new_world"])) { ?>
+                        <div class="error_message pb-3 alert alert-danger" id="error_mess_new_world">
+                           <?php
+                           echo $_SESSION["error_mess_new_world"];
+                           unset($_SESSION["error_mess_new_world"]);
+                           ?>
+                        </div>
+                     <?php
+                     }
+                     ?>
                      <button type="submit" class="btn btn-primary px-4 b">Vytvořit!</button>
                </form>
             </div>
