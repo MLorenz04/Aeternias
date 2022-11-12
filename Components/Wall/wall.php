@@ -21,7 +21,7 @@ require "../Elements/head.php";
       <div class="collapse navbar-collapse" id="navbarText">
          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
          </ul>
-            <p class="link-dark navbar-text m-0 p-0 px-2 " > <a class="text-decoration-none" href="./profile?username=<?php echo $nickname ?>"> <?php echo $nickname ?> </a></p>
+         <p class="link-dark navbar-text m-0 p-0 px-2 "> <a class="text-decoration-none" href="./profile?username=<?php echo $nickname ?>"> <?php echo $nickname ?> </a></p>
          <a href="../Profile/PHP/log_off.php"> <button class=" mx-2 btn btn-primary"> Odhlásit </button> </a>
       </div>
    </div>
@@ -53,5 +53,7 @@ require "../Elements/head.php";
 </main>
 
 <?php
-require "../Elements/footer.php"
+require "../Elements/footer.php";
+/* Přesměrovávač na určité podstránky s pomocí Ajaxu */
+require "../Helpers/redirectors.php";
 ?>

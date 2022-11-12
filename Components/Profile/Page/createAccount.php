@@ -2,7 +2,11 @@
 /* Konfigurační soubor */
 $config = include("../../../config.php");
 /* Hlavička */
-require "../../Elements/head.php"
+require "../../Elements/head.php";
+session_start();
+if(isset($_SESSION["is_logged"])){
+  header("location:" . $config["root_url"] . "index.php");
+}
 ?>
 <main>
   <div class="container">
@@ -26,7 +30,19 @@ require "../../Elements/head.php"
                 <label for="email" class="form-label">E-mail</label>
                 <input type="email" class="form-control" id="email" name="email">
               </div>
-              <button type="submit" class="btn btn-primary px-4 b">Zaregistrovat</button>
+
+              <?php
+              if (isset($_SESSION["error_mess_register"])) { ?>
+                <div class="error_message pb-3 alert alert-danger" id="error_mess_register">
+                  <?php
+                  echo $_SESSION["error_mess_register"];
+                  unset($_SESSION["error_mess_register"]);
+                  ?>
+                </div>
+              <?php
+              }
+              ?>
+              <button type="submit" class="btn btn-primary px-4">Zaregistrovat</button>
             </form>
             <div class="">
               Máte již účet? <a href="../../../index.php">Přihlaste se!</a>
@@ -35,5 +51,6 @@ require "../../Elements/head.php"
         </div>
       </div>
     </div>
+  </div>
   </div>
 </main>
