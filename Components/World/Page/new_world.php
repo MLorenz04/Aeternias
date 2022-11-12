@@ -11,7 +11,7 @@ session_start();
                <div class="row flex text-center main-color card-title">
                   <h1 class="py-4"> Vytvořte si nový svět! </h1>
                </div>
-               <form action="/Omega/Components/World/PHP/create_world.php" method="POST">
+               <form action=" <?php echo $config['root_url'] . 'Components/World/PHP/create_world.php' ?>" method="POST">
                   <div class="container">
                      <div class="row">
                         <p class="my-0"> Ve Vašem světě jste pánem vy! Přidávejte své přátelé, ukažte jim Váš svět a simulujte epické bitvy! </p>
