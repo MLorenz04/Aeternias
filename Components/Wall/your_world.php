@@ -1,8 +1,6 @@
 <?php
 /* Konfigurační soubory */
 $config = require("../../config.php");
-/* Založení session */
-session_start();
 /* Proměnné */
 $id_owner = $_SESSION["id_user"];
 /* Databáze a připojení do kolekce */
