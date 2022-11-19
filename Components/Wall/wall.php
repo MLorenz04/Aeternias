@@ -3,15 +3,10 @@
 $config = require "../../config.php";
 /* Založení session */
 session_start();
-/* Proměnné */
+/* Layout stránky */
 $nickname = $_SESSION["username"];
-/* Kontrola přihlášení */
-require "../Security/check_login.php";
-/* Hlavička */
-require "../Elements/head.php";
-require "../Elements/feedback.php";
-require "../Elements/navbar.php";
-require "../Elements/sidebar.php"
+/* Require s ostatními requires */
+require $config['root'] . "/Components/Helpers/php_header.php";
 ?>
 <main id="main" class="main wall_main">
    <div id="content">

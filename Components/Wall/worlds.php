@@ -5,13 +5,8 @@ $config = require "../../config.php";
 session_start();
 /* Proměnné */
 $nickname = $_SESSION["username"];
-/* Kontrola přihlášení */
-require "../Security/check_login.php";
-/* Hlavička */
-require "../Elements/head.php";
-require "../Elements/feedback.php";
-require "../Elements/navbar.php";
-require "../Elements/sidebar.php"
+/* Require s ostatními requires */
+require $config['root'] . "/Components/Helpers/php_header.php";
 ?>
 <main id="main" class="main wall_main">
   <div id="content">
@@ -22,7 +17,9 @@ require "../Elements/sidebar.php"
         <div class="card m-4" style="width: 18rem;">
           <div class="card-body body-add-world">
             <h5 class="card-title text-center">Vytvořit svět</h5>
-            <i onclick="load_create_new_world()" class="bi bi-plus text-center d-flex justify-content-center" style="max-height:100px; font-size:6rem; color:#2d2d2d; cursor:pointer"></i>
+            <a class="new-world-href" href="../World/Page/new_world.php">
+              <i class="bi bi-plus text-center d-flex justify-content-center" style="max-height:100px; font-size:6rem; color:#2d2d2d; cursor:pointer"></i>
+            </a>
           </div>
         </div>
         <?php

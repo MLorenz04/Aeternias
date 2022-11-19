@@ -4,7 +4,7 @@
 /* Pokud je projekt na mém localhostu, tak se nastaví proměnné podle mého vývoje */
 $document_root = $document_root_url = $db_name = $db_user = $db_password = $db_server = "";
 if($_SERVER['DOCUMENT_ROOT'] == "C:/xampp/htdocs") {
-    $document_root = $_SERVER["DOCUMENT_ROOT"] . "/Omega";
+    $document_root = $_SERVER["DOCUMENT_ROOT"] . "/Omega/";
     $document_root_url = "/Omega/";
     $db_server = "localhost";
     $db_name = "Aeternias";
@@ -13,7 +13,7 @@ if($_SERVER['DOCUMENT_ROOT'] == "C:/xampp/htdocs") {
 }
 /* Pokud je projekt na serveru, nastaví se přístupy do databáze */
 if($_SERVER["DOCUMENT_ROOT"] == "/3w/users/a/aeternias.cz/web/") {
-    $document_root = "/";
+    $document_root = $_SERVER["DOCUMENT_ROOT"] . "/";
     $document_root_url = "/";
     $db_server = "sql6.webzdarma.cz";
     $db_name = "aeterniascz9913";
