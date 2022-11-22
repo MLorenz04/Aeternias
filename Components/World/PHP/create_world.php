@@ -26,7 +26,7 @@ $con = $config["db"];
 /* SQL příkazy */
 $sql_check_name = "select name from world where name = ?";
 $sql_insert_your_world = "insert into world(id_owner,name,description,date,user_count,warrior_count,battle_count) values(?, ?, ?, ?, 1, 0, 0)";
-$sql_create_permission = "insert into permissions(id_owner, id_world) values(?,?)";
+$sql_create_permission = "insert into permissions(id_owner, id_world,type_of_permission) values(?,?,1)";
 /* Předpřipravení příkazi kvůli SQL injection */
 $statement = $con->prepare($sql_check_name);
 $statement->bind_param("s", $world_name);
@@ -43,13 +43,11 @@ if (mysqli_num_rows($result) == 0) {
    //Tady bude potřeba ještě kontrola
    $world_id = $con->insert_id;
    $statement = $con->prepare($sql_create_permission);
-   $statement->bind_param("ii", $owner_id, $world_id);
+   $statement->bind_param("ii", $owner_id, $world_id, );
    $statement->execute();
    header("location:" . $config["root_url"] . "Components/Wall/wall.php"); //Odkaz na zeď
    exit();
-
 }
-/* Redirect na vytvoření nového světa a vrácení chybové hlášky */ 
-   $_SESSION["error_mess_new_world"] = $error_mess_existing_name;
-   header("location:" . $config["root_url"] . "Components/World/Page/new_world.php");
-
+/* Redirect na vytvoření nového světa a vrácení chybové hlášky */
+$_SESSION["error_mess_new_world"] = $error_mess_existing_name;
+header("location:" . $config["root_url"] . "Components/World/Page/new_world.php");

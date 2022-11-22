@@ -13,7 +13,7 @@ require $config['root'] . "/Components/Helpers/php_header.php";
     <div class="container px-4 pb-4">
       <h1 class="text-center wall-header"> Světy </h1>
       <h3 class="text-center"> Vytvořte si svůj vlastní svět a generujte epické bitvy! </h3>
-      <div class="container-worlds">
+      <div class="container-cards">
         <div class="card m-4" style="width: 18rem;">
           <div class="card-body body-add-world">
             <h5 class="card-title text-center">Vytvořit svět</h5>
