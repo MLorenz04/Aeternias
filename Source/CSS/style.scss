@@ -86,9 +86,44 @@
 }
 
 .create-new-warrior {
-height:2.5rem;
+   height: 2.5rem;
 }
 .remove-warrior {
-   margin-top:10px;
-   margin-left:10px;
+   margin-top: 12px;
+   margin-left: 10px;
+}
+
+.remove-permission {
+   margin-top:6px;
+   margin-left:6px;
+}
+/* Banner */
+
+.alert-banner-row {
+   width:100%;
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+   padding: 0.5rem;
+   border-radius: 1rem;
+   background-color: #004089;
+
+   .body-column {
+      padding-top: 10px;
+      font-family: "Roboto", sans-serif;
+      margin: 0rem;
+      color: white;
+   }
+   span {
+      color:white;
+   }
+   .banner-name {
+      font-size:30px;
+   }
+   .banner-army {
+      font-size: 18px;
+   }
+   .banner-score {
+      font-size: 3rem;
+   }
 }

@@ -41,7 +41,7 @@ if (!(preg_match($regex_new_warrior_desc, $desc))) {
    exit();
 }
 
-if($attack < 0 || $defense < 0 || $agility <0) {
+if ($attack < 0 || $defense < 0 || $agility < 0) {
    $_SESSION["error_mess_new_warrior"] = $error_mess_new_warrior_number;
    header("location:" . $config["root_url"] . "Components/World/Page/world_create_warrior.php");
    exit();

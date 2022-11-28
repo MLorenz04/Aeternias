@@ -9,10 +9,8 @@ function send_feedback() {
     data: {
       message: $message,
       email: $email,
-      nickname: $nickname
+      nickname: $nickname,
     },
-    success: function (result) {
-      console.log("JOOO")
-    },
+    success: function (result) {},
   });
 }

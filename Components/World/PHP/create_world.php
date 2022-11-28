@@ -26,7 +26,7 @@ $con = $config["db"];
 /* SQL příkazy */
 $sql_check_name = "select name from world where name = ?";
 $sql_insert_your_world = "insert into world(id_owner,name,description,date,user_count,warrior_count,battle_count) values(?, ?, ?, ?, 1, 0, 0)";
-$sql_create_permission = "insert into permissions(id_owner, id_world,type_of_permission) values(?,?,1)";
+$sql_create_permission = "insert into permissions(id_owner, id_world,type_of_permission) values(?,?,'Administrátor')";
 /* Předpřipravení příkazi kvůli SQL injection */
 $statement = $con->prepare($sql_check_name);
 $statement->bind_param("s", $world_name);
