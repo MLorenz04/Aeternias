@@ -2,13 +2,10 @@
 /* Zde není potřeba checkovat SQL Injection, protože to už kontroluje vždy skript se security v souboru, kde je World vytvářen */
 class World
 {
-   public $id, $id_owner, $warrior_count, $user_count = 0;
-   public $name, $date, $desc = "";
    public $list_of_warriors = array();
    public $list_of_permissions = array();
    function get_world($input_id)
    {
-      global $id, $desc, $id_owner, $warrior_count, $user_count, $date;
       $config = require "../../../config.php";
       $con = $config["db"];
       $sql_world_info = "select * from world where id = $input_id";

@@ -20,7 +20,7 @@ if($_SERVER["DOCUMENT_ROOT"] == "/3w/users/a/aeternias.cz/web/") {
     $db_user = "aeterniascz9913";
     $db_password = "StarClan1*";
 }
-
+/* Vrací pole údajů */ 
 return array(
     'project_name' => 'Aeternias', //Jméno projektu
     'root' => $document_root, //Root adresář

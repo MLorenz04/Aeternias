@@ -1,7 +1,7 @@
 <?php
 /* Konfigurační soubory */
 $config = require "../../../config.php";
-/* Security */ 
+/* Security */
 require $config["root"] . "Components/Security/security_functions.php";
 /* Založení session */
 session_start();
@@ -13,7 +13,6 @@ if (check_login() == False) {
 $nickname = $_SESSION["username"];
 $id_user = $_SESSION["id_user"];
 $id_world = $_GET["id"];
-
 /* Bezpečnost */
 if (!($id_world = (int)$id_world) == 1) {
    exit();

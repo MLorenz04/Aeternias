@@ -3,7 +3,7 @@
 $config = require "../../../config.php";
 /* Založení session */
 session_start();
-/* Security */ 
+/* Security */
 require $config["root"] . "Components/Security/security_functions.php";
 /* Kontrola přihlášení */
 if (check_login() == False) {
@@ -24,13 +24,14 @@ if (!check_permission($id_user, $id_world)) {
 }
 /* Require s ostatními requires */
 require $config['root'] . "/Components/Helpers/php_header_single_world.php";
+/*  */
 ?>
 <main id="main" class="main wall_main">
    <div class="px-4 py-2" id="content">
       <h1> Správa uživatelů </h1>
       <p> Zde můžete spravovat hráče ve Vašem úžasném světě! Přidejte kohokoliv budete chtít, upravujte jim role, dejte jim přezdívky a nechte je bojovat! </p>
       <div class="container d-flex justify-content-center">
-         <div class="col-lg-5">
+         <div class="col-lg-5" id="list_of_users">
             <h3 class="text-center"> Seznam uživatelů </h3>
             <?php require $config["root"] . "Components/Elements/list_of_users.php" ?>
          </div>
@@ -73,11 +74,27 @@ require $config['root'] . "/Components/Helpers/php_header_single_world.php";
          method: "POST",
          asnyc: false,
          data: {
-            id: $id
+            id: $id,
+            current_open_world: <?php echo $id_world ?>
          },
          success: function($result) {
             alert($result);
          }
       })
    })
+   $(".remove_permission").click(function() {
+      $id_warrior = this.id;
+      $.ajax({
+         url: "<?php echo $config["root_url"] ?>Components/World/PHP/remove_permission.php",
+         method: "POST",
+         asnyc: false,
+         data: {
+            id: $id_warrior,
+            id_world: <?php echo $id_world ?>
+         },
+         success: function($result) {
+            $("#list_of_users").html()
+         }
+      })
+   });
 </script>

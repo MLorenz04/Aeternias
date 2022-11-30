@@ -17,11 +17,6 @@ if (!check_permission($id_user, $id_world)) {
    exit();
 }
 
-if (!check_owner($id_world, $id_user)) {
-   header("location: " . $config["root_url"] . "Components/Errors/error.php?id=1");
-   exit();
-}
-
 $name = $_POST["name"];
 $desc = $_POST["desc"];
 $attack = $_POST["attack"];

@@ -2,7 +2,7 @@
 /* Konfigurační soubory */
 $config = require "../../../config.php";
 /* Require světa */
-require $config["root"] . "Components/World/PHP/World.php";
+require $config["root"] . "Components/Classes/World.php";
 /* Security */ 
 require $config["root"] . "Components/Security/security_functions.php";
 /* Založení session */
@@ -16,17 +16,15 @@ if (check_login() == False) {
 $nickname = $_SESSION["username"];
 $id_user = $_SESSION["id_user"];
 $id_world = $_GET["id"];
-
+/* Bezpečnost */
 if (!($id_world = (int)$id_world) == 1) {
    header("location: " . $config["root_url"] . "Components/Errors/error.php?id=1");
    exit();
 }
-/* Kontrola pravomocí */
 if (!check_permission($id_user, $id_world)) {
    header("location: " . $config["root_url"] . "Components/Errors/error.php?id=1");
    exit();
 }
-
 /* Require s ostatními requires */
 require $config['root'] . "Components/Helpers/php_header_single_world.php";
 /* Vytvoření světa podle id */

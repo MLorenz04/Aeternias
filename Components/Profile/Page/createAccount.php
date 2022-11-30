@@ -6,9 +6,6 @@ require "../../Elements/head.php";
 session_start();
 /* Kontrola přihlášení */
 require $config["root"] . "Components/Security/security_functions.php";
-if(check_login() == False) {
-   header("location: " . $config["root_url"] . "index.php");
-}
 ?>
 <main>
   <div class="container">

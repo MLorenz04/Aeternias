@@ -2,7 +2,7 @@
 /* Konfigurační soubory */
 $config = require "../../../config.php";
 /* Require světa */
-require $config["root"] . "Components/World/PHP/World.php";
+require $config["root"] . "Components/Classes/World.php";
 /* Založení session */
 session_start();
 /* Proměnné */
