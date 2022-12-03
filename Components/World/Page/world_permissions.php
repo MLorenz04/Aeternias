@@ -21,9 +21,12 @@ if (!($id_world = (int)$id_world) == 1) {
 if (!check_permission($id_user, $id_world)) {
    header("location: " . $config["root_url"] . "Components/Errors/error.php?id=1");
    exit();
+} else {
+   $permission = true;
 }
 /* Require s ostatními requires */
 require $config['root'] . "/Components/Helpers/php_header_single_world.php";
+
 /*  */
 ?>
 <main id="main" class="main wall_main">
@@ -33,7 +36,7 @@ require $config['root'] . "/Components/Helpers/php_header_single_world.php";
       <div class="container d-flex justify-content-center">
          <div class="col-lg-5" id="list_of_users">
             <h3 class="text-center"> Seznam uživatelů </h3>
-            <?php require $config["root"] . "Components/Elements/list_of_users.php" ?>
+            <?php $x = require $config["root"] . "Components/Elements/list_of_users.php" ?>
          </div>
          <div class="container d-flex justify-content-center">
             <div class="col-lg-5">
@@ -47,11 +50,11 @@ require $config['root'] . "/Components/Helpers/php_header_single_world.php";
       </div>
 </main>
 <script>
-   $id = ""
+   $id = "";
    $("#submit").click(function() {
       if ($("#user").val() == "") {
          alert("Musíte zadat uživatele");
-         return 0
+         return 0;
       }
       $username = $("#user").val();
       $.ajax({
@@ -72,29 +75,31 @@ require $config['root'] . "/Components/Helpers/php_header_single_world.php";
       $.ajax({
          url: "<?php echo $config["root_url"] ?>Components/World/PHP/write_permission.php",
          method: "POST",
-         asnyc: false,
+         async: false,
          data: {
             id: $id,
             current_open_world: <?php echo $id_world ?>
          },
          success: function($result) {
             alert($result);
+            location.reload()
          }
       })
    })
    $(".remove_permission").click(function() {
       $id_warrior = this.id;
+
       $.ajax({
          url: "<?php echo $config["root_url"] ?>Components/World/PHP/remove_permission.php",
          method: "POST",
-         asnyc: false,
+         async: false,
          data: {
             id: $id_warrior,
             id_world: <?php echo $id_world ?>
          },
          success: function($result) {
-            $("#list_of_users").html()
+            location.reload()
          }
-      })
+      });
    });
 </script>

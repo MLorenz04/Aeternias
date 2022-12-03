@@ -1,7 +1,5 @@
 <?php
-if (check_permission($id_user, $id_world)) {
-   $permission = true;
-}
+/* Konfigurační soubory */
 $sql_select_permissions = "select users.nickname, users.id, permissions.type_of_permission from permissions 
 inner join users
 on permissions.id_owner = users.id 
@@ -9,7 +7,7 @@ where id_world = $id_world";
 $con = $config["db"];
 $result = $con->query($sql_select_permissions);
 ?>
-<ul class="list-group container d-flex flex-column">
+<ul id="list" class="list-group container d-flex flex-column">
    <?php
    while ($row = $result->fetch_assoc()) {
       $id = $row["id"];
