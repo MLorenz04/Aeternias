@@ -1,9 +1,8 @@
 <?php
 session_start();
 $mess = wordwrap($_POST["message"], 70);
-$email = $_POST["email"];
-$nickname = $_POST["username"];
-$result = mail("matyaslorenz@seznam.cz", "Feedback", $mess, $email);
+$nickname = $_SESSION["username"];
+$result = mail("matyaslorenz@seznam.cz", "Feedback", $mess, $nickname);
 if($result == true) {
    return true;
    exit();

@@ -4,9 +4,8 @@ $config = include("../../../config.php");
 /* Hlavička */
 require "../../Elements/head.php";
 session_start();
-if(isset($_SESSION["is_logged"])){
-  header("location:" . $config["root_url"] . "index.php");
-}
+/* Kontrola přihlášení */
+require $config["root"] . "Components/Security/security_functions.php";
 ?>
 <main>
   <div class="container">

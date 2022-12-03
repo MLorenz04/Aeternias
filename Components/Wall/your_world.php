@@ -1,21 +1,24 @@
 <?php
 /* Konfigurační soubory */
-$config = require("../../config.php");
+$config = require "../../config.php";
 /* Proměnné */
 $id_owner = $_SESSION["id_user"];
 /* Databáze a připojení do kolekce */
 $con = $config["db"];
 /* SQL příkazy */
-$sql_all_worlds = "select name, description from world where id_owner = $id_owner";
+$sql_all_worlds = "select name, description, id from world where id_owner = $id_owner";
 /* Výpis všech uživatelových světů */
 $result = $con->query($sql_all_worlds);
 while ($row = $result->fetch_assoc()) {
+   $current_id = $row["id"];
 ?>
-   <div class="m-4 card body-add-world" style="width: 18rem;">
-      <div class="card-body">
-         <h5 class="card-text"><?php echo $row["name"]; ?></h5>
-         <p class="card-text"><?php echo $row["description"]; ?></p>
-      </div>
+   <div class="m-4 card world body-add-world" style="width: 18rem;">
+      <a class="single-world-link" href="<?php echo $config['root_url'] . "Components/World/Page/single_world.php?id=$current_id" ?>">
+         <div class="card-body">
+            <h5 class="card-text"><?php echo $row["name"]; ?></h5>
+            <p class="card-text"><?php echo $row["description"]; ?></p>
+         </div>
+      </a>
    </div>
 <?php
 }

@@ -62,7 +62,7 @@
   height: 10rem;
 }
 
-.container-worlds {
+.container-cards {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   align-items: center;
@@ -76,4 +76,58 @@
 
 .send-feedback {
   cursor: pointer;
+}
+
+.single-world-link {
+  width: 100%;
+  height: 100%;
+  color: #2d2d2d;
+  text-decoration: none;
+}
+
+.new-world-href {
+  color: transparent !important;
+}
+
+.create-new-warrior {
+  height: 2.5rem;
+}
+
+.remove-warrior {
+  margin-top: 12px;
+  margin-left: 10px;
+}
+
+.remove-permission {
+  margin-top: 6px;
+  margin-left: 6px;
+}
+
+/* Banner */
+.alert-banner-row {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0.5rem;
+  border-radius: 1rem;
+  background-color: #004089;
+}
+.alert-banner-row .body-column {
+  padding-top: 10px;
+  font-family: "Roboto", sans-serif;
+  margin: 0rem;
+  color: white;
+}
+.alert-banner-row span {
+  color: white;
+}
+.alert-banner-row .banner-name {
+  font-size: 30px;
+}
+.alert-banner-row .banner-army {
+  font-size: 18px;
+}
+.alert-banner-row .banner-score {
+  font-size: 3rem;
 }/*# sourceMappingURL=style.css.map */

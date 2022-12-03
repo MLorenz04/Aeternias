@@ -3,15 +3,17 @@
 $config = require "../../config.php";
 /* Založení session */
 session_start();
+/* Security */ 
+require $config["root"] . "Components/Security/security_functions.php";
+/* Kontrola přihlášení  */
+if (check_login() == False) {
+  header("location: " . $config["root_url"] . "index.php");
+  exit();
+}
+/* Require s ostatními requires */
+require $config['root'] . "/Components/Helpers/php_header.php";
 /* Proměnné */
 $nickname = $_SESSION["username"];
-/* Kontrola přihlášení */
-require "../Security/check_login.php";
-/* Hlavička */
-require "../Elements/head.php";
-require "../Elements/feedback.php";
-require "../Elements/navbar.php";
-require "../Elements/sidebar.php"
 ?>
 <main id="main" class="main wall_main">
    <div id="content">
@@ -23,8 +25,10 @@ require "../Elements/sidebar.php"
          <h4> Jak tedy fungují? </h4>
          <p> Jednotky můžete vytvářet ve svém vlasntím světě. Aeternias nabízí na ukázku několik jednotek, které si můžete libovolně upravit a případně i smazat.
             Jakmile jednotku vytvoříte, uloží se pouze do vašeho světa. V záložce "Bitvy" ve vašem světě ji pak uvidíte při vybírání armády. <strong> Čím silnější jednotky budou, tím zvětšují šanci na výhru</strong> </p>
-         <p> Jednotky mají několik atributů: <strong> Sílu</strong>, <strong>obranu</strong> a <strong>typ útoku</strong>. Podle typu útoku můžete i dělit vojáky.
-         <ul>
+         <p> Jednotky mají několik atributů: <strong> Sílu</strong>, <strong>obranu</strong>, <strong> agilitu </strong> a <strong>typ útoku</strong>. Podle typu útoku můžete i dělit vojáky.
+         <p> <strong> Síla </strong> indukuje obecnou sílu jednotky. Je základním údajem při výpočtu.
+         <p> <strong> Obrana </strong> zvyšuje pravděpodobnost na přežití jednotky v souboji
+         <p> <strong> Agilita </strong> představuje šanci, že se jednotka vyhne útoku.
             <li>
                <strong> Útok na blízko -> </strong>
                Kopiník, šermíř.

@@ -3,15 +3,17 @@
 $config = require "../../config.php";
 /* Založení session */
 session_start();
+/* Security */ 
+require $config["root"] . "Components/Security/security_functions.php";
+/* Kontrola přihlášení  */
+if (check_login() == False) {
+  header("location: " . $config["root_url"] . "index.php");
+  exit();
+}
+/* Require s ostatními requires */
+require $config['root'] . "/Components/Helpers/php_header.php";
 /* Proměnné */
 $nickname = $_SESSION["username"];
-/* Kontrola přihlášení */
-require "../Security/check_login.php";
-/* Hlavička */
-require "../Elements/head.php";
-require "../Elements/feedback.php";
-require "../Elements/navbar.php";
-require "../Elements/sidebar.php"
 ?>
 <main id="main" class="main wall_main">
    <div id="content">
