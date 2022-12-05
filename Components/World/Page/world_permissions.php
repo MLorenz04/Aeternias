@@ -53,7 +53,10 @@ require $config['root'] . "/Components/Helpers/php_header_single_world.php";
    $id = "";
    $("#submit").click(function() {
       if ($("#user").val() == "") {
-         alert("Musíte zadat uživatele");
+         Swal.fire({
+                  icon: 'error',
+                  title: 'Musíte zadat uživatele',
+               })
          return 0;
       }
       $username = $("#user").val();
@@ -66,7 +69,6 @@ require $config['root'] . "/Components/Helpers/php_header_single_world.php";
          },
          success: function(result) {
             $id = result;
-            console.log($id);
             if ($id == "error") {
                return 0;
             }
@@ -81,8 +83,14 @@ require $config['root'] . "/Components/Helpers/php_header_single_world.php";
             current_open_world: <?php echo $id_world ?>
          },
          success: function($result) {
-            alert($result);
-            location.reload()
+            if ($result != "") {
+               Swal.fire({
+                  icon: 'error',
+                  title: $result,
+               })
+            } else {
+               location.reload();
+            }
          }
       })
    })
