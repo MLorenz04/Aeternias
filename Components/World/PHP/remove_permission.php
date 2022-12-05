@@ -23,14 +23,14 @@ $world = new World();
 $world->get_world($id_world);
 if (!($logged_user == $world->id_owner)) {
    echo "Na toto nemáte pravomoce!";
-   echo $logged_user;
-   echo $world->id_owner;
    exit();
 }
-
+if ($id_owner == $world->id_owner) {
+   echo "Nemůžete odebrat vlastníka světa!";
+   exit();
+}
 $sql_select_all = "delete from permissions where id_owner = $id_owner and id_world = $id_world";
 if ($con->query($sql_select_all)) {
-   echo "Uživatel byl smazán";
    exit();
 } else {
    echo "Tento uživatel nemá pravomoce ve vašem světě";

@@ -54,9 +54,9 @@ require $config['root'] . "/Components/Helpers/php_header_single_world.php";
    $("#submit").click(function() {
       if ($("#user").val() == "") {
          Swal.fire({
-                  icon: 'error',
-                  title: 'Musíte zadat uživatele',
-               })
+            icon: 'error',
+            title: 'Musíte zadat uživatele',
+         })
          return 0;
       }
       $username = $("#user").val();
@@ -106,7 +106,14 @@ require $config['root'] . "/Components/Helpers/php_header_single_world.php";
             id_world: <?php echo $id_world ?>
          },
          success: function($result) {
-            location.reload()
+            if ($result != "") {
+               Swal.fire({
+                  icon: 'error',
+                  title: $result,
+               })
+            } else {
+               location.reload();
+            }
          }
       });
    });
