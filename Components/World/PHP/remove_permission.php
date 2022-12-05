@@ -7,8 +7,16 @@ session_start();
 /* Databáze */
 $con = $config["db"];
 /* Proměnné */
-$id_owner = $_POST["id"]; //Id vlastníka permisse
-$id_world = $_POST['id_world']; //Id otevřeného světa
+
+/* Zkusí získat údaje, pokud se mu to nepodaří, hodí na index */
+/* Ochrana proti pokusu jít přímo na soubor bez vyplněného formuláře */
+try {
+   $id_owner = $_POST["id"]; //Id vlastníka permisse
+   $id_world = $_POST['id_world']; //Id otevřeného světa
+} catch (Exception $e) {
+   header("location:" . $config['root_url'] . "index.php");
+   exit();
+}
 $logged_user = $_SESSION["id_user"];
 /* Vytvoření světa podle id */
 $world = new World();

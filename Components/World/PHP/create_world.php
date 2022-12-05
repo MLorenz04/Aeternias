@@ -6,18 +6,22 @@ require "../../Security/security.php";
 session_start();
 /* Proměnné */
 $owner_id = $_SESSION["id_user"];
-$world_name = $_POST["world_name"];
-$world_desc = $_POST["desc"];
+/* Zkusí získat údaje, pokud se mu to nepodaří, hodí na index */
+/* Ochrana proti pokusu jít přímo na soubor bez vyplněného formuláře */
+try {
+   $world_name = $_POST["name"];
+   $world_desc = $_POST["desc"];
+} catch (Exception $e) {
+   exit();
+}
 $date = date("Y-m-d");
 /* Security */
 if (!(preg_match($regex_new_world_name, $world_name))) {
-   $_SESSION["error_mess_new_world"] = $error_mess_world_name;
-   header("location:" . $config["root_url"] . "Components/World/Page/new_world.php");
+   echo $error_mess_world_name;
    exit();
 }
 if (!(preg_match($regex_new_world_desc, $world_desc))) {
-   $_SESSION["error_mess_new_world"] = $error_mess_world_desc;
-   header("location:" . $config["root_url"] . "Components/World/Page/new_world.php");
+   echo $error_mess_world_desc;
    exit();
 }
 
@@ -43,11 +47,10 @@ if (mysqli_num_rows($result) == 0) {
    //Tady bude potřeba ještě kontrola
    $world_id = $con->insert_id;
    $statement = $con->prepare($sql_create_permission);
-   $statement->bind_param("ii", $owner_id, $world_id, );
+   $statement->bind_param("ii", $owner_id, $world_id,);
    $statement->execute();
-   header("location:" . $config["root_url"] . "Components/Wall/wall.php"); //Odkaz na zeď
    exit();
 }
 /* Redirect na vytvoření nového světa a vrácení chybové hlášky */
-$_SESSION["error_mess_new_world"] = $error_mess_existing_name;
-header("location:" . $config["root_url"] . "Components/World/Page/new_world.php");
+echo $error_mess_existing_name;
+exit();

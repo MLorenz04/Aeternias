@@ -3,7 +3,7 @@
 $config = require "../../../config.php";
 /* Založení session */
 session_start();
-/* Security */ 
+/* Security */
 require $config["root"] . "Components/Security/security_functions.php";
 /* Kontrola přihlášení */
 if (check_login() == False) {
@@ -33,7 +33,7 @@ require $config['root'] . "/Components/Helpers/php_header_single_world.php";
                   <div class="row flex text-center main-color card-title">
                      <h1 class="py-4"> Vytvořte si novou jednotku!</h1>
                   </div>
-                  <form action="<?php echo $config['root_url'] . "Components/World/PHP/create_warrior.php" ?>" method="POST">
+                  <form onclick="event.preventDefault()" method="POST">
                      <div class="container">
                         <div class="row">
                            <p class="my-0"> Jednotku budete moci využít hned po jejím vytvoření </p>
@@ -61,18 +61,7 @@ require $config['root'] . "/Components/Helpers/php_header_single_world.php";
                               <input type="number" class="form-control" id="agility" name="agility" required>
                            </div>
                         </div>
-                        <?php
-                        if (isset($_SESSION["error_mess_new_warrior"])) { ?>
-                           <div class="error_message pb-3 alert alert-danger" id="error_mess_new_warrior">
-                              <?php
-                              echo $_SESSION["error_mess_new_warrior"];
-                              unset($_SESSION["error_mess_new_warrior"]);
-                              ?>
-                           </div>
-                        <?php
-                        }
-                        ?>
-                        <button type="submit" class="btn btn-primary px-4 b">Vytvořit!</button>
+                        <button id="create_warrior" class="btn btn-primary px-4 b">Vytvořit!</button>
                   </form>
                </div>
             </div>
@@ -81,3 +70,35 @@ require $config['root'] . "/Components/Helpers/php_header_single_world.php";
    </div>
    </div>
 </main>
+<script>
+   $("#create_warrior").click(function() {
+      $name = $("#name").val();
+      $desc = $("#desc").val();
+      $attack = $("#attack").val();
+      $defense = $("#defense").val();
+      $agility = $("#agility").val();
+      $.ajax({
+         url: "<?php echo $config["root_url"] ?>Components/World/PHP/create_warrior.php",
+         method: "POST",
+         async: false,
+         data: {
+            name: $name,
+            desc: $desc,
+            attack: $attack,
+            defense: $defense,
+            agility: $agility,
+            id_world: <?php echo $id_world ?>
+         },
+         success: function($result) {
+            if ($result != "") {
+               Swal.fire({
+                  icon: 'error',
+                  title: $result,
+               })
+            } else {
+               window.location.href = "./world_warriors.php?id=<?php echo $id_world ?>";
+            }
+         }
+      });
+   });
+</script>

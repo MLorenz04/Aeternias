@@ -17,7 +17,7 @@ require $config["root"] . "Components/Helpers/php_header.php";
                   <div class="row flex text-center main-color card-title">
                      <h1 class="py-4"> Vytvořte si nový svět! </h1>
                   </div>
-                  <form action=" <?php echo $config['root_url'] . 'Components/World/PHP/create_world.php' ?>" method="POST">
+                  <form onclick="event.preventDefault()" method="POST">
                      <div class="container">
                         <div class="row">
                            <p class="my-0"> Ve Vašem světě jste pánem vy! Přidávejte své přátelé, ukažte jim Váš svět a simulujte epické bitvy! </p>
@@ -31,18 +31,7 @@ require $config["root"] . "Components/Helpers/php_header.php";
                               <input type="text" class="form-control" id="desc" name="desc" required>
                            </div>
                         </div>
-                        <?php
-                        if (isset($_SESSION["error_mess_new_world"])) { ?>
-                           <div class="error_message pb-3 alert alert-danger" id="error_mess_new_world">
-                              <?php
-                              echo $_SESSION["error_mess_new_world"];
-                              unset($_SESSION["error_mess_new_world"]);
-                              ?>
-                           </div>
-                        <?php
-                        }
-                        ?>
-                        <button type="submit" class="btn btn-primary px-4 b">Vytvořit!</button>
+                        <button id="create_world" type="submit" class="btn btn-primary px-4 b">Vytvořit!</button>
                   </form>
                </div>
             </div>
@@ -51,9 +40,40 @@ require $config["root"] . "Components/Helpers/php_header.php";
    </div>
    </div>
 </main>
-
+<script>
+   $("#create_world").click(function() {
+      $name = $("#world_name").val();
+      $desc = $("#desc").val();
+      if ($name == "" || $desc == "") {
+         Swal.fire({
+            icon: 'error',
+            title: 'Zadejte, prosím, údaje',
+         })
+         return 0;
+      }
+      $.ajax({
+         url: "<?php echo $config["root_url"] ?>Components/World/PHP/create_world.php",
+         method: "POST",
+         async: false,
+         data: {
+            name: $name,
+            desc: $desc,
+         },
+         success: function($result) {
+            if ($result != "") {
+               Swal.fire({
+                  icon: 'error',
+                  title: $result,
+               })
+            } else {
+               location.reload();
+            }
+         }
+      });
+   });
+</script>
 <?php
-require "../Elements/footer.php";
+require $config["root"] . "Components/Elements/footer.php";
 /* Přesměrovávač na určité podstránky s pomocí Ajaxu */
-require "../Helpers/redirectors.php";
+require $config["root"] . "Components/Helpers/redirectors.php";
 ?>

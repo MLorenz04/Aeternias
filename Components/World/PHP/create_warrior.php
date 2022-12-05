@@ -13,32 +13,35 @@ $id_user = $_SESSION["id_user"];
 /* Kontrola pravomocí */
 require $config["root"] . "Components/Security/security_functions.php";
 if (!check_permission($id_user, $id_world)) {
-   header("location: " . $config["root_url"] . "Components/Errors/error.php?id=1");
+   echo $error_mess_no_permission;
    exit();
 }
-
-$name = $_POST["name"];
-$desc = $_POST["desc"];
-$attack = $_POST["attack"];
-$defense = $_POST["defense"];
-$agility = $_POST["agility"];
+/* Zkusí získat údaje, pokud se mu to nepodaří, hodí na index */
+/* Ochrana proti pokusu jít přímo na soubor bez vyplněného formuláře */
+try {
+   $name = $_POST["name"];
+   $desc = $_POST["desc"];
+   $attack = $_POST["attack"];
+   $defense = $_POST["defense"];
+   $agility = $_POST["agility"];
+} catch (Exception $e) {
+   header("location:" . $config['root_url'] . "index.php");
+   exit();
+}
 
 /* Kontrola údajů  */
 
 if (!(preg_match($regex_new_warrior_name, $name))) {
-   $_SESSION["error_mess_new_warrior"] = $error_mess_new_warrior_name;
-   header("location:" . $config["root_url"] . "Components/World/Page/world_create_warrior.php?id=$id_world");
+   echo $error_mess_new_warrior_name;
    exit();
 }
 if (!(preg_match($regex_new_warrior_desc, $desc))) {
-   $_SESSION["error_mess_new_warrior"] = $error_mess_new_warrior_desc;
-   header("location:" . $config["root_url"] . "Components/World/Page/world_create_warrior.php");
+   echo $error_mess_new_warrior_desc;
    exit();
 }
 
 if ($attack < 0 || $defense < 0 || $agility < 0) {
-   $_SESSION["error_mess_new_warrior"] = $error_mess_new_warrior_number;
-   header("location:" . $config["root_url"] . "Components/World/Page/world_create_warrior.php");
+   echo $error_mess_new_warrior_number;
    exit();
 }
 /* Sql příkazy */
@@ -46,4 +49,4 @@ $sql_insert_warrior = 'insert into warrior(name, description, attack, defense, a
 $statement = $con->prepare($sql_insert_warrior);
 $statement->bind_param("ssiiii", $name, $desc, $attack, $defense, $agility, $id_world);
 $statement->execute();
-header("location:" . $config["root_url"] . "Components/World/Page/world_create_warrior.php");
+exit();
