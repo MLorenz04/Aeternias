@@ -61,7 +61,7 @@ require $config['root'] . "/Components/Helpers/php_header_single_world.php";
       }
       $username = $("#user").val();
       $.ajax({
-         url: "<?php echo $config["root_url"] ?>/Restapi/v1/get_user_by_name.php",
+         url: "<?php echo $config["root_url"] ?>Restapi/v1/get_user_by_name.php",
          type: "POST",
          async: false,
          data: {
