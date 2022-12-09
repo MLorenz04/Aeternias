@@ -3,12 +3,12 @@
 $config = require "../../config.php";
 /* Založení session */
 session_start();
-/* Security */ 
+/* Security */
 require $config["root"] . "Components/Security/security_functions.php";
 /* Kontrola přihlášení  */
 if (check_login() == False) {
-  header("location: " . $config["root_url"] . "index.php");
-  exit();
+   header("location: " . $config["root_url"] . "index.php");
+   exit();
 }
 /* Require s ostatními requires */
 require $config['root'] . "/Components/Helpers/php_header.php";
@@ -25,6 +25,4 @@ $nickname = $_SESSION["username"];
 
 <?php
 require "../Elements/footer.php";
-/* Přesměrovávač na určité podstránky s pomocí Ajaxu */
-require "../Helpers/redirectors.php";
 ?>

@@ -43,7 +43,7 @@ require $config['root'] . "/Components/Helpers/php_header_single_world.php";
                <h3 class="text-center"> Přidejte uživatele </h3>
                <form>
                   <input class="form-control" type="text" id="user"> </input>
-                  <button class="btn btn-primary" type="submit" id="submit" onclick="event.preventDefault();"> Přidat </button>
+                  <button class="btn btn-primary m-auto d-flex mt-2" type="submit" id="submit" onclick="event.preventDefault();"> Přidat </button>
                </form>
             </div>
          </div>
@@ -118,3 +118,6 @@ require $config['root'] . "/Components/Helpers/php_header_single_world.php";
       });
    });
 </script>
+<?php
+require $config["root"] . "Components/Elements/footer.php";
+?>

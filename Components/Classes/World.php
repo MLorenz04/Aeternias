@@ -4,6 +4,8 @@ class World
 {
    public $list_of_warriors = array();
    public $list_of_permissions = array();
+   public $id, $name, $desc, $id_owner, $warrior_count, $user_count, $date, $admin;
+   
    function get_world($input_id)
    {
       $config = require "../../../config.php";
@@ -23,7 +25,7 @@ class World
       $sql_warriors_info = "select * from warrior where id_world = $input_id";
       $result_warriors = $con->query($sql_warriors_info);
       while ($row = $result_warriors->fetch_assoc()) {
-         array_push($this->list_of_warriors, $row);
+         array_push($this->list_of_warriors, $row); //Naplní pole válečníkami, kteří existují
       }
    }
 }

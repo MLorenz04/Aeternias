@@ -4,7 +4,7 @@ $config = require "../../../config.php";
 require $config["root"] . "Components/Classes/World.php";
 /* Založení session */
 session_start();
-/* Security */ 
+/* Security */
 require $config["root"] . "Components/Security/security_functions.php";
 /* Kontrola přihlášení */
 if (check_login() == False) {
@@ -57,3 +57,7 @@ $world->get_world($id_world);
       </div>
    </div>
 </main>
+
+<?php
+require $config["root"] . "Components/Elements/footer.php";
+?>

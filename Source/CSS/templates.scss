@@ -1,0 +1,31 @@
+/* Templates */
+
+.dark-mode {
+   background: #2d2d2d !important;
+   color: white !important;
+
+   &-text {
+      color: white !important;
+   }
+}
+.dark-mode-secondary {
+   background: #1c1b1b !important;
+   color: white !important;
+
+   &-text {
+      color: white !important;
+   }
+}
+
+.light-mode {
+   background: white !important;
+   color: #2d2d2d !important;
+
+   &-text {
+      color: #2d2d2d !important;
+   }
+}
+
+.btn-light-dark {
+   background-color: gray !important;
+}

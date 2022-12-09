@@ -14,3 +14,7 @@ function send_feedback() {
     success: function (result) {},
   });
 }
+
+function show_feed() {
+  $("#exampleModal").css("opacity", "1");
+}

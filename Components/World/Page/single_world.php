@@ -3,7 +3,7 @@
 $config = require "../../../config.php";
 /* Require světa */
 require $config["root"] . "Components/Classes/World.php";
-/* Security */ 
+/* Security */
 require $config["root"] . "Components/Security/security_functions.php";
 /* Založení session */
 session_start();
@@ -42,3 +42,6 @@ $_SESSION["current_open_world"] = $id_world;
       <p> Počet uživatelů: <?php echo $world->user_count ?></p>
    </div>
 </main>
+<?php
+require $config["root"] . "Components/Elements/footer.php";
+?>
