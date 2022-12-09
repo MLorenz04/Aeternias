@@ -49,3 +49,6 @@ require $config['root'] . "/Components/Helpers/php_header_single_world.php";
       </div>
    </div>
 </main>
+<?php
+require $config["root"] . "Components/Elements/footer.php";
+?>

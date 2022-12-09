@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
-
+<?php
+require $config["root"] . "Components/Elements/loader.php";
+?>
 <head>
    <link rel="icon" type="image/png" sizes="32x32" href="<?php echo $config['root_url'] ?>Source/IMG/favicon.ico">
    <link rel="icon" type="image/png" sizes="16x16" href="<?php echo $config['root_url'] ?>Source/IMG/favicon.ico">
@@ -22,6 +24,7 @@
    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
    <!-- Animation css -->
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+   <script src="<?php echo $config['root_url'] ?>Source/JS/loader.js"></script>
+   <script src="<?php echo $config['root_url']?>vendor/cookies.js"></script>
 </head>
-
 <body>

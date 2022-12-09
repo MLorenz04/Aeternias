@@ -25,7 +25,7 @@ $nickname = $_SESSION["username"];
           <div class="card-body body-add-world">
             <h5 class="card-title text-center">Vytvořit svět</h5>
             <a class="new-world-href" href="../World/Page/new_world.php">
-              <i class="bi bi-plus text-center d-flex justify-content-center" style="max-height:100px; font-size:6rem; color:#2d2d2d; cursor:pointer"></i>
+              <i class="bi bi-plus text-dark-always text-center d-flex justify-content-center" style="max-height:100px; font-size:6rem; color:#2d2d2d; cursor:pointer"></i>
             </a>
           </div>
         </div>

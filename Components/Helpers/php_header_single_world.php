@@ -3,7 +3,7 @@
 require $config["root"] . "Components/Functions/functions.php";
 /* Hlavička */
 require $config['root'] . "/Components/Elements/head.php";
-/* Navigační meun */
+/* Navigační menu */
 require $config['root'] . "/Components/Elements/feedback.php";
 require $config['root'] . "/Components/Elements/navbar.php";
 /* Sidebar */

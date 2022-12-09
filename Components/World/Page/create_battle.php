@@ -53,3 +53,6 @@ $_SESSION["current_open_world"] = $id_world;
       </div>
    </div>
 </main>
+<?php
+require $config["root"] . "Components/Elements/footer.php";
+?>
