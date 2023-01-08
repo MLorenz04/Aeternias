@@ -5,7 +5,7 @@ class World
    public $list_of_warriors = array();
    public $list_of_permissions = array();
    public $id, $name, $desc, $id_owner, $warrior_count, $user_count, $date, $admin;
-   
+
    function get_world($input_id)
    {
       $config = require "../../../config.php";

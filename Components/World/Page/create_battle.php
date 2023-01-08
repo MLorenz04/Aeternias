@@ -3,6 +3,8 @@
 $config = require "../../../config.php";
 /* Require světa */
 require $config["root"] . "Components/Classes/World.php";
+/* Security */
+require $config["root"] . "Components/Security/security_functions.php";
 /* Založení session */
 session_start();
 /* Proměnné */
@@ -35,20 +37,22 @@ $_SESSION["current_open_world"] = $id_world;
    <div id="content">
       <div class="container px-4 pb-4">
          <h1 class="text-center wall-header"> Bitva </h1>
-         <h3 class="text-center"> Poměř síly se svým nepřítelem! </h3>
-         <div class="container-cards">
-            <div class="card m-4" style="width: 18rem;">
-               <div class="card-body body-add-world">
-                  <h5 class="card-title text-center"> Vytvořit svět </h5>
-                  <a class="new-world-href" href="../World/Page/new_world.php">
-                     <i class="bi bi-plus text-center d-flex justify-content-center" style="max-height:100px; font-size:6rem; color:#2d2d2d; cursor:pointer"></i>
-                  </a>
-               </div>
-            </div>
+         <form action="<?php echo $config["root_url"] ?>Components/Battle/battle.php?id=<?php echo $world->id ?>" method="POST">
             <?php
-            /* Výpis všech uživatelových světů */
-            require "./your_world.php";
+            $count_of_warriors = 0; //Počítáme, kolik existuje jednotek a postupně je vypíšeme
+            foreach ($world->list_of_warriors as $warrior) {
+               $count_of_warriors++;
             ?>
+               <label for="warrior[warrior<?php echo $warrior["id"] ?>][count]"> <?php echo $warrior["name"] ?> </label>
+               <input type="hidden" name="warrior[<?php echo $count_of_warriors ?>][id]" value="<?php echo $warrior["id"] ?>"> </input>
+               <input type="number" name="warrior[<?php echo $count_of_warriors ?>][count]"> </input>
+            <?php
+            }
+            $count_of_warriors = 0;
+            ?>
+            <button type="submit">
+         </form>
+         <div class="container-cards">
          </div>
       </div>
    </div>

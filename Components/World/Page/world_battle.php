@@ -23,12 +23,33 @@ if (!check_permission($id_user, $id_world)) {
 }
 /* Require s ostatními requires */
 require $config['root'] . "/Components/Helpers/php_header_single_world.php";
+/*  */
+class World_Battles
+{
+   public function show_battles()
+   {
+      global $config;
+      global $id_world;
+      $url = $config["root"];
+      $file = fopen($url . "Components/Files/Administration/world_$id_world.txt", 'r');
+      while (!feof($file)) {
+         $line = fgets($file);
+         $this->read_type($line);
+      }
+   }
+   public function read_type($data) {
+      if(str_starts_with($data, "BATTLE-TO-CONFIRM")) { 
+      }
+   }
+}
+$w1 = new World_Battles();
+$w1->show_battles();
 ?>
 <main id="main" class="main wall_main">
    <div class="px-4 py-2" id="content">
       <div class="d-flex">
          <h1 class="m-auto"> Bitva </h1>
-         <a href="<?php echo $config['root_url'] . "Components/World/Page/create_battle.php" ?>"><button class="btn btn-primary create-new-warrior my-2"> Vytvořit </button> </a>
+         <a href="<?php echo $config['root_url'] . "Components/World/Page/create_battle.php?id=$id_world" ?>"><button class="btn btn-primary create-new-warrior my-2"> Vytvořit </button> </a>
       </div>
       <p> Zde můžete vyzvat spoluhráče či protivníka na bitvu! Výsledky se zobrazí na výsledkové tabuli </p>
       <div class="col-lg-12 d-flex justify-content-center">
