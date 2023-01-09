@@ -13,7 +13,7 @@ if (check_login() == False) {
 /* Require s ostatními requires */
 require $config['root'] . "/Components/Helpers/php_header.php";
 /* Proměnné */
-$nickname = $_SESSION["username"];
+$nickname = unserialize($_SESSION["logged_user"]) -> get_username();
 ?>
 <main id="main" class="main wall_main">
    <div id="content">

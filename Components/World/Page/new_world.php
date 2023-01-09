@@ -4,7 +4,7 @@ $config = require "../../../config.php";
 /* Založení session */
 session_start();
 /* Proměnné */
-$nickname = $_SESSION["username"];
+$nickname = unserialize($_SESSION["logged_user"]) -> get_username();
 /* Hlavička */
 require $config["root"] . "Components/Helpers/php_header.php";
 ?>

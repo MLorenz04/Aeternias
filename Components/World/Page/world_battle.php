@@ -3,6 +3,8 @@
 $config = require "../../../config.php";
 /* Security */
 require $config["root"] . "Components/Security/security_functions.php";
+/* Uživatel */
+require $config["root"] . "Components/Classes/Login.php";
 /* Založení session */
 session_start();
 /* Kontrola přihlášení */
@@ -10,8 +12,8 @@ if (check_login() == False) {
    header("location: " . $config["root_url"] . "index.php");
 }
 /* Proměnné */
-$nickname = $_SESSION["username"];
-$id_user = $_SESSION["id_user"];
+$nickname = unserialize($_SESSION["logged_user"]) -> get_username();
+$id_user =unserialize($_SESSION["logged_user"]) -> get_id();
 $id_world = $_GET["id"];
 /* Bezpečnost */
 if (!($id_world = (int)$id_world) == 1) {

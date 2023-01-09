@@ -1,6 +1,8 @@
 <?php
 /* Konfigurační soubory */
 $config = require "../../../config.php";
+/* Uživatel */
+require $config["root"] . "Components/Classes/Login.php";
 /* Require se založením instance světa */
 require $config["root"] . "Components/Classes/World.php";
 /* Založení session */
@@ -12,8 +14,8 @@ if (check_login() == False) {
    header("location: " . $config["root_url"] . "index.php");
 }
 /* Proměnné */
-$nickname = $_SESSION["username"];
-$id_user = $_SESSION["id_user"];
+$nickname = unserialize($_SESSION["logged_user"]) -> get_username();
+$id_user = unserialize($_SESSION["logged_user"]) -> get_id();
 $id_world = $_GET["id"];
 /* Bezpečnost */
 if (!check_permission($id_user, $id_world)) {
