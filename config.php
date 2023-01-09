@@ -25,6 +25,6 @@ return array(
     'project_name' => 'Aeternias', //Jméno projektu
     'root' => $document_root, //Root adresář
     'root_url' => $document_root_url, //Protože nemůžeme přistupovat k souborům absolutní cestou na disku
-    'db' => new mysqli($db_server, $db_user, $db_password, $db_name) //Připojení do databáze
+    'db' => new mysqli($db_server, $db_user, $db_password, $db_name), //Připojení do databáze
 );
 ?>

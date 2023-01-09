@@ -1,0 +1,28 @@
+{
+   "battle": {
+      "id": 2,
+      "world_id": 4,
+      "first_warrior": "admin",
+      "second_warrior": "TestTest",
+      "first_army": {
+         "1": {
+            "id": "16",
+            "count": "2"
+         },
+         "2": {
+            "id": "17",
+            "count": "2"
+         }
+      },
+      "second_army": {
+         "1": {
+            "id": "16",
+            "count": "2"
+         },
+         "2": {
+            "id": "17",
+            "count": "2"
+         }
+      }
+   }
+}

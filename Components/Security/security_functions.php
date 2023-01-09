@@ -1,4 +1,5 @@
 <?php
+
 /* Databáze */
 $con = $config["db"];
 /* Kontrola pravomocí */
