@@ -11,16 +11,6 @@ function check_login()
    }
    return True;
 }
-function check_permission($id_user, $id_world)
-{
-   global $con;
-   $sql = "select * from permissions where id_world = $id_world AND id_owner = $id_user";
-   $result = $con->query($sql);
-   if (mysqli_num_rows($result) == 0) {
-      return False;
-   }
-   return True;
-}
 function check_owner($id_world, $id_owner)
 {
    global $con;

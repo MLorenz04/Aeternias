@@ -19,7 +19,7 @@ $id_world = $_GET["id"];
 if (!($id_world = (int)$id_world) == 1) {
    exit();
 }
-if (!check_permission($id_user, $id_world)) {
+if (!(in_array($id_world, unserialize($_SESSION["logged_user"])->get_permissions()))) {
    header("location: " . $config["root_url"] . "Components/Errors/error.php?id=1");
    exit();
 }
@@ -30,7 +30,7 @@ require $config['root'] . "/Components/Helpers/php_header_single_world.php";
    <div class="px-4 py-2" id="content">
       <div class="d-flex">
          <h1 class="m-auto"> Bitva </h1>
-         <a href="<?php echo $config['root_url'] . "Components/World/Page/create_battle.php" ?>"><button class="btn btn-primary create-new-warrior my-2"> Vytvořit </button> </a>
+         <a href="<?php echo $config['root_url'] . "Components/World/Page/create_battle.php?id=$id_world" ?>"><button class="btn btn-primary create-new-warrior my-2"> Vytvořit </button> </a>
       </div>
       <p> Zde můžete vyzvat spoluhráče či protivníka na bitvu! Výsledky se zobrazí na výsledkové tabuli </p>
       <div class="col-lg-12 d-flex justify-content-center">

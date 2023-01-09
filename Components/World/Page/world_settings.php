@@ -18,15 +18,15 @@ $nickname = unserialize($_SESSION["logged_user"]) -> get_username();
 $id_user = unserialize($_SESSION["logged_user"]) -> get_id();
 $id_world = $_GET["id"];
 /* Bezpečnost */
-if (!check_permission($id_user, $id_world)) {
+if (!(in_array($id_world, unserialize($_SESSION["logged_user"])->get_permissions()))) {
    header("location: " . $config["root_url"] . "Components/Errors/error.php?id=1");
    exit();
 }
 if (!($id_world = (int)$id_world) == 1) {
    exit();
 }
-$world = new World();
-$world->get_world($id_world);
+/* Svět */
+$world = new World($id_world);
 /* Require s ostatními requires */
 require $config['root'] . "/Components/Helpers/php_header_single_world.php";
 ?>
