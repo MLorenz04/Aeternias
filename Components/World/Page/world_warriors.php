@@ -23,11 +23,14 @@ $con = $config["db"];
 if (!($id_world = (int)$id_world) == 1) {
    exit();
 }
+if (!(in_array($id_world, unserialize($_SESSION["logged_user"])->get_permissions()))) {
+   header("location: " . $config["root_url"] . "Components/Errors/error.php?id=1");
+   exit();
+}
 /* Require s ostatními requires */
 require $config['root'] . "/Components/Helpers/php_header_single_world.php";
 /* Vytvoření světa podle id */
-$world = new World();
-$world->get_world($id_world);
+$world = new World($id_world);
 ?>
 <main id="main" class="main wall_main">
    <div class="px-4 py-4" id="content">

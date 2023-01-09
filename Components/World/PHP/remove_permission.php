@@ -17,10 +17,9 @@ try {
    header("location:" . $config['root_url'] . "index.php");
    exit();
 }
-$logged_user = $_SESSION["id_user"];
+$logged_user = unserialize($_SESSION["logged_user"])->id;
 /* Vytvoření světa podle id */
-$world = new World();
-$world->get_world($id_world);
+$world = new World($id_world);
 if (!($logged_user == $world->id_owner)) {
    echo "Na toto nemáte pravomoce!";
    exit();

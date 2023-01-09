@@ -1,11 +1,23 @@
 <?php
 /* Zde není potřeba checkovat SQL Injection, protože to už kontroluje vždy skript se security v souboru, kde je World vytvářen */
+/**
+ * Třída pro konkrétní svět s informacemi
+ * @author Matyáš Lorenz
+ */
 class World
 {
    public $list_of_warriors = array();
    public $list_of_permissions = array();
    public $id, $name, $desc, $id_owner, $warrior_count, $user_count, $date, $admin;
-   
+   /**
+    * @param mixed $input_id Id světa, od kterého chceme info
+    * @return
+    */
+
+   function  __construct($id) {
+      $this->id = $id;
+      $this->get_world($id);
+   }
    function get_world($input_id)
    {
       $config = require "../../../config.php";

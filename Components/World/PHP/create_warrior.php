@@ -12,8 +12,8 @@ $id_user = $_SESSION["id_user"];
 
 /* Kontrola pravomocí */
 require $config["root"] . "Components/Security/security_functions.php";
-if (!check_permission($id_user, $id_world)) {
-   echo $error_mess_no_permission;
+if (!(in_array($id_world, unserialize($_SESSION["logged_user"]->get_permissions())))) {
+   header("location: " . $config["root_url"] . "Components/Errors/error.php?id=1");
    exit();
 }
 /* Zkusí získat údaje, pokud se mu to nepodaří, hodí na index */

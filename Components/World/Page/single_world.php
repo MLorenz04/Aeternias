@@ -14,23 +14,22 @@ if (check_login() == False) {
    exit();
 }
 /* Proměnné */
-$nickname =  unserialize($_SESSION["logged_user"]) -> get_username();
-$id_user = unserialize($_SESSION["logged_user"]) -> get_id();
+$nickname =  unserialize($_SESSION["logged_user"])->get_username();
+$id_user = unserialize($_SESSION["logged_user"])->get_id();
 $id_world = $_GET["id"];
 /* Bezpečnost */
 if (!($id_world = (int)$id_world) == 1) {
    header("location: " . $config["root_url"] . "Components/Errors/error.php?id=1");
    exit();
 }
-if (!check_permission($id_user, $id_world)) {
+if (!(in_array($id_world, unserialize($_SESSION["logged_user"])->get_permissions()))) {
    header("location: " . $config["root_url"] . "Components/Errors/error.php?id=1");
    exit();
 }
 /* Require s ostatními requires */
 require $config['root'] . "Components/Helpers/php_header_single_world.php";
 /* Vytvoření světa podle id */
-$world = new World();
-$world->get_world($id_world);
+$world = new World($id_world);
 /* Uložení informace, jaký svět je otevřen */
 $_SESSION["current_open_world"] = $id_world;
 ?>

@@ -20,7 +20,7 @@ $id_world = $_GET["id"];
 if (!($id_world = (int)$id_world) == 1) {
    exit();
 }
-if (!check_permission($id_user, $id_world)) {
+if (!(in_array($id_world, unserialize($_SESSION["logged_user"])->get_permissions()))) {
    header("location: " . $config["root_url"] . "Components/Errors/error.php?id=1");
    exit();
 } else {

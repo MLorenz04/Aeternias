@@ -13,7 +13,7 @@ if (!($id_warrior = (int)$id_warrior)) {
 }
 /* Kontrola pravomocí */
 require $config["root"] . "Components/Security/security_functions.php";
-if (!check_permission($user_id, $id_world)) {
+if (!(in_array($id_world, unserialize($_SESSION["logged_user"])->get_permissions()))) {
    header("location: " . $config["root_url"] . "Components/Errors/error.php?id=1");
    exit();
 }

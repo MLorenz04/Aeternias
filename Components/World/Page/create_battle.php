@@ -3,10 +3,14 @@
 $config = require "../../../config.php";
 /* Require světa */
 require $config["root"] . "Components/Classes/World.php";
+/* Require uživatele */
+require $config["root"] . "Components/Classes/Login.php";
+/* Security */
+require $config["root"] . "Components/Security/security_functions.php";
 /* Založení session */
 session_start();
 /* Proměnné */
-$id_user = $_SESSION["id_user"];
+$id_user = unserialize($_SESSION["logged_user"])->get_id();
 $id_world = $_GET['id'];
 /* Require s ostatními requires */
 require $config['root'] . "/Components/Helpers/php_header_single_world.php";
@@ -19,13 +23,12 @@ if (check_login() == False) {
    header("location: " . $config["root_url"] . "index.php");
 }
 /* Kontrola pravomocí */
-if (!check_permission($id_user, $id_world)) {
+if (!(in_array($id_world, unserialize($_SESSION["logged_user"])->get_permissions()))) {
    header("location: " . $config["root_url"] . "Components/Errors/error.php?id=1");
    exit();
 }
 /* Vytvoření světa podle id */
-$world = new World();
-$world->get_world($id_world);
+$world = new World($id_world);
 /* Uložení informace, jaký svět je otevřen */
 $_SESSION["current_open_world"] = $id_world;
 ?>
