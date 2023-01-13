@@ -2,10 +2,10 @@
 /* Konfigurační soubor */
 $config = include("../../../config.php");
 /* Hlavička */
-require "../../Elements/head.php";
+require_once $config['root_path_require_once'] . "Components/Templates/Body_parts/head.php";
 session_start();
 /* Kontrola přihlášení */
-require $config["root"] . "Components/Security/security_functions.php";
+require_once $config['root_path_require_once'] . "Components/Security/security_functions.php";
 ?>
 <main>
   <div class="container">
@@ -31,11 +31,11 @@ require $config["root"] . "Components/Security/security_functions.php";
               </div>
 
               <?php
-              if (isset($_SESSION["error_mess_register"])) { ?>
+              if (isset($_SESSION['error_mess_register'])) { ?>
                 <div class="error_message pb-3 alert alert-danger" id="error_mess_register">
                   <?php
-                  echo $_SESSION["error_mess_register"];
-                  unset($_SESSION["error_mess_register"]);
+                  echo $_SESSION['error_mess_register'];
+                  unset($_SESSION['error_mess_register']);
                   ?>
                 </div>
               <?php

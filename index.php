@@ -1,11 +1,12 @@
 <?php
 /* Konfigurační soubory */
-$config = include("./config.php");
+include("config.php");
+$config = (new Config())->get_instance();
 /* Hlavička */
-require "Components/Elements/head.php";
+require_once "Components/Templates/Body_Parts/head.php";
 session_start();
-if(isset($_SESSION["is_logged"])){
-  header("location: Components/Wall/wall.php");
+if(isset($_SESSION['is_logged'])){
+  header("location: Components/Templates/Wall/wall.php");
 }
 ?>
 
@@ -19,7 +20,7 @@ if(isset($_SESSION["is_logged"])){
               <div class="row flex text-center main-color card-title">
                 <h1> <?php echo $config['project_name'] ?> </h1>
               </div>
-              <form action="Components/Profile/PHP/login.php" method="POST">
+              <form action="Components/Profile/Functions/login.php" method="POST">
                 <div class="mb-3">
                   <label for="username" class="form-label">Přezdívka</label>
                   <input type="text" class="form-control" id="username" name="username">
@@ -34,20 +35,20 @@ if(isset($_SESSION["is_logged"])){
                 </div>
 
                   <?php
-                  if (isset($_SESSION["error_mess_login"])) { ?>
+                  if (isset($_SESSION['error_mess_login'])) { ?>
                     <div class="error_message pb-3 alert alert-danger" id="error_mess_login">
                       <?php
-                    echo $_SESSION["error_mess_login"];
-                    unset($_SESSION["error_mess_login"]);
+                    echo $_SESSION['error_mess_login'];
+                    unset($_SESSION['error_mess_login']);
                     ?>
                     </div>
                     <?php
                   }
-                  if (isset($_SESSION["info_mess_success_register"])) { ?>
+                  if (isset($_SESSION['info_mess_success_register'])) { ?>
                     <div class="error_message pb-3 alert alert-success" id="info_mess_success_register">
                       <?php
-                    echo $_SESSION["info_mess_success_register"];
-                    unset($_SESSION["info_mess_success_register"]);
+                    echo $_SESSION['info_mess_success_register'];
+                    unset($_SESSION['info_mess_success_register']);
                     ?>
                     </div>
                     <?php
@@ -57,7 +58,7 @@ if(isset($_SESSION["is_logged"])){
                 <button type="submit" class="btn btn-primary px-4 b">Přihlásit</button>
               </form>
               <div class="">
-                Nemáte účet? <a href="<?php echo $config["root_url"] ?>Components/Profile/Page/createAccount.php"> Zaregistrujte se! </a>
+                Nemáte účet? <a href="<?php echo $config['root_path_url'] ?>Components/Profile/Page/createAccount.php"> Zaregistrujte se! </a>
               </div>
             </div>
           </div>

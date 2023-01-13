@@ -1,16 +1,15 @@
 <?php
-
-/* Databáze */
-$con = $config["db"];
 /* Kontrola pravomocí */
+
 function check_login()
 {
    /* Jednoduchá kontrola přihlášení. Jestli není přihlášen, vrátí false */
-   if (!(isset($_SESSION["is_logged"]))) {
+   if (!(isset($_SESSION['is_logged']))) {
       return False;
    }
    return True;
 }
+
 function check_owner($id_world, $id_owner)
 {
    global $con;
