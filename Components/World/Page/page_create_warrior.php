@@ -1,0 +1,110 @@
+<?php
+/* Konfigurační soubory */
+require_once "../../../config.php";
+$config = (new Config()) -> get_instance();
+/* Uživatel */
+require_once $config['root_path_require_once'] . "Components/Classes/User.php";
+/* Založení session */
+session_start();
+/* Security */
+require_once $config['root_path_require_once'] . "Components/Security/security_functions.php";
+/* Kontrola přihlášení */
+if (check_login() == False) {
+   header("location: " . $config['root_path_url'] . "index.php");
+}
+/* Proměnné */
+$nickname = unserialize($_SESSION['logged_user']) -> get_username();
+$id_user = unserialize($_SESSION['logged_user']) -> get_id();
+$id_world = $_GET['id'];
+/* Bezpečnost */
+if (!($id_world = (int)$id_world) == 1) {
+   exit();
+}
+if (!(in_array($id_world, unserialize($_SESSION['logged_user'])->get_permissions()))) {
+   header("location: " . $config['root_path_url'] . "Components/Errors/page_error.php?id=1");
+   exit();
+}
+/* Require s ostatními require_onces */
+require_once $config['root_path_require_once'] . "/Components/Templates/Body_Parts/php_header_single_world.php";
+?>
+<main id="main" class="main wall_main">
+   <div class="container">
+      <div class="row justify-content-center">
+         <div class="col-lg-8 section register min-vh-100 d-flex flex-column py-4">
+            <div class="card">
+               <div class="card-body">
+                  <div class="row flex text-center main-color card-title">
+                     <h1 class="py-4"> Vytvořte si novou jednotku!</h1>
+                  </div>
+                  <form onclick="event.preventDefault()" method="POST">
+                     <div class="container">
+                        <div class="row">
+                           <p class="my-0"> Jednotku budete moci využít hned po jejím vytvoření </p>
+                           <p class="mb-4"> Pro informace, jak vytvářet jednotky, zamiřte do sekce <a href="<?php echo $config['root_path_url'] . "Components/Wall/warriors.php" ?>"> jednotek </a> </p>
+                           <div class="mb-3 col-sm">
+                              <label for="name" class="form-label">Název jednotky</label>
+                              <input type="text" require_onced class="form-control" id="name" name="name">
+                           </div>
+                           <div class="mb-3 col-sm">
+                              <label for="desc" class="form-label">Krátká poznámka</label>
+                              <input type="text" class="form-control" id="desc" name="desc" require_onced>
+                           </div>
+                        </div>
+                        <div class="row">
+                           <div class="mb-3 col-sm">
+                              <label for="attack" class="form-label">Útok</label>
+                              <input type="number" class="form-control" id="attack" name="attack" require_onced>
+                           </div>
+                           <div class="mb-3 col-sm">
+                              <label for="defense" class="form-label">Obrana</label>
+                              <input type="number" class="form-control" id="defense" name="defense" require_onced>
+                           </div>
+                           <div class="mb-3 col-sm">
+                              <label for="agility" class="form-label">Agilita</label>
+                              <input type="number" class="form-control" id="agility" name="agility" require_onced>
+                           </div>
+                        </div>
+                        <button id="create_warrior" class="btn btn-primary px-4 b">Vytvořit!</button>
+                  </form>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   </div>
+</main>
+<script>
+   $("#create_warrior").click(function() {
+      $name = $("#name").val();
+      $desc = $("#desc").val();
+      $attack = $("#attack").val();
+      $defense = $("#defense").val();
+      $agility = $("#agility").val();
+      $.ajax({
+         url: "<?php echo $config['root_path_url'] ?>Components/World/Functions/create_warrior.php",
+         method: "POST",
+         async: false,
+         data: {
+            name: $name,
+            desc: $desc,
+            attack: $attack,
+            defense: $defense,
+            agility: $agility,
+            id_world: <?php echo $id_world ?>
+         },
+         success: function($result) {
+            if ($result != "") {
+               Swal.fire({
+                  icon: 'error',
+                  title: $result,
+               })
+            } else {
+               window.location.href = "./page_warriors.php?id=<?php echo $id_world ?>";
+            }
+         }
+      });
+   });
+</script>
+<?php
+require_once $config['root_path_require_once'] . "Components/Templates/Body_Parts/footer.php";
+?>

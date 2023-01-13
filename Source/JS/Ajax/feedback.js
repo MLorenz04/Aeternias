@@ -4,7 +4,7 @@ function send_feedback() {
   $nickname = $("#username_feed").val();
   $email = $("#email_feed").val();
   $.ajax({
-    url: "../../Components/Helpers/feedback.php",
+    url: "../../Components/Functions/send_feedback.php",
     type: "POST",
     data: {
       message: $message,
