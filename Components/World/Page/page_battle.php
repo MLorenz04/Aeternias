@@ -20,7 +20,7 @@ $id_world = $_GET['id'];
 if (!($id_world = (int)$id_world) == 1) {
    exit();
 }
-if (!(in_array($id_world, unserialize($_SESSION['logged_user'])->get_permissions()))) {
+if (!(in_array($id_world, (unserialize($_SESSION['logged_user']))->get_permissions()))) {
    header("location: " . $config['root_path_url'] . "Components/Errors/page_error.php?id=1");
    exit();
 }

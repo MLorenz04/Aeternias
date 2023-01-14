@@ -1,7 +1,7 @@
 <?php
 /* Konfigurační soubory */
 require_once "../../../config.php";
-$config = (new Config()) -> get_instance();
+$config = (new Config())->get_instance();
 /* Uživatel */
 require_once $config['root_path_require_once'] . "Components/Classes/User.php";
 /* Založení session */
@@ -13,8 +13,8 @@ if (check_login() == False) {
    header("location: " . $config['root_path_url'] . "index.php");
 }
 /* Proměnné */
-$nickname = unserialize($_SESSION['logged_user']) -> get_username();
-$id_user = unserialize($_SESSION['logged_user']) -> get_id();
+$nickname = unserialize($_SESSION['logged_user'])->get_username();
+$id_user = unserialize($_SESSION['logged_user'])->get_id();
 $id_world = $_GET['id'];
 /* Bezpečnost */
 if (!($id_world = (int)$id_world) == 1) {
@@ -38,7 +38,7 @@ require_once $config['root_path_require_once'] . "/Components/Templates/Body_Par
                   </div>
                   <form onclick="event.preventDefault()" method="POST">
                      <div class="container">
-                        <div class="row">
+                        <div class="row light-text">
                            <p class="my-0"> Jednotku budete moci využít hned po jejím vytvoření </p>
                            <p class="mb-4"> Pro informace, jak vytvářet jednotky, zamiřte do sekce <a href="<?php echo $config['root_path_url'] . "Components/Wall/warriors.php" ?>"> jednotek </a> </p>
                            <div class="mb-3 col-sm">
@@ -50,8 +50,8 @@ require_once $config['root_path_require_once'] . "/Components/Templates/Body_Par
                               <input type="text" class="form-control" id="desc" name="desc" require_onced>
                            </div>
                         </div>
-                        <div class="row">
-                           <div class="mb-3 col-sm">
+                        <div class="row light-text">
+                           <div class="mb-3 col-sm ">
                               <label for="attack" class="form-label">Útok</label>
                               <input type="number" class="form-control" id="attack" name="attack" require_onced>
                            </div>

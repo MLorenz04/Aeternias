@@ -6,6 +6,7 @@
    height: 70px;
    width: 100%;
    z-index: 2;
+   background: rgb(219, 219, 219) !important;
 }
 .card {
    box-shadow: 0px 0 30px rgb(1 41 112 / 10%);
@@ -17,6 +18,7 @@
    width: 300px;
    padding: 20px;
    box-shadow: 0px 0px 20px rgba(1, 41, 112, 0.1);
+   background: rgb(255, 255, 255) !important;
    scrollbar-color: #8c94a4;
    //transition: all 0.3s;
    overflow-y: auto;

@@ -2,7 +2,7 @@
 /* Konfigurační soubory */
 include("../../../config.php");
 $config = (new Config()) -> get_instance();
-require_once "../../Security/security.php";
+require_once "../../Security/error_messages.php";
 require_once "../../Classes/User.php";
 session_start();
 /* Připojení do databáze */
@@ -17,7 +17,7 @@ $result = $con->query($sql_get_users);
 if (mysqli_num_rows($result) > 0) {
    while ($row = $result->fetch_assoc()) {
       if (password_verify($password, $row['password'])) {
-         $u1 = new User($row['id'], $nickname);
+         $u1 = new User($row['id']);
          $u1 -> set_permissions();
          $u1 = serialize($u1);
          $_SESSION['logged_user'] = $u1;
