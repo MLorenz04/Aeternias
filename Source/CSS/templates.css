@@ -6,6 +6,9 @@
 .dark-mode-text {
   color: white !important;
 }
+.dark-mode-navbar {
+  background: #393838 !important;
+}
 
 .dark-mode-secondary {
   background: #1c1b1b !important;

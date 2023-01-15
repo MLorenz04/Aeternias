@@ -5,11 +5,13 @@ require_once "../../../config.php";
 require_once "../../Classes/User.php";
 require_once "../../Classes/World.php";
 $config = (new Config())->get_instance();
-require_once "../../Security/security.php";
+require_once "../../Security/error_messages.php";
 /* Začátek session */
 session_start();
 /* Proměnné */
-$owner_id = (unserialize($_SESSION['logged_user']))->get_id();
+$user = unserialize($_SESSION['logged_user']);
+$world_count = $user->get_world_count();
+$owner_id = $user->get_id();
 /* Zkusí získat údaje, pokud se mu to nepodaří, hodí na index */
 /* Ochrana proti pokusu jít přímo na soubor bez vyplněného formuláře */
 try {
@@ -28,7 +30,10 @@ if (!(preg_match($regex_new_world_desc, $world_desc))) {
    echo $error_mess_world_desc;
    exit();
 }
-
+if($world_count >= 10) {
+   echo $error_mess_max_world_count;
+   exit();
+}
 /* Databáze a kolekce */
 $con = $config['db'];
 /* SQL příkazy */

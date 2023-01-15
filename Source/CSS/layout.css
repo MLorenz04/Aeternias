@@ -1,13 +1,11 @@
 main {
   padding-top: 70px;
+  background-color: rgb(212, 212, 212);
+  min-height: 100%;
 }
 
 body,
 html {
   width: 100%;
   height: 100%;
-}
-
-nav {
-  background-color: white;
 }/*# sourceMappingURL=layout.css.map */

@@ -2,6 +2,7 @@
 /* Konfigurační soubory */
 require_once "../../../config.php";
 $config = (new Config()) -> get_instance();
+require_once "../../Classes/User.php";
 /* Založení session */
 session_start();
 /* Security */ 
@@ -16,12 +17,14 @@ require_once $config['root_path_require_once'] . "/Components/Templates/Body_Par
 /* Proměnné */
 $user = unserialize($_SESSION['logged_user']);
 $nickname = $user->get_username();
+$world_count = $user->get_world_count();
 ?>
 <main id="main" class="main wall_main">
   <div id="content">
     <div class="container px-4 pb-4">
       <h1 class="text-center wall-header"> Světy </h1>
       <h3 class="text-center"> Vytvořte si svůj vlastní svět a generujte epické bitvy! </h3>
+      <p> Aktuálně máte vytvořeno <?php echo $world_count ?> z 10 světů.
       <div class="container-cards">
         <div class="card m-4" style="width: 18rem;">
           <div class="card-body body-add-world">

@@ -17,6 +17,7 @@ $error_mess_new_warrior_name = "Jméno tohoto válečníka je moc krátké či d
 $error_mess_new_warrior_desc = "Popisek této jednotky je moc krátký či dlouhý";
 $error_mess_new_warrior_number = "Zadal jste hodnotu útoku, obrany či agility zápornou";
 $error_mess_no_permission = "K této akci nemáte pravomoce";
+$error_mess_max_world_count = "Již máte maximální počet světů!";
 /* Proměnné s informačními hláškami */
 $info_mess_success_register = "Váš účet byl úspěšně vytvořen!";
 $info_mess_success_warrior_creation = "Vaše jednotka byla úspěšně vytvořena!";
