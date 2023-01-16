@@ -24,7 +24,7 @@ class User {
    function get_username_from_db() {
       global $config;
       $con = $config["db"];
-      $result = $con->query("select username from users where id=$this->id");
+      $result = $con->query("select nickname from users where id=$this->id");
       $this->username = $result -> fetch_assoc();
    }
 
@@ -53,6 +53,9 @@ class User {
    }
    function set_world_count($count) {
       $this->world_count = $count;
+   }
+   function get_warriors() {
+      
    }
 }
 }

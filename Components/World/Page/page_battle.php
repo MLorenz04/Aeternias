@@ -31,7 +31,7 @@ require_once $config['root_path_require_once'] . "/Components/Templates/Body_Par
    <div class="px-4 py-2" id="content">
       <div class="d-flex">
          <h1 class="m-auto"> Bitva </h1>
-         <a href="<?php echo $config['root_path_url'] . "Components/World/Page/page_battle.php?id=$id_world" ?>"><button class="btn btn-primary create-new-warrior my-2"> Vytvořit </button> </a>
+         <a href="<?php echo $config['root_path_url'] . "Components/World/Page/page_create_battle.php?id=$id_world" ?>"><button class="btn btn-primary create-new-warrior my-2"> Vytvořit </button> </a>
       </div>
       <p> Zde můžete vyzvat spoluhráče či protivníka na bitvu! Výsledky se zobrazí na výsledkové tabuli </p>
       <div class="col-lg-12 d-flex justify-content-center">
