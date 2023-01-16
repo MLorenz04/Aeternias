@@ -8,22 +8,12 @@ require_once $config['root_path_require_once'] . "Components/Classes/User.php";
 session_start();
 /* Security */
 require_once $config['root_path_require_once'] . "Components/Security/security_functions.php";
-/* Kontrola přihlášení */
-if (check_login() == False) {
-   header("location: " . $config['root_path_url'] . "index.php");
-}
+$user = unserialize($_SESSION['logged_user']);
 /* Proměnné */
-$nickname = unserialize($_SESSION['logged_user'])->get_username();
-$id_user = unserialize($_SESSION['logged_user'])->get_id();
-$id_world = $_GET['id'];
-/* Bezpečnost */
-if (!($id_world = (int)$id_world) == 1) {
-   exit();
-}
-if (!(in_array($id_world, unserialize($_SESSION['logged_user'])->get_permissions()))) {
-   header("location: " . $config['root_path_url'] . "Components/Errors/page_error.php?id=1");
-   exit();
-}
+$nickname = $user->get_username();
+$id_user = $user->get_id();
+/* Kontrola přihlášení a bezpečnost */
+security();
 /* Require s ostatními require_onces */
 require_once $config['root_path_require_once'] . "/Components/Templates/Body_Parts/php_header_single_world.php";
 ?>

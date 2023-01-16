@@ -2,7 +2,7 @@
 /* Konfigurační soubory */
 include("../../../config.php");
 $config = (new Config()) -> get_instance();
-require_once "../../Security/error_messages.php";
+require_once "../../Errors/error_messages.php";
 require_once "../../Classes/User.php";
 session_start();
 /* Připojení do databáze */

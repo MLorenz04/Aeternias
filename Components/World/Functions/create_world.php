@@ -5,7 +5,7 @@ require_once "../../../config.php";
 require_once "../../Classes/User.php";
 require_once "../../Classes/World.php";
 $config = (new Config())->get_instance();
-require_once "../../Security/error_messages.php";
+require_once "../../Errors/error_messages.php";
 /* Začátek session */
 session_start();
 /* Proměnné */

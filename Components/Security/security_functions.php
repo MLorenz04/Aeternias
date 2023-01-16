@@ -22,3 +22,18 @@ function check_owner($id_world, $id_owner)
    }
    return False;
 }
+function security() {
+   global $config, $id_world, $user;
+   if (check_login() == False) {
+      header("location: " . $config['root_path_url'] . "index.php");
+      exit();
+   }
+   if (!($id_world = (int)$id_world) == 1) {
+      header("location: " . $config['root_path_url'] . "Components/Errors/page_error.php?id=3");
+      exit();
+   }
+   if (!(in_array($id_world, $user->get_permissions()))) {
+      header("location: " . $config['root_path_url'] . "Components/Errors/page_error.php?id=1");
+      exit();
+   }
+}

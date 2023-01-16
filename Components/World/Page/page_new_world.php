@@ -2,7 +2,6 @@
 /* Konfigurační soubory */
 require_once "../../../config.php";
 $config = (new Config()) -> get_instance();
-
 /* Založení session */
 session_start();
 /* Hlavička */

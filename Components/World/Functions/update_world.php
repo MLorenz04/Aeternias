@@ -1,6 +1,6 @@
 <?php
 /* Konfigurační soubor */
-require_once "../../Security/error_messages.php";
+require_once "../../Errors/error_messages.php";
 require_once "../../../config.php";
 $config = (new Config())->get_instance();
 /* Začátek session */

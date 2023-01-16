@@ -3,10 +3,11 @@ require_once '../../config.php';
 $config = (new Config())->get_instance();
 require_once $config['root_path_require_once'] . 'Components/Templates/Body_parts/head.php';
 require_once $config["root_path_require_once"] . 'Components/Classes/Errors.php';
-$type_of_error = intval($_GET['id']);
-$error = new Errors($type_of_error);
-$error_name = 'Chyba stránky na chyby!';
-$error_desc = 'Nějakým způsobem jsi našel chybu na stránce o chybách... Jak se ti to povedlo (O.O)?';
+if(!isset($_GET["id"])) {
+$error = new Errors(0);
+} else {
+$error = new Errors($_GET["id"]);
+}
 ?>
 
 <body>

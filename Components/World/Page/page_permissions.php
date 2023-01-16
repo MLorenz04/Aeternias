@@ -1,32 +1,20 @@
 <?php
 /* Konfigurační soubory */
 require_once "../../../config.php";
-$config = (new Config()) -> get_instance();
+$config = (new Config())->get_instance();
 /* Uživatel */
 require_once $config['root_path_require_once'] . "Components/Classes/User.php";
 /* Založení session */
 session_start();
 /* Security */
 require_once $config['root_path_require_once'] . "Components/Security/security_functions.php";
-/* Kontrola přihlášení */
-if (check_login() == False) {
-   header("location: " . $config['root_path_url'] . "index.php");
-}
 /* Proměnné */
-$nickname = unserialize($_SESSION['logged_user']) -> get_username();
-$id_user = unserialize($_SESSION['logged_user']) -> get_id();
-$id_world = $_GET['id'];
-
-/* Bezpečnost */
-if (!($id_world = (int)$id_world) == 1) {
-   exit();
-}
-if (!(in_array($id_world, unserialize($_SESSION['logged_user'])->get_permissions()))) {
-   header("location: " . $config['root_path_url'] . "Components/Errors/error.page_error?id=1");
-   exit();
-} else {
-   $permission = true;
-}
+$user = unserialize($_SESSION['logged_user']);
+$nickname = $user->get_username();
+$id_user = $user->get_id();
+$id_world = $_GET["id"];
+/* Kontrola přihlášení a bezpečnost */
+security();
 /* Require s ostatními require_onces */
 require_once $config['root_path_require_once'] . "/Components/Templates/Body_Parts/php_header_single_world.php";
 
