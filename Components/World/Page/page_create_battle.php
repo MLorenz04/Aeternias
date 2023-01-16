@@ -41,15 +41,18 @@ $_SESSION['current_open_world'] = $id_world;
       <div class="container px-4 pb-4">
          <h1 class="text-center wall-header"> Bitva </h1>
          <h3 class="text-center"> Poměř síly se svým nepřítelem! </h3>
-         <form action="../Functions/create_battle.php" method="GET">
+         <form action="../../Classes/Battle.php?id=<?php echo $world->id ?>" method="POST">
+         <label for="enemy"> Nepřítel </label>
+         <input name="enemy" type="text"> </input><br><br>
             <?php
             $id = 0;
             foreach ($world->get_warriors() as $jednotka) {
-                $id++;
-                ?>
-               <label for="<?php echo $id?>"> <?php echo $jednotka["name"] ?></label>
-               <input type="text" name="<?php echo $id ?>"></input>
-            <?php }
+            ?>
+               <label for="<?php echo $id ?>"> <?php echo $jednotka["name"] ?></label>
+               <input type="number" name="warrior[<?php echo $jednotka["id"] ?>][count]"></input>
+            <?php
+               $id++;
+            }
             ?><br><br>
             <button class="btn btn-primary" type="submit"> Odeslat</button>
          </form>

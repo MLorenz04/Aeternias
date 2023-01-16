@@ -1,6 +1,4 @@
 <?php
-/* Kontrola přihlášení */
-require_once $config['root_path_require_once'] . "Components/Functions/functions.php";
 /* Hlavička */
 require_once $config['root_path_require_once'] . "/Components/Templates/Body_Parts/head.php";
 /* Navigační menu */
