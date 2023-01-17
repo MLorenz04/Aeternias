@@ -2,7 +2,7 @@
 session_start();
 /* Konfigurační soubory */
 $config = include("../../../config.php");
-require_once "../../Security/error_messages.php";
+require_once "../../Errors/error_messages.php";
 
 /* Připojení do databáze */
 $con = $config['db'];

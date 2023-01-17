@@ -14,7 +14,7 @@ $result = $con->query($sql_select_permissions);
    ?>
       <li class="list-group-item active" style="width:100%; margin: 10px 0;">
          <span class="float-start" style="margin-top: 3px"> <?php echo $row['nickname'] ?> </span>
-         <?php if ($permission == true) { ?><a style="cursor:pointer" class="remove_permission float-end" id="<?php echo $row['id'] ?>" class="" style="margin-top: 1px"> <i class="remove-permission bi bi-x-circle"></i> </a> <?php } ?>
+         <a style="cursor:pointer" class="remove_permission float-end" id="<?php echo $row['id'] ?>" class="" style="margin-top: 1px"> <i class="remove-permission bi bi-x-circle"></i> </a>
          <span class="float-end" style="margin-top: 3px"> <?php echo $row['type_of_permission'] ?> </span>
       </li>
    <?php
