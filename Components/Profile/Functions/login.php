@@ -18,7 +18,7 @@ if (mysqli_num_rows($result) > 0) {
    while ($row = $result->fetch_assoc()) {
       if (password_verify($password, $row['password'])) {
          $u1 = new User($row['id']);
-         $u1 -> set_permissions();
+         $u1 -> get_permissions();
          $u1 = serialize($u1);
          $_SESSION['logged_user'] = $u1;
          $_SESSION['is_logged'] = true;
@@ -29,5 +29,5 @@ if (mysqli_num_rows($result) > 0) {
    }
 }
 $_SESSION['error_mess_login'] = "Vaše jméno nebo heslo bylo zadáno špatně. Zkuste to, prosím, znovu.";
-//header("location:" . $config['root_path_url'] . "index.php"); //Pokud špatné heslo, zpět na login
+header("location:" . $config['root_path_url'] . "index.php"); //Pokud špatné heslo, zpět na login
 exit();

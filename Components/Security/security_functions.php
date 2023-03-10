@@ -22,18 +22,27 @@ function check_owner($id_world, $id_owner)
    }
    return False;
 }
-function security() {
-   global $config, $id_world, $user;
+function security($id_world, $user)
+{
+   global $config;
    if (check_login() == False) {
       header("location: " . $config['root_path_url'] . "index.php");
       exit();
    }
+
    if (!($id_world = (int)$id_world) == 1) {
       header("location: " . $config['root_path_url'] . "Components/Errors/page_error.php?id=3");
       exit();
    }
-   if (!(in_array($id_world, $user->get_permissions()))) {
+
+   foreach ($user->get_permissions() as $single_perm) {
+      $has_perm = False;
+      if (in_array($id_world, $single_perm)) {
+         $has_perm = True;
+      }
+   }
+
+   if ($has_perm == False) {
       header("location: " . $config['root_path_url'] . "Components/Errors/page_error.php?id=1");
-      exit();
    }
 }

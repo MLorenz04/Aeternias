@@ -12,7 +12,7 @@ $user = unserialize($_SESSION['logged_user']);
 $nickname =  $user->get_username();
 $id_user = $user->get_id();
 $id_world = $_GET['id'];
-security();
+security($id_world, $user);
 $world = new World($id_world);
 /* Kontrola přihlášení a bezpečnost */
 require_once $config['root_path_require_once'] . "Components/Templates/Body_Parts/php_header_single_world.php";

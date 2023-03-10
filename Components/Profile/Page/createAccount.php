@@ -1,6 +1,7 @@
 <?php
 /* Konfigurační soubor */
-$config = include("../../../config.php");
+include("../../../config.php");
+$config = (new Config())->get_instance();
 /* Hlavička */
 require_once $config['root_path_require_once'] . "Components/Templates/Body_parts/head.php";
 session_start();
@@ -16,7 +17,7 @@ require_once $config['root_path_require_once'] . "Components/Security/security_f
             <div class="row flex text-center main-color card-title">
               <h1> <?php echo $config['project_name'] ?> </h1>
             </div>
-            <form action="../PHP/create.php" method="POST">
+            <form action="../Functions/create.php" method="POST">
               <div class="mb-3">
                 <label for="username" class="form-label">Přezdívka</label>
                 <input type="text" class="form-control" id="username" name="username">
