@@ -12,7 +12,7 @@ $id_user = unserialize($_SESSION['logged_user'])->get_id();
 /* Require s ostatními require_onces */
 require_once $config['root_path_require_once'] . "/Components/Templates/Body_Parts/php_header_single_world.php";
 /* Kontrola přihlášení  */
-security();
+security($id_world, $user);
 /* Vytvoření světa podle id */
 ?>
 <!-- Content stránky -->

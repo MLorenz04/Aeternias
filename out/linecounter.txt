@@ -1,0 +1,107 @@
+===============================================================================
+EXTENSION NAME : linecounter
+EXTENSION VERSION : 0.2.7
+-------------------------------------------------------------------------------
+count time : 2023-01-18 11:54:39
+count workspace : c:\xampp\htdocs\Omega
+total files : 82
+total code lines : 2250
+total comment lines : 215
+total blank lines : 123
+
+    statistics
+   |      extension|     total code|  total comment|    total blank|percent|
+   -------------------------------------------------------------------------
+   |            .js|             85|              0|              5|    3.8|
+   |           .map|              6|              0|              0|   0.27|
+   |          .scss|            217|              4|             21|    9.6|
+   |           .css|            240|              3|             27|     11|
+   |               |              1|              0|              0|  0.044|
+   |           .php|           1664|            208|             64|     74|
+   |           .txt|              1|              0|              0|  0.044|
+   |          .json|             28|              0|              0|    1.2|
+   |            .md|              8|              0|              6|   0.36|
+   -------------------------------------------------------------------------
+.htaccess, code is 1, comment is 0, blank is 0.
+a, it is a binary file.
+Components\Classes\Database.php, code is 28, comment is 0, blank is 1.
+Components\Classes\Errors.php, code is 41, comment is 0, blank is 0.
+Components\Classes\User.php, code is 55, comment is 0, blank is 3.
+Components\Classes\World.php, code is 64, comment is 18, blank is 4.
+Components\Errors\error_messages.php, code is 22, comment is 3, blank is 0.
+Components\Errors\page_error.php, code is 29, comment is 0, blank is 2.
+Components\Functions\functions.php, code is 10, comment is 2, blank is 1.
+Components\Functions\send_feedback.php, code is 9, comment is 0, blank is 0.
+Components\Profile\Functions\create.php, code is 36, comment is 9, blank is 8.
+Components\Profile\Functions\log_off.php, code is 11, comment is 2, blank is 0.
+Components\Profile\Functions\login.php, code is 26, comment is 8, blank is 0.
+Components\Profile\Page\createAccount.php, code is 51, comment is 3, blank is 1.
+Components\Security\security_functions.php, code is 34, comment is 2, blank is 3.
+Components\Templates\Body_parts\feedback.php, code is 32, comment is 0, blank is 0.
+Components\Templates\Body_parts\footer.php, code is 6, comment is 0, blank is 1.
+Components\Templates\Body_parts\head.php, code is 30, comment is 0, blank is 0.
+Components\Templates\Body_parts\navbar.php, code is 21, comment is 0, blank is 0.
+Components\Templates\Body_parts\php_header.php, code is 7, comment is 2, blank is 1.
+Components\Templates\Body_parts\php_header_single_world.php, code is 7, comment is 4, blank is 0.
+Components\Templates\Body_parts\sidebar.php, code is 18, comment is 0, blank is 0.
+Components\Templates\Body_parts\sidebar_world.php, code is 21, comment is 0, blank is 0.
+Components\Templates\list_of_users.php, code is 19, comment is 1, blank is 0.
+Components\Templates\loader.php, code is 6, comment is 0, blank is 1.
+Components\Templates\Wall\information.php, code is 34, comment is 6, blank is 1.
+Components\Templates\Wall\profile.php, code is 1, comment is 0, blank is 0.
+Components\Templates\Wall\tutorial.php, code is 30, comment is 6, blank is 2.
+Components\Templates\Wall\wall.php, code is 22, comment is 6, blank is 1.
+Components\Templates\Wall\Wall_Components\brief_wall.php, code is 9, comment is 0, blank is 3.
+Components\Templates\Wall\Wall_Components\your_world.php, code is 22, comment is 4, blank is 1.
+Components\Templates\Wall\warriors.php, code is 54, comment is 7, blank is 2.
+Components\Templates\Wall\worlds.php, code is 40, comment is 7, blank is 0.
+Components\World\Functions\Battle\battle.php, code is 2, comment is 0, blank is 1.
+Components\World\Functions\check_warrior.php, code is 23, comment is 3, blank is 2.
+Components\World\Functions\create_world.php, code is 49, comment is 14, blank is 2.
+Components\World\Functions\register_warrior.php, code is 44, comment is 1, blank is 2.
+Components\World\Functions\remove_permission.php, code is 31, comment is 9, blank is 1.
+Components\World\Functions\remove_warrior.php, code is 25, comment is 7, blank is 1.
+Components\World\Functions\update_world.php, code is 31, comment is 7, blank is 5.
+Components\World\Functions\write_permission.php, code is 31, comment is 4, blank is 0.
+Components\World\Page\page_battle.php, code is 41, comment is 6, blank is 0.
+Components\World\Page\page_create_battle.php, code is 35, comment is 8, blank is 1.
+Components\World\Page\page_create_warrior.php, code is 111, comment is 7, blank is 4.
+Components\World\Page\page_new_world.php, code is 74, comment is 4, blank is 0.
+Components\World\Page\page_permissions.php, code is 104, comment is 8, blank is 2.
+Components\World\Page\page_settings.php, code is 66, comment is 5, blank is 1.
+Components\World\Page\page_single_world.php, code is 27, comment is 4, blank is 0.
+Components\World\Page\page_warriors.php, code is 50, comment is 5, blank is 1.
+config.php, code is 48, comment is 23, blank is 2.
+Files\Administration\world_.txt, code is 0, comment is 0, blank is 0.
+Files\Administration\world_21.txt, code is 1, comment is 0, blank is 0.
+Files\Administration\world_21_battle_2_admin_TestTest.json, code is 28, comment is 0, blank is 0.
+Files\Administration\world_23.txt, code is 0, comment is 0, blank is 0.
+index.php, code is 64, comment is 2, blank is 3.
+README.md, code is 8, comment is 0, blank is 6.
+Restapi\v1\check_world.php, code is 0, comment is 0, blank is 0.
+Restapi\v1\get_user_by_name.php, code is 13, comment is 1, blank is 0.
+Source\CSS\all.css, code is 6, comment is 0, blank is 0.
+Source\CSS\animations.css, code is 47, comment is 0, blank is 0.
+Source\CSS\animations.css.map, code is 1, comment is 0, blank is 0.
+Source\CSS\animations.scss, code is 25, comment is 0, blank is 1.
+Source\CSS\layout.css, code is 10, comment is 0, blank is 1.
+Source\CSS\layout.css.map, code is 1, comment is 0, blank is 0.
+Source\CSS\layout.scss, code is 10, comment is 0, blank is 2.
+Source\CSS\style.css, code is 141, comment is 2, blank is 22.
+Source\CSS\style.css.map, code is 1, comment is 0, blank is 0.
+Source\CSS\style.scss, code is 144, comment is 3, blank is 12.
+Source\CSS\templates.css, code is 27, comment is 1, blank is 3.
+Source\CSS\templates.css.map, code is 1, comment is 0, blank is 0.
+Source\CSS\templates.scss, code is 27, comment is 1, blank is 6.
+Source\CSS\typography.css, code is 6, comment is 0, blank is 1.
+Source\CSS\typography.css.map, code is 1, comment is 0, blank is 0.
+Source\CSS\typography.scss, code is 8, comment is 0, blank is 0.
+Source\CSS\vendor.css, code is 3, comment is 0, blank is 0.
+Source\CSS\vendor.css.map, code is 1, comment is 0, blank is 0.
+Source\CSS\vendor.scss, code is 3, comment is 0, blank is 0.
+Source\IMG\favicon.ico, it is a binary file.
+Source\JS\Ajax\feedback.js, code is 19, comment is 0, blank is 1.
+Source\JS\loader.js, code is 8, comment is 0, blank is 0.
+Source\JS\tmp_system.js, code is 44, comment is 0, blank is 2.
+vendor\cookies.js, code is 14, comment is 0, blank is 2.
+===============================================================================

@@ -13,7 +13,7 @@ $nickname = $user->get_username();
 $id_user = $user->get_id();
 $con = $config['db'];
 $id_world = $_GET["id"];
-security();
+security($id_world, $user);
 $world = new World($id_world);
 /* Kontrola přihlášení a bezpečnost */
 /* Require s ostatními require_onces */

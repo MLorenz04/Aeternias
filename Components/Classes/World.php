@@ -45,5 +45,33 @@ if (!class_exists("World")) {
             array_push($this->list_of_warriors, $row); //Naplní pole válečníkami, kteří existují
          }
       }
+      function get_id() {
+         return $this->id;
+      }
+      function get_name() {
+         return $this->name;
+      }
+      function get_desc() {
+         return $this->desc;
+      }
+      function get_id_owner() {
+         return $this->id_owner;
+      }
+      function get_user_count() {
+         return $this->user_count;
+      }
+      function get_user_date() {
+         return $this->date;
+      }
+      function get_admin() {
+         return $this->admin;
+      }
+      function get_warriors() {
+         return $this->list_of_warriors;
+      }
+      function get_permissions() {
+         return $this->list_of_permissions;
+      }
+
    }
 }

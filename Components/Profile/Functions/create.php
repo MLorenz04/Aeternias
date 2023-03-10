@@ -1,7 +1,8 @@
 <?php
 session_start();
 /* Konfigurační soubory */
-$config = include("../../../config.php");
+include("../../../config.php");
+$config = (new Config()) -> get_instance();
 require_once "../../Errors/error_messages.php";
 
 /* Připojení do databáze */

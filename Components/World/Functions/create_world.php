@@ -55,9 +55,9 @@ if (mysqli_num_rows($result) == 0) {
    $statement->execute();
    //Tady bude potřeba ještě kontrola
    $world_id = $con->insert_id;
-   $statement = $con->prepare($sql_create_permission);
-   $statement->bind_param("ii", $owner_id, $world_id,);
-   $statement->execute();
+   $statement2 = $con->prepare($sql_create_permission);
+   $statement2->bind_param("ii", $owner_id, $world_id,);
+   $statement2->execute();
    exit();
 }
 /* Redirect na vytvoření nového světa a vrácení chybové hlášky */
