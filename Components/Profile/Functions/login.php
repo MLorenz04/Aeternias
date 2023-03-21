@@ -1,7 +1,7 @@
 <?php
 /* Konfigurační soubory */
-include("../../../config.php");
-$config = (new Config()) -> get_instance();
+include("../../../Components/Classes/Config.php");
+$config = (new Config())->get_instance();
 require_once "../../Errors/error_messages.php";
 require_once "../../Classes/User.php";
 session_start();
@@ -18,11 +18,11 @@ if (mysqli_num_rows($result) > 0) {
    while ($row = $result->fetch_assoc()) {
       if (password_verify($password, $row['password'])) {
          $u1 = new User($row['id']);
-         $u1 -> get_permissions();
+         $u1->getPermissions();
          $u1 = serialize($u1);
          $_SESSION['logged_user'] = $u1;
          $_SESSION['is_logged'] = true;
-         header("location:" . $config['root_path_url'] . "Components/Templates/Wall/wall.php"); //Pokud správné heslo, jde na zeď
+         header("location:" . $config['root_path_url'] . "Components/Wall/wall.php"); //Pokud správné heslo, jde na zeď
          //Pokud správné heslo, jde na zeď
          exit();
       }

@@ -1,22 +1,9 @@
 <?php
-/* Založení session */
-session_start();
 /* Konfigurační soubory */
-require_once "../../../config.php";
+require_once "../../../Components/Classes/Config.php";
 $config = (new Config())->get_instance();
-/* Uživatel */
-require_once $config['root_path_require_once'] . "Components/Classes/User.php";
-/* Security */
-require_once $config['root_path_require_once'] . "Components/Security/security_functions.php";
-require_once $config['root_path_require_once'] . "Components/Errors/error_messages.php";
-$user = unserialize($_SESSION['logged_user']);
-/* Proměnné */
-$nickname = $user->get_username();
-$id_user = $user->get_id();
-$id_world = $_GET["id"];
-/* Kontrola přihlášení a bezpečnost */
-security($id_world, $user);
-/* Require s ostatními require_onces */
+/* Celá hlavička */
+require_once "../../Templates/Body_parts/world_header.php";
 require_once $config['root_path_require_once'] . "/Components/Templates/Body_Parts/php_header_single_world.php";
 ?>
 <main id="main" class="main wall_main">
@@ -55,9 +42,13 @@ require_once $config['root_path_require_once'] . "/Components/Templates/Body_Par
                               <label for="agility" class="form-label">Agilita</label>
                               <input type="number" class="form-control" id="agility" name="agility" require_onced>
                            </div>
+                           <div class="mb-3 col-sm ">
+                              <label for="health" class="form-label">Zdraví</label>
+                              <input type="number" class="form-control" id="health" name="health" require_onced>
+                           </div>
                         </div>
                         <button id="add_warrior" class="btn btn-primary px-4 b">Přidat!</button>
-                        <button id="create_warrior" class="btn btn-primary px-4 b">Vytvořit!</button>
+                        <button id="create_warrior" class="btn btn-primary px-4 b float-end">Vytvořit!</button>
                   </form>
                </div>
             </div>
@@ -70,27 +61,40 @@ require_once $config['root_path_require_once'] . "/Components/Templates/Body_Par
    </div>
 </main>
 <script>
-   const $warriors = [];
+   var $warriors = [];
+   var $existing_warriors;
+   window.onload = function() {
+      $.ajax({
+         url: "<?php echo $config['root_path_url'] ?>Restapi/v1/World/Warriors/all_warriors.php?id=<?php echo $id_world ?>",
+         method: "POST",
+         async: false,
+         success: function($data) {
+            //Tady dodělat cyklus
+         }
+      });
+   }
    $("#add_warrior").click(function() {
       $name = $("#name").val();
       $desc = $("#desc").val();
       $attack = $("#attack").val();
       $defense = $("#defense").val();
       $agility = $("#agility").val();
-      $regex_new_warrior_name = new RegExp("^[a-zA-z0-9+,ě,š,č,ř,ž,ý,á,í,é,ů,ú,Ě,Š,Č,Ř,Ž,Ý,Á,Í,É,Ú,Ů,!,*,-,\s]{3,20}$");
-      $regex_new_warrior_desc = new RegExp("^[a-zA-z0-9+,ě,š,č,ř,ž,ý,á,í,é,ů,ú,Ě,Š,Č,Ř,Ž,Ý,Á,Í,É,Ú,Ů,!,*,\s]{5,500}$");
-      if($warriors.every(function(element) {
-         if (element["name"] == $name) {
-            Swal.fire({
-               icon: 'error',
-               title: '<?php echo $error_mess_name_exists ?>'
-            })
-            return false;
-         }
-         return true;
-      }) == false) {
+      $health = $("#health").val();
+      $regex_new_warrior_name = new RegExp("^[a-zA-z0-9+,ě,š,č,ř,ž,ý,á,í,é,ů,ú,Ě,Š,Č,Ř,Ž,Ý,Á,Í,É,Ú,Ů,!,*,-,\\s]{3,50}$");
+      if ($warriors.every(function(element) {
+            if (element["name"] == $name) {
+               Swal.fire({
+                  icon: 'error',
+                  title: '<?php echo $error_mess_name_exists ?>'
+               })
+               return false;
+            }
+            return true;
+         }) == false) {
          return;
       }
+      console.log($name);
+      console.log($regex_new_warrior_name.test($name));
       if (!($regex_new_warrior_name.test($name))) {
          Swal.fire({
             icon: 'error',
@@ -98,10 +102,10 @@ require_once $config['root_path_require_once'] . "/Components/Templates/Body_Par
          })
          return;
       }
-      if (!($regex_new_warrior_desc.test($desc))) {
+      if ($desc.length > 500) {
          Swal.fire({
             icon: 'error',
-            title: '<?php echo $error_mess_new_warrior_desc ?>',
+            title: '<?php echo $error_mess_new_warrior_desc ?> ',
          })
          return;
       }
@@ -119,20 +123,29 @@ require_once $config['root_path_require_once'] . "/Components/Templates/Body_Par
          })
          return;
       }
+      if ($health <= 0) {
+         Swal.fire({
+            icon: 'error',
+            title: '<?php echo $error_mess_new_warrior_health ?>',
+         })
+         return;
+      }
       let warrior = {
          name: $name,
          desc: $desc,
          attack: $attack,
          defense: $defense,
-         agility: $agility
+         agility: $agility,
+         health: $health
       }
-      $("#warriors").append('<div class="card-body" <span class="d-flex"> <h5 class="card-text pl-4 text-center w-100">' + $name + '</h5>  </span> <p id="warrior_desc" class="mb-1">' + $desc + '</p> <p id="warrior_attack" class="mb-1">' + $attack + '</p> <p id="warrior_defense" class="mb-1">' + $defense + '</p> <p id="warrior_agility" class="mb-1">' + $agility + '</p> </div>');
+      $("#warriors").append('<div class="card-body" <span class="d-flex"> <h5 class="card-text pl-4 text-center w-100">' + $name + '</h5>  </span> <p id="warrior_desc" class="mb-1"><b> Popis: </b>' + $desc + '</p> <p id="warrior_attack" class="mb-1"> <b>Útok: </b>' + $attack + '</p> <p id="warrior_defense" class="mb-1"> <b> Obrana: </b> ' + $defense + '</p> <p id="warrior_agility" class="mb-1"> <b> Agilita: </b> ' + $agility + '</p> <p id="warrior_hp" class="mb-1"> <b> Zdraví: </b> ' + $health + '</p> </div>');
       $warriors.push(warrior);
       $("#name").val("");
       $("#desc").val("");
       $("#attack").val("");
       $("#defense").val("");
       $("#agility").val("");
+      $("#health").val("");
    });
 
    $("#create_warrior").click(function() {
@@ -144,17 +157,23 @@ require_once $config['root_path_require_once'] . "/Components/Templates/Body_Par
          data: {
             warriors: $warriors,
          },
+
          success: function($result) {
-            if ($result != "") {
+            if ($result != "ok") {
                Swal.fire({
                   icon: 'error',
-                  title: $result,
+                  title: $result
                })
             } else {
-               window.location.href = "./page_warriors.php?id=<?php echo $id_world ?>";
+               Swal.fire({
+                  icon: 'success',
+                  title: 'Válečníci přidáni do vašeho světa!',
+               })
             }
          }
       });
+      $warriors = [];
+      $("#warriors").html("")
    });
 </script>
 <?php

@@ -135,7 +135,7 @@
 
 /* Loader */
 .loader {
-   z-index:3;
+   z-index: 3;
    position: absolute;
    width: 100%;
    height: 100%;
@@ -156,4 +156,56 @@
    height: 50px;
    border: 4px solid white;
    animation: makeCuteAnimationSquareUwU 4s linear infinite;
+}
+
+.container_battle {
+   width: 100%;
+   height: 4rem;
+   display: flex;
+   padding: 0;
+   color: white;
+}
+
+.power {
+   height: 100%;
+   font-size: 2rem;
+   text-align: center;
+}
+
+.power > p {
+   padding-top: 6px;
+}
+
+.first {
+   width: 50%;
+   border-top-left-radius: 1rem;
+   border-bottom-left-radius: 1rem;
+   transition: width 1s !important;
+   background-color: forestgreen;
+}
+
+.second {
+   width: 50%;
+   transition: width 1s !important;
+   border-top-right-radius: 1rem;
+   border-bottom-right-radius: 1rem;
+   background-color: firebrick;
+}
+
+.warning {
+   background-color: orange !important;
+}
+
+.won {
+   th,
+   td {
+      background-color: #279a53 !important;
+   }
+}
+
+.loose {
+   th,
+   td {
+      background-color: #bf433f !important;
+   }
 }

@@ -1,13 +1,10 @@
 <?php
 /* Konfigurační soubory */
-require_once "../../../config.php";
-$config = (new Config()) -> get_instance();
-/* Založení session */
-session_start();
-/* Hlavička */
-require_once $config['root_path_require_once'] . "Components/Templates/Body_Parts/php_header.php";
-/* Proměnné */
-$nickname = unserialize($_SESSION['logged_user']) -> get_username();
+require_once "../../Classes/Config.php";
+$config = (new Config())->get_instance();
+/* Celá hlavička */
+require_once "../../Templates/Body_parts/normal_header.php";
+require_once $config['root_path_require_once'] . "/Components/Templates/Body_Parts/php_header_single_world.php";
 ?>
 <main id="main" class="main wall_main">
    <div class="container">
@@ -67,7 +64,7 @@ $nickname = unserialize($_SESSION['logged_user']) -> get_username();
                   title: $result,
                })
             } else {
-               location.reload();
+               window.location.href = "<?php echo $config['root_path_url'] ?>Components/Wall/worlds.php"
             }
          }
       });

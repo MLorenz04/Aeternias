@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html>
-<?php
-require_once $config['root_path_require_once'] . "Components/Templates/loader.php";
-?>
+
 <head>
    <link rel="icon" type="image/png" sizes="32x32" href="<?php echo $config['root_path_url'] ?>Source/IMG/favicon.ico">
    <link rel="icon" type="image/png" sizes="16x16" href="<?php echo $config['root_path_url'] ?>Source/IMG/favicon.ico">
@@ -25,6 +23,10 @@ require_once $config['root_path_require_once'] . "Components/Templates/loader.ph
    <!-- Animation css -->
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
    <script src="<?php echo $config['root_path_url'] ?>Source/JS/loader.js"></script>
-   <script src="<?php echo $config['root_path_url']?>vendor/cookies.js"></script>
+   <script src="<?php echo $config['root_path_url'] ?>vendor/cookies.js"></script>
 </head>
+<?php
+require_once $config['root_path_require_once'] . "Components/Templates/loader.php";
+?>
+
 <body>

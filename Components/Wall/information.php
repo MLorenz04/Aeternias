@@ -1,20 +1,9 @@
 <?php
 /* Konfigurační soubory */
-require_once "../../../config.php";
-$config = (new Config()) -> get_instance();
-/* Založení session */
-session_start();
-/* Security */ 
-require_once $config['root_path_require_once'] . "Components/Security/security_functions.php";
-/* Kontrola přihlášení  */
-if (check_login() == False) {
-  header("location: " . $config['root_path_url'] . "index.php");
-  exit();
-}
-/* Require s ostatními require_onces */
-require_once $config['root_path_require_once'] . "/Components/Templates/Body_Parts/php_header.php";
-/* Proměnné */
-$nickname = unserialize($_SESSION['logged_user']) -> get_username();
+require_once "../Classes/Config.php";
+$config = (new Config())->get_instance();
+/* Celá hlavička */
+require_once $config['root_path_require_once'] . "/Components/Templates/Body_parts/normal_header.php";
 ?>
 <main id="main" class="main wall_main">
    <div id="content">
@@ -31,7 +20,7 @@ $nickname = unserialize($_SESSION['logged_user']) -> get_username();
             komu zbylo kolik vojáků a jak moc vyhrál.
          </p>
          <p> <strong> Ačkoliv pevně stojíme za tím, že fantasy a role-playe jsou právě o lidské domýšlivosti</strong>, věříme, že by tento projekt mohl mnohým ušetřit
-         problémy, šarvátky mezi hráči a vznikající rozepře. </p>
+            problémy, šarvátky mezi hráči a vznikající rozepře. </p>
       </div>
    </div>
 </main>

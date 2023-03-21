@@ -1,24 +1,27 @@
 <?php
 /* Konfigurační soubor */
-require_once '../../../config.php';
+require_once '../../Classes/User.php';
+require_once '../../Classes/Config.php';
+require_once '../../Classes/Security.php';
 /* Začátek sessionu */
 session_start();
 /* Proměnné */
-$user_id = $_SESSION['id_user'];
-$id_world = $_SESSION['current_open_world'];
+$config = (new Config())->get_instance();
+$s1 = (new Security());
+$user = unserialize($_SESSION['logged_user']);
+$nickname = $user->getUsername();
+$world_count = $user->getWorldCount();
+$user_id = $user->getId();
+$id_world = $_GET['id'];
 $id_warrior = $_GET['id_warrior'];
 /* Kontrola, jestli je id vůbec číslo */
 if (!($id_warrior = (int)$id_warrior)) {
    exit();
 }
 /* Kontrola pravomocí */
-require_once $config['root_path_require_once'] . "Components/Security/security_functions.php";
-if (!(in_array($id_world, unserialize($_SESSION['logged_user'])->get_permissions()))) {
-   header("location: " . $config['root_path_url'] . "Components/Errors/page_error.php?id=1");
-   exit();
-}
+$s1->security($id_world,$user);
 
-if (!check_owner($id_world, $user_id)) {
+if (!$s1->check_owner($id_world, $user_id)) {
    header("location: " . $config['root_path_url'] . "Components/Errors/page_error.php?id=1");
    exit();
 }

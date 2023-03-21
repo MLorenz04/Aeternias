@@ -1,6 +1,6 @@
 <?php
 /* Konfigurační soubor */
-require_once "../../../config.php";
+require_once "../../../Components/Classes/Config.php";
 /* Třídy */
 require_once "../../Classes/User.php";
 require_once "../../Classes/World.php";
@@ -10,8 +10,8 @@ require_once "../../Errors/error_messages.php";
 session_start();
 /* Proměnné */
 $user = unserialize($_SESSION['logged_user']);
-$world_count = $user->get_world_count();
-$owner_id = $user->get_id();
+$world_count = $user->getWorldCount();
+$owner_id = $user->getId();
 /* Zkusí získat údaje, pokud se mu to nepodaří, hodí na index */
 /* Ochrana proti pokusu jít přímo na soubor bez vyplněného formuláře */
 try {
@@ -20,21 +20,18 @@ try {
 } catch (Exception $e) {
    exit();
 }
-$date = date("Y-m-d");
 /* Security */
 if (!(preg_match($regex_new_world_name, $world_name))) {
    echo $error_mess_world_name;
    exit();
 }
-if (!(preg_match($regex_new_world_desc, $world_desc))) {
-   echo $error_mess_world_desc;
-   exit();
-}
-if($world_count >= 10) {
+
+if ($world_count >= 10) {
    echo $error_mess_max_world_count;
    exit();
 }
 /* Databáze a kolekce */
+$date = date("Y.m.d");
 $con = $config['db'];
 /* SQL příkazy */
 $sql_check_name = "select name from world where name = ?";

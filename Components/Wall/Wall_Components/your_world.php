@@ -1,8 +1,8 @@
 <?php
 /* Proměnné */
 $user = unserialize($_SESSION['logged_user']);
-$username = $user->get_username();
-$id_owner = $user->get_id();
+$username = $user->getUsername();
+$id_owner = $user->getId();
 echo "<script> alert(" . $id_owner . "asd" . "); </script>";
 /* Databáze a připojení do kolekce */
 $con = $config['db'];
