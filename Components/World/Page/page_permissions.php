@@ -1,24 +1,10 @@
 <?php
 /* Konfigurační soubory */
-require_once "../../../config.php";
+require_once "../../../Components/Classes/Config.php";
 $config = (new Config())->get_instance();
-/* Uživatel */
-require_once $config['root_path_require_once'] . "Components/Classes/User.php";
-/* Založení session */
-session_start();
-/* Security */
-require_once $config['root_path_require_once'] . "Components/Security/security_functions.php";
-/* Proměnné */
-$user = unserialize($_SESSION['logged_user']);
-$nickname = $user->get_username();
-$id_user = $user->get_id();
-$id_world = $_GET["id"];
-/* Kontrola přihlášení a bezpečnost */
-security($id_world, $user);
-/* Require s ostatními require_onces */
+/* Celá hlavička */
+require_once "../../Templates/Body_parts/world_header.php";
 require_once $config['root_path_require_once'] . "/Components/Templates/Body_Parts/php_header_single_world.php";
-
-/*  */
 ?>
 <main id="main" class="main wall_main">
    <div class="px-4 py-2" id="content">

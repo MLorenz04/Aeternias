@@ -21,19 +21,19 @@ if (!class_exists("Errors")) {
             }
          }
       }
-      public function get_instance()
+      public function getInstance()
       {
          return $this;
       }
-      public function get_error_message()
+      public function getErrorMessage()
       {
          return $this->error_message;
       }
-      public function get_error_header()
+      public function getErrorHeader()
       {
          return $this->error_header;
       }
-      public function get_code_of_error()
+      public function getCodeOfError()
       {
          return $this->code_of_error;
       }

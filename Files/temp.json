@@ -1,0 +1,18 @@
+{
+   "first_army_hp": 700,
+   "second_army_hp": 900,
+   "messages": [
+      {
+         "type": "warning",
+         "message": "Armáda se začala bortit po nepříjemném svahu"
+      },
+      {
+         "type": "warning",
+         "message": "Armáda se začala bortit po velmi nepříjemném svahu"
+      },
+      {
+         "type": "warning",
+         "message": "Armáda se začala bortit po velmi nepříjemném svahu"
+      }
+   ]
+}

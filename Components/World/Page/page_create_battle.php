@@ -1,44 +1,91 @@
 <?php
 /* Konfigurační soubory */
-require_once "../../../config.php";
+require_once "../../../Components/Classes/Config.php";
 $config = (new Config())->get_instance();
-/* Require světa */
-require_once $config['root_path_require_once'] . "Components/Classes/World.php";
-require_once $config['root_path_require_once'] . "Components/Classes/User.php";
-/* Založení session */
-session_start();
-/* Proměnné */
-$id_user = unserialize($_SESSION['logged_user'])->get_id();
-/* Require s ostatními require_onces */
-require_once $config['root_path_require_once'] . "/Components/Templates/Body_Parts/php_header_single_world.php";
-/* Kontrola přihlášení  */
-security($id_world, $user);
-/* Vytvoření světa podle id */
-?>
-<!-- Content stránky -->
+/* Celá hlavička */
+require_once "../../Templates/Body_parts/world_header.php";
+require_once $config['root_path_require_once'] . "Components/Templates/Body_Parts/php_header_single_world.php";
 
+$world = (new World($id_world))->get_instance();
+?>
 <main id="main" class="main wall_main">
-   <div id="content">
-      <div class="container px-4 pb-4">
-         <h1 class="text-center wall-header"> Bitva </h1>
-         <h3 class="text-center"> Poměř síly se svým nepřítelem! </h3>
-         <div class="container-cards">
-            <div class="card m-4" style="width: 18rem;">
-               <div class="card-body body-add-world">
-                  <h5 class="card-title text-center"> Vytvořit svět </h5>
-                  <a class="new-world-href" href="../World/Page/page_new_world.php">
-                     <i class="bi bi-plus text-center d-flex justify-content-center" style="max-height:100px; font-size:6rem; color:#2d2d2d; cursor:pointer"></i>
-                  </a>
-               </div>
-            </div>
-            <?php
-            /* Výpis všech uživatelových světů */
-            require_once "./Wall_Components/your_world.php";
-            ?>
-         </div>
+   <form id="army" method="POST">
+      <div class="army_container" id="first_army">
+         <?php
+         foreach ($world->getWarriors() as $single_warrior) {
+         ?>
+            <label for="<?php $single_warrior["id"] ?>">
+               <?php echo $single_warrior["name"] ?>
+            </label>
+            <input type="number" name="first_army_warriors[<?php echo $single_warrior["id"] ?>]">
+         <?php
+         }
+         ?>
       </div>
-   </div>
+      <div class="army_container" id="second_army">
+         <?php
+         foreach ($world->getWarriors() as $single_warrior) {
+         ?>
+            <label for="<?php $single_warrior["id"] ?>">
+               <?php echo $single_warrior["name"] ?>
+            </label>
+            <input type="number" name="second_army_warriors[<?php echo $single_warrior["id"] ?>]">
+         <?php
+         }
+         ?>
+      </div>
+      <br>
+      <button type="submit"> Odeslat !</button>
+   </form>
 </main>
+<script>
+   function makeid(length) {
+      let result = '';
+      const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+      const charactersLength = characters.length;
+      let counter = 0;
+      while (counter < length) {
+         result += characters.charAt(Math.floor(Math.random() * charactersLength));
+         counter += 1;
+      }
+      return result;
+   }
+
+   $(document).ready(function() {
+      $('#army').submit(function(event) {
+         $datas = $('#army').serialize();
+         if ($datas == null || $datas == [] || $datas == "") {
+            Swal.fire({
+               icon: 'error',
+               title: 'Nezadal jste žádného válečníka'
+            })
+            return;
+         }
+         event.preventDefault(); // zabrání výchozímu chování formuláře
+         $slug = makeid(30)
+         $.ajax({
+            url: '<?php echo $config["root_path_url"] ?>Components/World/Functions/Battle/battle.php?id=<?php echo $id_world ?>',
+            type: 'POST',
+            data: {
+               "form-data": $datas,
+               "slug": $slug
+            },
+
+            success: function($data) {
+               if ($data != "") {
+                  Swal.fire({
+                     icon: "error",
+                     title: $data
+                  })
+               } else {
+                  window.location.replace('<?php echo $config["root_path_url"] ?>Components/World/Page/page_single_battle.php?id=' + $slug); // přesměrování na single_battle.php
+               }
+            }
+
+         });
+      });
+   });
+</script>
 <?php
 require_once $config['root_path_require_once'] . "Components/Templates/Body_Parts/footer.php";
 ?>

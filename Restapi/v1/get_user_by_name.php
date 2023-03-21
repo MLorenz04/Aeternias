@@ -1,5 +1,5 @@
 <?php
-require_once "../../config.php";
+require_once "../../Components/Classes/Config.php";
 $config = (new Config()) -> get_instance();
 global $config;
 $username = $_POST['username'];

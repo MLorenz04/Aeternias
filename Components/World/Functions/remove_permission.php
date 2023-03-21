@@ -1,6 +1,6 @@
 <?php
 /* Konfigurační soubor */
-require_once "../../../config.php";
+require_once "../../../Components/Classes/Config.php";
 require_once "../../Classes/User.php";
 $config = (new Config()) -> get_instance();
 require_once $config['root_path_require_once'] . "Components/Classes/World.php";
@@ -21,7 +21,7 @@ try {
 }
 $logged_user = (unserialize($_SESSION['logged_user']))->get_id();
 /* Vytvoření světa podle id */
-$world = new World($id_world);
+$world = (new World($id_world))->get_instance();
 if (!($logged_user == $world->id_owner)) {
    echo "Na toto nemáte pravomoce!";
    exit();

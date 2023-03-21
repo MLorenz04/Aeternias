@@ -357,7 +357,7 @@
                     "blank": 2,
                     "code": 48,
                     "comment": 23,
-                    "filename": "config.php"
+                    "filename": "Components/Classes/Config.php"
                 },
                 {
                     "blank": 0,
@@ -464,6 +464,3548 @@
                 {
                     "blank": 12,
                     "code": 144,
+                    "comment": 3,
+                    "filename": "Source\\CSS\\style.scss"
+                },
+                {
+                    "blank": 3,
+                    "code": 27,
+                    "comment": 1,
+                    "filename": "Source\\CSS\\templates.css"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "Source\\CSS\\templates.css.map"
+                },
+                {
+                    "blank": 6,
+                    "code": 27,
+                    "comment": 1,
+                    "filename": "Source\\CSS\\templates.scss"
+                },
+                {
+                    "blank": 1,
+                    "code": 6,
+                    "comment": 0,
+                    "filename": "Source\\CSS\\typography.css"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "Source\\CSS\\typography.css.map"
+                },
+                {
+                    "blank": 0,
+                    "code": 8,
+                    "comment": 0,
+                    "filename": "Source\\CSS\\typography.scss"
+                },
+                {
+                    "blank": 0,
+                    "code": 3,
+                    "comment": 0,
+                    "filename": "Source\\CSS\\vendor.css"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "Source\\CSS\\vendor.css.map"
+                },
+                {
+                    "blank": 0,
+                    "code": 3,
+                    "comment": 0,
+                    "filename": "Source\\CSS\\vendor.scss"
+                },
+                {
+                    "filename": "Source\\IMG\\favicon.ico",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "blank": 1,
+                    "code": 19,
+                    "comment": 0,
+                    "filename": "Source\\JS\\Ajax\\feedback.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 8,
+                    "comment": 0,
+                    "filename": "Source\\JS\\loader.js"
+                },
+                {
+                    "blank": 2,
+                    "code": 44,
+                    "comment": 0,
+                    "filename": "Source\\JS\\tmp_system.js"
+                },
+                {
+                    "blank": 2,
+                    "code": 14,
+                    "comment": 0,
+                    "filename": "vendor\\cookies.js"
+                }
+            ]
+        },
+        {
+            "version": "0.2.7",
+            "counttime": "2023-03-14 14:14:05",
+            "filesum": 86,
+            "codesum": 2334,
+            "commentsum": 181,
+            "blanksum": 135,
+            "statistics": {
+                ".js": {
+                    "code": 85,
+                    "comment": 0,
+                    "blank": 5
+                },
+                ".md": {
+                    "code": 9,
+                    "comment": 0,
+                    "blank": 7
+                },
+                ".php": {
+                    "code": 1747,
+                    "comment": 174,
+                    "blank": 75
+                },
+                ".css": {
+                    "code": 240,
+                    "comment": 3,
+                    "blank": 27
+                },
+                ".map": {
+                    "code": 6,
+                    "comment": 0,
+                    "blank": 0
+                },
+                ".scss": {
+                    "code": 217,
+                    "comment": 4,
+                    "blank": 21
+                },
+                ".json": {
+                    "code": 28,
+                    "comment": 0,
+                    "blank": 0
+                },
+                ".txt": {
+                    "code": 1,
+                    "comment": 0,
+                    "blank": 0
+                },
+                "": {
+                    "code": 1,
+                    "comment": 0,
+                    "blank": 0
+                }
+            },
+            "filelist": [
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": ".htaccess"
+                },
+                {
+                    "filename": "a",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "blank": 3,
+                    "code": 21,
+                    "comment": 4,
+                    "filename": "Components\\Classes\\Army.php"
+                },
+                {
+                    "blank": 2,
+                    "code": 48,
+                    "comment": 23,
+                    "filename": "Components\\Classes\\Config.php"
+                },
+                {
+                    "blank": 1,
+                    "code": 28,
+                    "comment": 0,
+                    "filename": "Components\\Classes\\Database.php"
+                },
+                {
+                    "blank": 0,
+                    "code": 41,
+                    "comment": 0,
+                    "filename": "Components\\Classes\\Errors.php"
+                },
+                {
+                    "blank": 8,
+                    "code": 69,
+                    "comment": 0,
+                    "filename": "Components\\Classes\\User.php"
+                },
+                {
+                    "blank": 4,
+                    "code": 74,
+                    "comment": 18,
+                    "filename": "Components\\Classes\\World.php"
+                },
+                {
+                    "blank": 0,
+                    "code": 23,
+                    "comment": 3,
+                    "filename": "Components\\Errors\\error_messages.php"
+                },
+                {
+                    "blank": 2,
+                    "code": 29,
+                    "comment": 0,
+                    "filename": "Components\\Errors\\page_error.php"
+                },
+                {
+                    "blank": 1,
+                    "code": 10,
+                    "comment": 2,
+                    "filename": "Components\\Functions\\functions.php"
+                },
+                {
+                    "blank": 2,
+                    "code": 3,
+                    "comment": 0,
+                    "filename": "Components\\Functions\\logged_user_functions.php"
+                },
+                {
+                    "blank": 0,
+                    "code": 9,
+                    "comment": 0,
+                    "filename": "Components\\Functions\\send_feedback.php"
+                },
+                {
+                    "blank": 8,
+                    "code": 37,
+                    "comment": 9,
+                    "filename": "Components\\Profile\\Functions\\create.php"
+                },
+                {
+                    "blank": 0,
+                    "code": 11,
+                    "comment": 2,
+                    "filename": "Components\\Profile\\Functions\\log_off.php"
+                },
+                {
+                    "blank": 0,
+                    "code": 27,
+                    "comment": 8,
+                    "filename": "Components\\Profile\\Functions\\login.php"
+                },
+                {
+                    "blank": 1,
+                    "code": 52,
+                    "comment": 3,
+                    "filename": "Components\\Profile\\Page\\createAccount.php"
+                },
+                {
+                    "blank": 6,
+                    "code": 40,
+                    "comment": 2,
+                    "filename": "Components\\Security\\security_functions.php"
+                },
+                {
+                    "blank": 0,
+                    "code": 32,
+                    "comment": 0,
+                    "filename": "Components\\Templates\\Body_parts\\feedback.php"
+                },
+                {
+                    "blank": 1,
+                    "code": 6,
+                    "comment": 0,
+                    "filename": "Components\\Templates\\Body_parts\\footer.php"
+                },
+                {
+                    "blank": 2,
+                    "code": 30,
+                    "comment": 0,
+                    "filename": "Components\\Templates\\Body_parts\\head.php"
+                },
+                {
+                    "blank": 0,
+                    "code": 21,
+                    "comment": 0,
+                    "filename": "Components\\Templates\\Body_parts\\navbar.php"
+                },
+                {
+                    "blank": 0,
+                    "code": 15,
+                    "comment": 6,
+                    "filename": "Components\\Templates\\Body_parts\\normal_header.php"
+                },
+                {
+                    "blank": 1,
+                    "code": 7,
+                    "comment": 2,
+                    "filename": "Components\\Templates\\Body_parts\\php_header.php"
+                },
+                {
+                    "blank": 0,
+                    "code": 7,
+                    "comment": 4,
+                    "filename": "Components\\Templates\\Body_parts\\php_header_single_world.php"
+                },
+                {
+                    "blank": 0,
+                    "code": 18,
+                    "comment": 0,
+                    "filename": "Components\\Templates\\Body_parts\\sidebar.php"
+                },
+                {
+                    "blank": 0,
+                    "code": 21,
+                    "comment": 0,
+                    "filename": "Components\\Templates\\Body_parts\\sidebar_world.php"
+                },
+                {
+                    "blank": 0,
+                    "code": 16,
+                    "comment": 5,
+                    "filename": "Components\\Templates\\Body_parts\\world_header.php"
+                },
+                {
+                    "blank": 0,
+                    "code": 19,
+                    "comment": 1,
+                    "filename": "Components\\Templates\\list_of_users.php"
+                },
+                {
+                    "blank": 1,
+                    "code": 6,
+                    "comment": 0,
+                    "filename": "Components\\Templates\\loader.php"
+                },
+                {
+                    "blank": 1,
+                    "code": 27,
+                    "comment": 2,
+                    "filename": "Components\\Wall\\information.php"
+                },
+                {
+                    "blank": 0,
+                    "code": 6,
+                    "comment": 2,
+                    "filename": "Components\\Wall\\profile.php"
+                },
+                {
+                    "blank": 2,
+                    "code": 23,
+                    "comment": 2,
+                    "filename": "Components\\Wall\\tutorial.php"
+                },
+                {
+                    "blank": 1,
+                    "code": 15,
+                    "comment": 2,
+                    "filename": "Components\\Wall\\wall.php"
+                },
+                {
+                    "blank": 3,
+                    "code": 9,
+                    "comment": 0,
+                    "filename": "Components\\Wall\\Wall_Components\\brief_wall.php"
+                },
+                {
+                    "blank": 1,
+                    "code": 22,
+                    "comment": 4,
+                    "filename": "Components\\Wall\\Wall_Components\\your_world.php"
+                },
+                {
+                    "blank": 2,
+                    "code": 47,
+                    "comment": 3,
+                    "filename": "Components\\Wall\\warriors.php"
+                },
+                {
+                    "blank": 0,
+                    "code": 30,
+                    "comment": 3,
+                    "filename": "Components\\Wall\\worlds.php"
+                },
+                {
+                    "blank": 0,
+                    "code": 14,
+                    "comment": 0,
+                    "filename": "Components\\World\\Functions\\Battle\\battle.php"
+                },
+                {
+                    "blank": 2,
+                    "code": 23,
+                    "comment": 3,
+                    "filename": "Components\\World\\Functions\\check_warrior.php"
+                },
+                {
+                    "blank": 2,
+                    "code": 49,
+                    "comment": 14,
+                    "filename": "Components\\World\\Functions\\create_world.php"
+                },
+                {
+                    "blank": 2,
+                    "code": 44,
+                    "comment": 1,
+                    "filename": "Components\\World\\Functions\\register_warrior.php"
+                },
+                {
+                    "blank": 1,
+                    "code": 31,
+                    "comment": 9,
+                    "filename": "Components\\World\\Functions\\remove_permission.php"
+                },
+                {
+                    "blank": 1,
+                    "code": 25,
+                    "comment": 7,
+                    "filename": "Components\\World\\Functions\\remove_warrior.php"
+                },
+                {
+                    "blank": 5,
+                    "code": 31,
+                    "comment": 7,
+                    "filename": "Components\\World\\Functions\\update_world.php"
+                },
+                {
+                    "blank": 0,
+                    "code": 31,
+                    "comment": 4,
+                    "filename": "Components\\World\\Functions\\write_permission.php"
+                },
+                {
+                    "blank": 0,
+                    "code": 53,
+                    "comment": 2,
+                    "filename": "Components\\World\\Page\\page_battle.php"
+                },
+                {
+                    "blank": 1,
+                    "code": 40,
+                    "comment": 2,
+                    "filename": "Components\\World\\Page\\page_create_battle.php"
+                },
+                {
+                    "blank": 2,
+                    "code": 145,
+                    "comment": 2,
+                    "filename": "Components\\World\\Page\\page_create_warrior.php"
+                },
+                {
+                    "blank": 0,
+                    "code": 73,
+                    "comment": 2,
+                    "filename": "Components\\World\\Page\\page_new_world.php"
+                },
+                {
+                    "blank": 1,
+                    "code": 97,
+                    "comment": 2,
+                    "filename": "Components\\World\\Page\\page_permissions.php"
+                },
+                {
+                    "blank": 1,
+                    "code": 57,
+                    "comment": 2,
+                    "filename": "Components\\World\\Page\\page_settings.php"
+                },
+                {
+                    "blank": 0,
+                    "code": 18,
+                    "comment": 2,
+                    "filename": "Components\\World\\Page\\page_single_world.php"
+                },
+                {
+                    "blank": 1,
+                    "code": 40,
+                    "comment": 2,
+                    "filename": "Components\\World\\Page\\page_warriors.php"
+                },
+                {
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0,
+                    "filename": "Files\\Administration\\world_.txt"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "Files\\Administration\\world_21.txt"
+                },
+                {
+                    "blank": 0,
+                    "code": 28,
+                    "comment": 0,
+                    "filename": "Files\\Administration\\world_21_battle_2_admin_TestTest.json"
+                },
+                {
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0,
+                    "filename": "Files\\Administration\\world_23.txt"
+                },
+                {
+                    "blank": 3,
+                    "code": 64,
+                    "comment": 2,
+                    "filename": "index.php"
+                },
+                {
+                    "blank": 7,
+                    "code": 9,
+                    "comment": 0,
+                    "filename": "README.md"
+                },
+                {
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0,
+                    "filename": "Restapi\\v1\\check_world.php"
+                },
+                {
+                    "blank": 0,
+                    "code": 13,
+                    "comment": 1,
+                    "filename": "Restapi\\v1\\get_user_by_name.php"
+                },
+                {
+                    "blank": 0,
+                    "code": 6,
+                    "comment": 0,
+                    "filename": "Source\\CSS\\all.css"
+                },
+                {
+                    "blank": 0,
+                    "code": 47,
+                    "comment": 0,
+                    "filename": "Source\\CSS\\animations.css"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "Source\\CSS\\animations.css.map"
+                },
+                {
+                    "blank": 1,
+                    "code": 25,
+                    "comment": 0,
+                    "filename": "Source\\CSS\\animations.scss"
+                },
+                {
+                    "blank": 1,
+                    "code": 10,
+                    "comment": 0,
+                    "filename": "Source\\CSS\\layout.css"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "Source\\CSS\\layout.css.map"
+                },
+                {
+                    "blank": 2,
+                    "code": 10,
+                    "comment": 0,
+                    "filename": "Source\\CSS\\layout.scss"
+                },
+                {
+                    "blank": 22,
+                    "code": 141,
+                    "comment": 2,
+                    "filename": "Source\\CSS\\style.css"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "Source\\CSS\\style.css.map"
+                },
+                {
+                    "blank": 12,
+                    "code": 144,
+                    "comment": 3,
+                    "filename": "Source\\CSS\\style.scss"
+                },
+                {
+                    "blank": 3,
+                    "code": 27,
+                    "comment": 1,
+                    "filename": "Source\\CSS\\templates.css"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "Source\\CSS\\templates.css.map"
+                },
+                {
+                    "blank": 6,
+                    "code": 27,
+                    "comment": 1,
+                    "filename": "Source\\CSS\\templates.scss"
+                },
+                {
+                    "blank": 1,
+                    "code": 6,
+                    "comment": 0,
+                    "filename": "Source\\CSS\\typography.css"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "Source\\CSS\\typography.css.map"
+                },
+                {
+                    "blank": 0,
+                    "code": 8,
+                    "comment": 0,
+                    "filename": "Source\\CSS\\typography.scss"
+                },
+                {
+                    "blank": 0,
+                    "code": 3,
+                    "comment": 0,
+                    "filename": "Source\\CSS\\vendor.css"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "Source\\CSS\\vendor.css.map"
+                },
+                {
+                    "blank": 0,
+                    "code": 3,
+                    "comment": 0,
+                    "filename": "Source\\CSS\\vendor.scss"
+                },
+                {
+                    "filename": "Source\\IMG\\favicon.ico",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "blank": 1,
+                    "code": 19,
+                    "comment": 0,
+                    "filename": "Source\\JS\\Ajax\\feedback.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 8,
+                    "comment": 0,
+                    "filename": "Source\\JS\\loader.js"
+                },
+                {
+                    "blank": 2,
+                    "code": 44,
+                    "comment": 0,
+                    "filename": "Source\\JS\\tmp_system.js"
+                },
+                {
+                    "blank": 2,
+                    "code": 14,
+                    "comment": 0,
+                    "filename": "vendor\\cookies.js"
+                }
+            ]
+        },
+        {
+            "version": "0.2.7",
+            "counttime": "2023-03-17 01:09:50",
+            "filesum": 86,
+            "codesum": 2696,
+            "commentsum": 189,
+            "blanksum": 195,
+            "statistics": {
+                ".js": {
+                    "code": 85,
+                    "comment": 0,
+                    "blank": 5
+                },
+                ".scss": {
+                    "code": 217,
+                    "comment": 4,
+                    "blank": 21
+                },
+                ".map": {
+                    "code": 6,
+                    "comment": 0,
+                    "blank": 0
+                },
+                ".css": {
+                    "code": 240,
+                    "comment": 3,
+                    "blank": 27
+                },
+                ".md": {
+                    "code": 9,
+                    "comment": 0,
+                    "blank": 7
+                },
+                ".php": {
+                    "code": 2131,
+                    "comment": 182,
+                    "blank": 135
+                },
+                ".json": {
+                    "code": 7,
+                    "comment": 0,
+                    "blank": 0
+                },
+                "": {
+                    "code": 1,
+                    "comment": 0,
+                    "blank": 0
+                }
+            },
+            "filelist": [
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": ".htaccess"
+                },
+                {
+                    "filename": "a",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "blank": 6,
+                    "code": 59,
+                    "comment": 4,
+                    "filename": "Components\\Classes\\Army.php"
+                },
+                {
+                    "blank": 6,
+                    "code": 40,
+                    "comment": 0,
+                    "filename": "Components\\Classes\\Battle.php"
+                },
+                {
+                    "blank": 2,
+                    "code": 48,
+                    "comment": 23,
+                    "filename": "Components\\Classes\\Config.php"
+                },
+                {
+                    "blank": 1,
+                    "code": 28,
+                    "comment": 0,
+                    "filename": "Components\\Classes\\Database.php"
+                },
+                {
+                    "blank": 0,
+                    "code": 41,
+                    "comment": 0,
+                    "filename": "Components\\Classes\\Errors.php"
+                },
+                {
+                    "blank": 5,
+                    "code": 43,
+                    "comment": 2,
+                    "filename": "Components\\Classes\\Security.php"
+                },
+                {
+                    "blank": 8,
+                    "code": 69,
+                    "comment": 0,
+                    "filename": "Components\\Classes\\User.php"
+                },
+                {
+                    "blank": 15,
+                    "code": 90,
+                    "comment": 0,
+                    "filename": "Components\\Classes\\Warrior.php"
+                },
+                {
+                    "blank": 22,
+                    "code": 116,
+                    "comment": 18,
+                    "filename": "Components\\Classes\\World.php"
+                },
+                {
+                    "blank": 0,
+                    "code": 24,
+                    "comment": 3,
+                    "filename": "Components\\Errors\\error_messages.php"
+                },
+                {
+                    "blank": 2,
+                    "code": 29,
+                    "comment": 0,
+                    "filename": "Components\\Errors\\page_error.php"
+                },
+                {
+                    "blank": 1,
+                    "code": 10,
+                    "comment": 2,
+                    "filename": "Components\\Functions\\functions.php"
+                },
+                {
+                    "blank": 2,
+                    "code": 3,
+                    "comment": 0,
+                    "filename": "Components\\Functions\\logged_user_functions.php"
+                },
+                {
+                    "blank": 0,
+                    "code": 9,
+                    "comment": 0,
+                    "filename": "Components\\Functions\\send_feedback.php"
+                },
+                {
+                    "blank": 8,
+                    "code": 37,
+                    "comment": 9,
+                    "filename": "Components\\Profile\\Functions\\create.php"
+                },
+                {
+                    "blank": 0,
+                    "code": 11,
+                    "comment": 2,
+                    "filename": "Components\\Profile\\Functions\\log_off.php"
+                },
+                {
+                    "blank": 0,
+                    "code": 27,
+                    "comment": 8,
+                    "filename": "Components\\Profile\\Functions\\login.php"
+                },
+                {
+                    "blank": 1,
+                    "code": 52,
+                    "comment": 3,
+                    "filename": "Components\\Profile\\Page\\createAccount.php"
+                },
+                {
+                    "blank": 0,
+                    "code": 32,
+                    "comment": 0,
+                    "filename": "Components\\Templates\\Body_parts\\feedback.php"
+                },
+                {
+                    "blank": 1,
+                    "code": 6,
+                    "comment": 0,
+                    "filename": "Components\\Templates\\Body_parts\\footer.php"
+                },
+                {
+                    "blank": 2,
+                    "code": 30,
+                    "comment": 0,
+                    "filename": "Components\\Templates\\Body_parts\\head.php"
+                },
+                {
+                    "blank": 0,
+                    "code": 21,
+                    "comment": 0,
+                    "filename": "Components\\Templates\\Body_parts\\navbar.php"
+                },
+                {
+                    "blank": 0,
+                    "code": 15,
+                    "comment": 5,
+                    "filename": "Components\\Templates\\Body_parts\\normal_header.php"
+                },
+                {
+                    "blank": 1,
+                    "code": 7,
+                    "comment": 2,
+                    "filename": "Components\\Templates\\Body_parts\\php_header.php"
+                },
+                {
+                    "blank": 0,
+                    "code": 7,
+                    "comment": 4,
+                    "filename": "Components\\Templates\\Body_parts\\php_header_single_world.php"
+                },
+                {
+                    "blank": 0,
+                    "code": 18,
+                    "comment": 0,
+                    "filename": "Components\\Templates\\Body_parts\\sidebar.php"
+                },
+                {
+                    "blank": 0,
+                    "code": 21,
+                    "comment": 0,
+                    "filename": "Components\\Templates\\Body_parts\\sidebar_world.php"
+                },
+                {
+                    "blank": 0,
+                    "code": 21,
+                    "comment": 7,
+                    "filename": "Components\\Templates\\Body_parts\\world_header.php"
+                },
+                {
+                    "blank": 0,
+                    "code": 19,
+                    "comment": 1,
+                    "filename": "Components\\Templates\\list_of_users.php"
+                },
+                {
+                    "blank": 1,
+                    "code": 6,
+                    "comment": 0,
+                    "filename": "Components\\Templates\\loader.php"
+                },
+                {
+                    "blank": 1,
+                    "code": 27,
+                    "comment": 2,
+                    "filename": "Components\\Wall\\information.php"
+                },
+                {
+                    "blank": 0,
+                    "code": 6,
+                    "comment": 2,
+                    "filename": "Components\\Wall\\profile.php"
+                },
+                {
+                    "blank": 2,
+                    "code": 23,
+                    "comment": 2,
+                    "filename": "Components\\Wall\\tutorial.php"
+                },
+                {
+                    "blank": 1,
+                    "code": 15,
+                    "comment": 2,
+                    "filename": "Components\\Wall\\wall.php"
+                },
+                {
+                    "blank": 3,
+                    "code": 9,
+                    "comment": 0,
+                    "filename": "Components\\Wall\\Wall_Components\\brief_wall.php"
+                },
+                {
+                    "blank": 1,
+                    "code": 22,
+                    "comment": 4,
+                    "filename": "Components\\Wall\\Wall_Components\\your_world.php"
+                },
+                {
+                    "blank": 2,
+                    "code": 47,
+                    "comment": 3,
+                    "filename": "Components\\Wall\\warriors.php"
+                },
+                {
+                    "blank": 0,
+                    "code": 30,
+                    "comment": 3,
+                    "filename": "Components\\Wall\\worlds.php"
+                },
+                {
+                    "blank": 6,
+                    "code": 60,
+                    "comment": 6,
+                    "filename": "Components\\World\\Functions\\Battle\\battle.php"
+                },
+                {
+                    "blank": 2,
+                    "code": 23,
+                    "comment": 3,
+                    "filename": "Components\\World\\Functions\\check_warrior.php"
+                },
+                {
+                    "blank": 2,
+                    "code": 49,
+                    "comment": 14,
+                    "filename": "Components\\World\\Functions\\create_world.php"
+                },
+                {
+                    "blank": 1,
+                    "code": 52,
+                    "comment": 1,
+                    "filename": "Components\\World\\Functions\\register_warrior.php"
+                },
+                {
+                    "blank": 1,
+                    "code": 31,
+                    "comment": 9,
+                    "filename": "Components\\World\\Functions\\remove_permission.php"
+                },
+                {
+                    "blank": 1,
+                    "code": 25,
+                    "comment": 7,
+                    "filename": "Components\\World\\Functions\\remove_warrior.php"
+                },
+                {
+                    "blank": 5,
+                    "code": 31,
+                    "comment": 7,
+                    "filename": "Components\\World\\Functions\\update_world.php"
+                },
+                {
+                    "blank": 0,
+                    "code": 31,
+                    "comment": 4,
+                    "filename": "Components\\World\\Functions\\write_permission.php"
+                },
+                {
+                    "blank": 0,
+                    "code": 53,
+                    "comment": 2,
+                    "filename": "Components\\World\\Page\\page_battle.php"
+                },
+                {
+                    "blank": 1,
+                    "code": 40,
+                    "comment": 2,
+                    "filename": "Components\\World\\Page\\page_create_battle.php"
+                },
+                {
+                    "blank": 2,
+                    "code": 159,
+                    "comment": 2,
+                    "filename": "Components\\World\\Page\\page_create_warrior.php"
+                },
+                {
+                    "blank": 0,
+                    "code": 73,
+                    "comment": 2,
+                    "filename": "Components\\World\\Page\\page_new_world.php"
+                },
+                {
+                    "blank": 1,
+                    "code": 97,
+                    "comment": 2,
+                    "filename": "Components\\World\\Page\\page_permissions.php"
+                },
+                {
+                    "blank": 1,
+                    "code": 57,
+                    "comment": 2,
+                    "filename": "Components\\World\\Page\\page_settings.php"
+                },
+                {
+                    "blank": 14,
+                    "code": 99,
+                    "comment": 1,
+                    "filename": "Components\\World\\Page\\page_single_battle.php"
+                },
+                {
+                    "blank": 0,
+                    "code": 18,
+                    "comment": 2,
+                    "filename": "Components\\World\\Page\\page_single_world.php"
+                },
+                {
+                    "blank": 1,
+                    "code": 40,
+                    "comment": 2,
+                    "filename": "Components\\World\\Page\\page_warriors.php"
+                },
+                {
+                    "blank": 0,
+                    "code": 7,
+                    "comment": 0,
+                    "filename": "Files\\battle0.json"
+                },
+                {
+                    "blank": 3,
+                    "code": 62,
+                    "comment": 2,
+                    "filename": "index.php"
+                },
+                {
+                    "blank": 7,
+                    "code": 9,
+                    "comment": 0,
+                    "filename": "README.md"
+                },
+                {
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0,
+                    "filename": "Restapi\\v1\\check_world.php"
+                },
+                {
+                    "blank": 0,
+                    "code": 13,
+                    "comment": 1,
+                    "filename": "Restapi\\v1\\get_user_by_name.php"
+                },
+                {
+                    "blank": 0,
+                    "code": 6,
+                    "comment": 0,
+                    "filename": "Source\\CSS\\all.css"
+                },
+                {
+                    "blank": 0,
+                    "code": 47,
+                    "comment": 0,
+                    "filename": "Source\\CSS\\animations.css"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "Source\\CSS\\animations.css.map"
+                },
+                {
+                    "blank": 1,
+                    "code": 25,
+                    "comment": 0,
+                    "filename": "Source\\CSS\\animations.scss"
+                },
+                {
+                    "blank": 1,
+                    "code": 10,
+                    "comment": 0,
+                    "filename": "Source\\CSS\\layout.css"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "Source\\CSS\\layout.css.map"
+                },
+                {
+                    "blank": 2,
+                    "code": 10,
+                    "comment": 0,
+                    "filename": "Source\\CSS\\layout.scss"
+                },
+                {
+                    "blank": 22,
+                    "code": 141,
+                    "comment": 2,
+                    "filename": "Source\\CSS\\style.css"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "Source\\CSS\\style.css.map"
+                },
+                {
+                    "blank": 12,
+                    "code": 144,
+                    "comment": 3,
+                    "filename": "Source\\CSS\\style.scss"
+                },
+                {
+                    "blank": 3,
+                    "code": 27,
+                    "comment": 1,
+                    "filename": "Source\\CSS\\templates.css"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "Source\\CSS\\templates.css.map"
+                },
+                {
+                    "blank": 6,
+                    "code": 27,
+                    "comment": 1,
+                    "filename": "Source\\CSS\\templates.scss"
+                },
+                {
+                    "blank": 1,
+                    "code": 6,
+                    "comment": 0,
+                    "filename": "Source\\CSS\\typography.css"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "Source\\CSS\\typography.css.map"
+                },
+                {
+                    "blank": 0,
+                    "code": 8,
+                    "comment": 0,
+                    "filename": "Source\\CSS\\typography.scss"
+                },
+                {
+                    "blank": 0,
+                    "code": 3,
+                    "comment": 0,
+                    "filename": "Source\\CSS\\vendor.css"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "Source\\CSS\\vendor.css.map"
+                },
+                {
+                    "blank": 0,
+                    "code": 3,
+                    "comment": 0,
+                    "filename": "Source\\CSS\\vendor.scss"
+                },
+                {
+                    "filename": "Source\\IMG\\favicon.ico",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "blank": 1,
+                    "code": 19,
+                    "comment": 0,
+                    "filename": "Source\\JS\\Ajax\\feedback.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 8,
+                    "comment": 0,
+                    "filename": "Source\\JS\\loader.js"
+                },
+                {
+                    "blank": 2,
+                    "code": 44,
+                    "comment": 0,
+                    "filename": "Source\\JS\\tmp_system.js"
+                },
+                {
+                    "blank": 2,
+                    "code": 14,
+                    "comment": 0,
+                    "filename": "vendor\\cookies.js"
+                }
+            ]
+        },
+        {
+            "version": "0.2.7",
+            "counttime": "2023-03-17 15:39:41",
+            "filesum": 90,
+            "codesum": 2794,
+            "commentsum": 193,
+            "blanksum": 205,
+            "statistics": {
+                ".js": {
+                    "code": 85,
+                    "comment": 0,
+                    "blank": 5
+                },
+                ".scss": {
+                    "code": 217,
+                    "comment": 4,
+                    "blank": 21
+                },
+                ".map": {
+                    "code": 6,
+                    "comment": 0,
+                    "blank": 0
+                },
+                ".css": {
+                    "code": 240,
+                    "comment": 3,
+                    "blank": 27
+                },
+                ".php": {
+                    "code": 2215,
+                    "comment": 186,
+                    "blank": 145
+                },
+                ".json": {
+                    "code": 21,
+                    "comment": 0,
+                    "blank": 0
+                },
+                ".md": {
+                    "code": 9,
+                    "comment": 0,
+                    "blank": 7
+                },
+                "": {
+                    "code": 1,
+                    "comment": 0,
+                    "blank": 0
+                }
+            },
+            "filelist": [
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": ".htaccess"
+                },
+                {
+                    "filename": "a",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "blank": 11,
+                    "code": 82,
+                    "comment": 4,
+                    "filename": "Components\\Classes\\Army.php"
+                },
+                {
+                    "blank": 9,
+                    "code": 78,
+                    "comment": 2,
+                    "filename": "Components\\Classes\\Battle.php"
+                },
+                {
+                    "blank": 2,
+                    "code": 48,
+                    "comment": 23,
+                    "filename": "Components\\Classes\\Config.php"
+                },
+                {
+                    "blank": 1,
+                    "code": 28,
+                    "comment": 0,
+                    "filename": "Components\\Classes\\Database.php"
+                },
+                {
+                    "blank": 0,
+                    "code": 41,
+                    "comment": 0,
+                    "filename": "Components\\Classes\\Errors.php"
+                },
+                {
+                    "blank": 5,
+                    "code": 43,
+                    "comment": 2,
+                    "filename": "Components\\Classes\\Security.php"
+                },
+                {
+                    "blank": 8,
+                    "code": 69,
+                    "comment": 0,
+                    "filename": "Components\\Classes\\User.php"
+                },
+                {
+                    "blank": 15,
+                    "code": 90,
+                    "comment": 0,
+                    "filename": "Components\\Classes\\Warrior.php"
+                },
+                {
+                    "blank": 22,
+                    "code": 116,
+                    "comment": 18,
+                    "filename": "Components\\Classes\\World.php"
+                },
+                {
+                    "blank": 0,
+                    "code": 24,
+                    "comment": 3,
+                    "filename": "Components\\Errors\\error_messages.php"
+                },
+                {
+                    "blank": 2,
+                    "code": 29,
+                    "comment": 0,
+                    "filename": "Components\\Errors\\page_error.php"
+                },
+                {
+                    "blank": 1,
+                    "code": 10,
+                    "comment": 2,
+                    "filename": "Components\\Functions\\functions.php"
+                },
+                {
+                    "blank": 2,
+                    "code": 3,
+                    "comment": 0,
+                    "filename": "Components\\Functions\\logged_user_functions.php"
+                },
+                {
+                    "blank": 0,
+                    "code": 9,
+                    "comment": 0,
+                    "filename": "Components\\Functions\\send_feedback.php"
+                },
+                {
+                    "blank": 8,
+                    "code": 37,
+                    "comment": 9,
+                    "filename": "Components\\Profile\\Functions\\create.php"
+                },
+                {
+                    "blank": 0,
+                    "code": 11,
+                    "comment": 2,
+                    "filename": "Components\\Profile\\Functions\\log_off.php"
+                },
+                {
+                    "blank": 0,
+                    "code": 27,
+                    "comment": 8,
+                    "filename": "Components\\Profile\\Functions\\login.php"
+                },
+                {
+                    "blank": 1,
+                    "code": 52,
+                    "comment": 3,
+                    "filename": "Components\\Profile\\Page\\createAccount.php"
+                },
+                {
+                    "blank": 0,
+                    "code": 32,
+                    "comment": 0,
+                    "filename": "Components\\Templates\\Body_parts\\feedback.php"
+                },
+                {
+                    "blank": 1,
+                    "code": 6,
+                    "comment": 0,
+                    "filename": "Components\\Templates\\Body_parts\\footer.php"
+                },
+                {
+                    "blank": 2,
+                    "code": 30,
+                    "comment": 0,
+                    "filename": "Components\\Templates\\Body_parts\\head.php"
+                },
+                {
+                    "blank": 0,
+                    "code": 21,
+                    "comment": 0,
+                    "filename": "Components\\Templates\\Body_parts\\navbar.php"
+                },
+                {
+                    "blank": 0,
+                    "code": 15,
+                    "comment": 5,
+                    "filename": "Components\\Templates\\Body_parts\\normal_header.php"
+                },
+                {
+                    "blank": 1,
+                    "code": 7,
+                    "comment": 2,
+                    "filename": "Components\\Templates\\Body_parts\\php_header.php"
+                },
+                {
+                    "blank": 0,
+                    "code": 7,
+                    "comment": 4,
+                    "filename": "Components\\Templates\\Body_parts\\php_header_single_world.php"
+                },
+                {
+                    "blank": 0,
+                    "code": 18,
+                    "comment": 0,
+                    "filename": "Components\\Templates\\Body_parts\\sidebar.php"
+                },
+                {
+                    "blank": 0,
+                    "code": 21,
+                    "comment": 0,
+                    "filename": "Components\\Templates\\Body_parts\\sidebar_world.php"
+                },
+                {
+                    "blank": 0,
+                    "code": 21,
+                    "comment": 7,
+                    "filename": "Components\\Templates\\Body_parts\\world_header.php"
+                },
+                {
+                    "blank": 0,
+                    "code": 19,
+                    "comment": 1,
+                    "filename": "Components\\Templates\\list_of_users.php"
+                },
+                {
+                    "blank": 1,
+                    "code": 6,
+                    "comment": 0,
+                    "filename": "Components\\Templates\\loader.php"
+                },
+                {
+                    "blank": 1,
+                    "code": 27,
+                    "comment": 2,
+                    "filename": "Components\\Wall\\information.php"
+                },
+                {
+                    "blank": 0,
+                    "code": 6,
+                    "comment": 2,
+                    "filename": "Components\\Wall\\profile.php"
+                },
+                {
+                    "blank": 2,
+                    "code": 23,
+                    "comment": 2,
+                    "filename": "Components\\Wall\\tutorial.php"
+                },
+                {
+                    "blank": 1,
+                    "code": 15,
+                    "comment": 2,
+                    "filename": "Components\\Wall\\wall.php"
+                },
+                {
+                    "blank": 3,
+                    "code": 9,
+                    "comment": 0,
+                    "filename": "Components\\Wall\\Wall_Components\\brief_wall.php"
+                },
+                {
+                    "blank": 1,
+                    "code": 22,
+                    "comment": 4,
+                    "filename": "Components\\Wall\\Wall_Components\\your_world.php"
+                },
+                {
+                    "blank": 2,
+                    "code": 47,
+                    "comment": 3,
+                    "filename": "Components\\Wall\\warriors.php"
+                },
+                {
+                    "blank": 0,
+                    "code": 30,
+                    "comment": 3,
+                    "filename": "Components\\Wall\\worlds.php"
+                },
+                {
+                    "blank": 7,
+                    "code": 48,
+                    "comment": 6,
+                    "filename": "Components\\World\\Functions\\Battle\\battle.php"
+                },
+                {
+                    "blank": 2,
+                    "code": 23,
+                    "comment": 3,
+                    "filename": "Components\\World\\Functions\\check_warrior.php"
+                },
+                {
+                    "blank": 2,
+                    "code": 49,
+                    "comment": 14,
+                    "filename": "Components\\World\\Functions\\create_world.php"
+                },
+                {
+                    "blank": 1,
+                    "code": 52,
+                    "comment": 1,
+                    "filename": "Components\\World\\Functions\\register_warrior.php"
+                },
+                {
+                    "blank": 1,
+                    "code": 31,
+                    "comment": 9,
+                    "filename": "Components\\World\\Functions\\remove_permission.php"
+                },
+                {
+                    "blank": 1,
+                    "code": 25,
+                    "comment": 7,
+                    "filename": "Components\\World\\Functions\\remove_warrior.php"
+                },
+                {
+                    "blank": 5,
+                    "code": 31,
+                    "comment": 7,
+                    "filename": "Components\\World\\Functions\\update_world.php"
+                },
+                {
+                    "blank": 0,
+                    "code": 31,
+                    "comment": 4,
+                    "filename": "Components\\World\\Functions\\write_permission.php"
+                },
+                {
+                    "blank": 0,
+                    "code": 53,
+                    "comment": 2,
+                    "filename": "Components\\World\\Page\\page_battle.php"
+                },
+                {
+                    "blank": 1,
+                    "code": 68,
+                    "comment": 4,
+                    "filename": "Components\\World\\Page\\page_create_battle.php"
+                },
+                {
+                    "blank": 2,
+                    "code": 159,
+                    "comment": 2,
+                    "filename": "Components\\World\\Page\\page_create_warrior.php"
+                },
+                {
+                    "blank": 0,
+                    "code": 73,
+                    "comment": 2,
+                    "filename": "Components\\World\\Page\\page_new_world.php"
+                },
+                {
+                    "blank": 1,
+                    "code": 97,
+                    "comment": 2,
+                    "filename": "Components\\World\\Page\\page_permissions.php"
+                },
+                {
+                    "blank": 1,
+                    "code": 57,
+                    "comment": 2,
+                    "filename": "Components\\World\\Page\\page_settings.php"
+                },
+                {
+                    "blank": 15,
+                    "code": 106,
+                    "comment": 1,
+                    "filename": "Components\\World\\Page\\page_single_battle.php"
+                },
+                {
+                    "blank": 0,
+                    "code": 18,
+                    "comment": 2,
+                    "filename": "Components\\World\\Page\\page_single_world.php"
+                },
+                {
+                    "blank": 1,
+                    "code": 40,
+                    "comment": 2,
+                    "filename": "Components\\World\\Page\\page_warriors.php"
+                },
+                {
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0,
+                    "filename": "Files\\battle.json"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "Files\\battle1Nk3B97a3g3I8z3Xqe2YeGmHVAzNJx.json"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "Files\\battleiFUFTMJdNUP6V4bBbtmoTBQo90UpAE.json"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "Files\\battlemaejMAXmkVvmwgIJVX6NhmrhSLfSnQ.json"
+                },
+                {
+                    "blank": 0,
+                    "code": 18,
+                    "comment": 0,
+                    "filename": "Files\\temp.json"
+                },
+                {
+                    "blank": 3,
+                    "code": 62,
+                    "comment": 2,
+                    "filename": "index.php"
+                },
+                {
+                    "blank": 7,
+                    "code": 9,
+                    "comment": 0,
+                    "filename": "README.md"
+                },
+                {
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0,
+                    "filename": "Restapi\\v1\\check_world.php"
+                },
+                {
+                    "blank": 0,
+                    "code": 13,
+                    "comment": 1,
+                    "filename": "Restapi\\v1\\get_user_by_name.php"
+                },
+                {
+                    "blank": 0,
+                    "code": 6,
+                    "comment": 0,
+                    "filename": "Source\\CSS\\all.css"
+                },
+                {
+                    "blank": 0,
+                    "code": 47,
+                    "comment": 0,
+                    "filename": "Source\\CSS\\animations.css"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "Source\\CSS\\animations.css.map"
+                },
+                {
+                    "blank": 1,
+                    "code": 25,
+                    "comment": 0,
+                    "filename": "Source\\CSS\\animations.scss"
+                },
+                {
+                    "blank": 1,
+                    "code": 10,
+                    "comment": 0,
+                    "filename": "Source\\CSS\\layout.css"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "Source\\CSS\\layout.css.map"
+                },
+                {
+                    "blank": 2,
+                    "code": 10,
+                    "comment": 0,
+                    "filename": "Source\\CSS\\layout.scss"
+                },
+                {
+                    "blank": 22,
+                    "code": 141,
+                    "comment": 2,
+                    "filename": "Source\\CSS\\style.css"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "Source\\CSS\\style.css.map"
+                },
+                {
+                    "blank": 12,
+                    "code": 144,
+                    "comment": 3,
+                    "filename": "Source\\CSS\\style.scss"
+                },
+                {
+                    "blank": 3,
+                    "code": 27,
+                    "comment": 1,
+                    "filename": "Source\\CSS\\templates.css"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "Source\\CSS\\templates.css.map"
+                },
+                {
+                    "blank": 6,
+                    "code": 27,
+                    "comment": 1,
+                    "filename": "Source\\CSS\\templates.scss"
+                },
+                {
+                    "blank": 1,
+                    "code": 6,
+                    "comment": 0,
+                    "filename": "Source\\CSS\\typography.css"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "Source\\CSS\\typography.css.map"
+                },
+                {
+                    "blank": 0,
+                    "code": 8,
+                    "comment": 0,
+                    "filename": "Source\\CSS\\typography.scss"
+                },
+                {
+                    "blank": 0,
+                    "code": 3,
+                    "comment": 0,
+                    "filename": "Source\\CSS\\vendor.css"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "Source\\CSS\\vendor.css.map"
+                },
+                {
+                    "blank": 0,
+                    "code": 3,
+                    "comment": 0,
+                    "filename": "Source\\CSS\\vendor.scss"
+                },
+                {
+                    "filename": "Source\\IMG\\favicon.ico",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "blank": 1,
+                    "code": 19,
+                    "comment": 0,
+                    "filename": "Source\\JS\\Ajax\\feedback.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 8,
+                    "comment": 0,
+                    "filename": "Source\\JS\\loader.js"
+                },
+                {
+                    "blank": 2,
+                    "code": 44,
+                    "comment": 0,
+                    "filename": "Source\\JS\\tmp_system.js"
+                },
+                {
+                    "blank": 2,
+                    "code": 14,
+                    "comment": 0,
+                    "filename": "vendor\\cookies.js"
+                }
+            ]
+        },
+        {
+            "version": "0.2.7",
+            "counttime": "2023-03-20 10:30:51",
+            "filesum": 88,
+            "codesum": 2886,
+            "commentsum": 190,
+            "blanksum": 213,
+            "statistics": {
+                ".js": {
+                    "code": 85,
+                    "comment": 0,
+                    "blank": 5
+                },
+                ".scss": {
+                    "code": 217,
+                    "comment": 4,
+                    "blank": 21
+                },
+                ".map": {
+                    "code": 6,
+                    "comment": 0,
+                    "blank": 0
+                },
+                ".css": {
+                    "code": 240,
+                    "comment": 3,
+                    "blank": 27
+                },
+                ".md": {
+                    "code": 9,
+                    "comment": 0,
+                    "blank": 7
+                },
+                ".json": {
+                    "code": 18,
+                    "comment": 0,
+                    "blank": 0
+                },
+                ".php": {
+                    "code": 2309,
+                    "comment": 183,
+                    "blank": 153
+                },
+                ".log": {
+                    "code": 1,
+                    "comment": 0,
+                    "blank": 0
+                },
+                "": {
+                    "code": 1,
+                    "comment": 0,
+                    "blank": 0
+                }
+            },
+            "filelist": [
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": ".htaccess"
+                },
+                {
+                    "filename": "a",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "blank": 11,
+                    "code": 78,
+                    "comment": 4,
+                    "filename": "Components\\Classes\\Army.php"
+                },
+                {
+                    "blank": 17,
+                    "code": 141,
+                    "comment": 0,
+                    "filename": "Components\\Classes\\Battle.php"
+                },
+                {
+                    "blank": 2,
+                    "code": 48,
+                    "comment": 23,
+                    "filename": "Components\\Classes\\Config.php"
+                },
+                {
+                    "blank": 1,
+                    "code": 28,
+                    "comment": 0,
+                    "filename": "Components\\Classes\\Database.php"
+                },
+                {
+                    "blank": 0,
+                    "code": 41,
+                    "comment": 0,
+                    "filename": "Components\\Classes\\Errors.php"
+                },
+                {
+                    "blank": 6,
+                    "code": 50,
+                    "comment": 1,
+                    "filename": "Components\\Classes\\Security.php"
+                },
+                {
+                    "blank": 8,
+                    "code": 69,
+                    "comment": 0,
+                    "filename": "Components\\Classes\\User.php"
+                },
+                {
+                    "blank": 15,
+                    "code": 90,
+                    "comment": 0,
+                    "filename": "Components\\Classes\\Warrior.php"
+                },
+                {
+                    "blank": 22,
+                    "code": 116,
+                    "comment": 18,
+                    "filename": "Components\\Classes\\World.php"
+                },
+                {
+                    "blank": 0,
+                    "code": 24,
+                    "comment": 3,
+                    "filename": "Components\\Errors\\error_messages.php"
+                },
+                {
+                    "blank": 2,
+                    "code": 29,
+                    "comment": 0,
+                    "filename": "Components\\Errors\\page_error.php"
+                },
+                {
+                    "blank": 1,
+                    "code": 10,
+                    "comment": 2,
+                    "filename": "Components\\Functions\\functions.php"
+                },
+                {
+                    "blank": 2,
+                    "code": 3,
+                    "comment": 0,
+                    "filename": "Components\\Functions\\logged_user_functions.php"
+                },
+                {
+                    "blank": 0,
+                    "code": 9,
+                    "comment": 0,
+                    "filename": "Components\\Functions\\send_feedback.php"
+                },
+                {
+                    "blank": 8,
+                    "code": 37,
+                    "comment": 9,
+                    "filename": "Components\\Profile\\Functions\\create.php"
+                },
+                {
+                    "blank": 0,
+                    "code": 11,
+                    "comment": 2,
+                    "filename": "Components\\Profile\\Functions\\log_off.php"
+                },
+                {
+                    "blank": 0,
+                    "code": 27,
+                    "comment": 8,
+                    "filename": "Components\\Profile\\Functions\\login.php"
+                },
+                {
+                    "blank": 0,
+                    "code": 51,
+                    "comment": 3,
+                    "filename": "Components\\Profile\\Page\\createAccount.php"
+                },
+                {
+                    "blank": 0,
+                    "code": 32,
+                    "comment": 0,
+                    "filename": "Components\\Templates\\Body_parts\\feedback.php"
+                },
+                {
+                    "blank": 1,
+                    "code": 6,
+                    "comment": 0,
+                    "filename": "Components\\Templates\\Body_parts\\footer.php"
+                },
+                {
+                    "blank": 2,
+                    "code": 30,
+                    "comment": 0,
+                    "filename": "Components\\Templates\\Body_parts\\head.php"
+                },
+                {
+                    "blank": 0,
+                    "code": 21,
+                    "comment": 0,
+                    "filename": "Components\\Templates\\Body_parts\\navbar.php"
+                },
+                {
+                    "blank": 0,
+                    "code": 14,
+                    "comment": 5,
+                    "filename": "Components\\Templates\\Body_parts\\normal_header.php"
+                },
+                {
+                    "blank": 1,
+                    "code": 7,
+                    "comment": 2,
+                    "filename": "Components\\Templates\\Body_parts\\php_header.php"
+                },
+                {
+                    "blank": 0,
+                    "code": 7,
+                    "comment": 4,
+                    "filename": "Components\\Templates\\Body_parts\\php_header_single_world.php"
+                },
+                {
+                    "blank": 0,
+                    "code": 18,
+                    "comment": 0,
+                    "filename": "Components\\Templates\\Body_parts\\sidebar.php"
+                },
+                {
+                    "blank": 0,
+                    "code": 21,
+                    "comment": 0,
+                    "filename": "Components\\Templates\\Body_parts\\sidebar_world.php"
+                },
+                {
+                    "blank": 0,
+                    "code": 21,
+                    "comment": 7,
+                    "filename": "Components\\Templates\\Body_parts\\world_header.php"
+                },
+                {
+                    "blank": 0,
+                    "code": 19,
+                    "comment": 1,
+                    "filename": "Components\\Templates\\list_of_users.php"
+                },
+                {
+                    "blank": 1,
+                    "code": 6,
+                    "comment": 0,
+                    "filename": "Components\\Templates\\loader.php"
+                },
+                {
+                    "blank": 1,
+                    "code": 27,
+                    "comment": 2,
+                    "filename": "Components\\Wall\\information.php"
+                },
+                {
+                    "blank": 0,
+                    "code": 6,
+                    "comment": 2,
+                    "filename": "Components\\Wall\\profile.php"
+                },
+                {
+                    "blank": 2,
+                    "code": 23,
+                    "comment": 2,
+                    "filename": "Components\\Wall\\tutorial.php"
+                },
+                {
+                    "blank": 1,
+                    "code": 15,
+                    "comment": 2,
+                    "filename": "Components\\Wall\\wall.php"
+                },
+                {
+                    "blank": 3,
+                    "code": 9,
+                    "comment": 0,
+                    "filename": "Components\\Wall\\Wall_Components\\brief_wall.php"
+                },
+                {
+                    "blank": 1,
+                    "code": 22,
+                    "comment": 4,
+                    "filename": "Components\\Wall\\Wall_Components\\your_world.php"
+                },
+                {
+                    "blank": 2,
+                    "code": 47,
+                    "comment": 3,
+                    "filename": "Components\\Wall\\warriors.php"
+                },
+                {
+                    "blank": 0,
+                    "code": 30,
+                    "comment": 3,
+                    "filename": "Components\\Wall\\worlds.php"
+                },
+                {
+                    "blank": 7,
+                    "code": 46,
+                    "comment": 6,
+                    "filename": "Components\\World\\Functions\\Battle\\battle.php"
+                },
+                {
+                    "blank": 2,
+                    "code": 23,
+                    "comment": 3,
+                    "filename": "Components\\World\\Functions\\check_warrior.php"
+                },
+                {
+                    "blank": 2,
+                    "code": 49,
+                    "comment": 14,
+                    "filename": "Components\\World\\Functions\\create_world.php"
+                },
+                {
+                    "blank": 1,
+                    "code": 52,
+                    "comment": 1,
+                    "filename": "Components\\World\\Functions\\register_warrior.php"
+                },
+                {
+                    "blank": 1,
+                    "code": 31,
+                    "comment": 9,
+                    "filename": "Components\\World\\Functions\\remove_permission.php"
+                },
+                {
+                    "blank": 1,
+                    "code": 28,
+                    "comment": 7,
+                    "filename": "Components\\World\\Functions\\remove_warrior.php"
+                },
+                {
+                    "blank": 5,
+                    "code": 31,
+                    "comment": 7,
+                    "filename": "Components\\World\\Functions\\update_world.php"
+                },
+                {
+                    "blank": 0,
+                    "code": 31,
+                    "comment": 4,
+                    "filename": "Components\\World\\Functions\\write_permission.php"
+                },
+                {
+                    "blank": 0,
+                    "code": 53,
+                    "comment": 2,
+                    "filename": "Components\\World\\Page\\page_battle.php"
+                },
+                {
+                    "blank": 3,
+                    "code": 71,
+                    "comment": 4,
+                    "filename": "Components\\World\\Page\\page_create_battle.php"
+                },
+                {
+                    "blank": 2,
+                    "code": 162,
+                    "comment": 2,
+                    "filename": "Components\\World\\Page\\page_create_warrior.php"
+                },
+                {
+                    "blank": 0,
+                    "code": 73,
+                    "comment": 2,
+                    "filename": "Components\\World\\Page\\page_new_world.php"
+                },
+                {
+                    "blank": 1,
+                    "code": 97,
+                    "comment": 2,
+                    "filename": "Components\\World\\Page\\page_permissions.php"
+                },
+                {
+                    "blank": 1,
+                    "code": 57,
+                    "comment": 2,
+                    "filename": "Components\\World\\Page\\page_settings.php"
+                },
+                {
+                    "blank": 13,
+                    "code": 129,
+                    "comment": 1,
+                    "filename": "Components\\World\\Page\\page_single_battle.php"
+                },
+                {
+                    "blank": 0,
+                    "code": 18,
+                    "comment": 2,
+                    "filename": "Components\\World\\Page\\page_single_world.php"
+                },
+                {
+                    "blank": 1,
+                    "code": 40,
+                    "comment": 2,
+                    "filename": "Components\\World\\Page\\page_warriors.php"
+                },
+                {
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0,
+                    "filename": "Files\\battle.json"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "Files\\log.log"
+                },
+                {
+                    "blank": 0,
+                    "code": 18,
+                    "comment": 0,
+                    "filename": "Files\\temp.json"
+                },
+                {
+                    "blank": 3,
+                    "code": 62,
+                    "comment": 2,
+                    "filename": "index.php"
+                },
+                {
+                    "blank": 7,
+                    "code": 9,
+                    "comment": 0,
+                    "filename": "README.md"
+                },
+                {
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0,
+                    "filename": "Restapi\\v1\\check_world.php"
+                },
+                {
+                    "blank": 0,
+                    "code": 13,
+                    "comment": 1,
+                    "filename": "Restapi\\v1\\get_user_by_name.php"
+                },
+                {
+                    "blank": 0,
+                    "code": 6,
+                    "comment": 0,
+                    "filename": "Source\\CSS\\all.css"
+                },
+                {
+                    "blank": 0,
+                    "code": 47,
+                    "comment": 0,
+                    "filename": "Source\\CSS\\animations.css"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "Source\\CSS\\animations.css.map"
+                },
+                {
+                    "blank": 1,
+                    "code": 25,
+                    "comment": 0,
+                    "filename": "Source\\CSS\\animations.scss"
+                },
+                {
+                    "blank": 1,
+                    "code": 10,
+                    "comment": 0,
+                    "filename": "Source\\CSS\\layout.css"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "Source\\CSS\\layout.css.map"
+                },
+                {
+                    "blank": 2,
+                    "code": 10,
+                    "comment": 0,
+                    "filename": "Source\\CSS\\layout.scss"
+                },
+                {
+                    "blank": 22,
+                    "code": 141,
+                    "comment": 2,
+                    "filename": "Source\\CSS\\style.css"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "Source\\CSS\\style.css.map"
+                },
+                {
+                    "blank": 12,
+                    "code": 144,
+                    "comment": 3,
+                    "filename": "Source\\CSS\\style.scss"
+                },
+                {
+                    "blank": 3,
+                    "code": 27,
+                    "comment": 1,
+                    "filename": "Source\\CSS\\templates.css"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "Source\\CSS\\templates.css.map"
+                },
+                {
+                    "blank": 6,
+                    "code": 27,
+                    "comment": 1,
+                    "filename": "Source\\CSS\\templates.scss"
+                },
+                {
+                    "blank": 1,
+                    "code": 6,
+                    "comment": 0,
+                    "filename": "Source\\CSS\\typography.css"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "Source\\CSS\\typography.css.map"
+                },
+                {
+                    "blank": 0,
+                    "code": 8,
+                    "comment": 0,
+                    "filename": "Source\\CSS\\typography.scss"
+                },
+                {
+                    "blank": 0,
+                    "code": 3,
+                    "comment": 0,
+                    "filename": "Source\\CSS\\vendor.css"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "Source\\CSS\\vendor.css.map"
+                },
+                {
+                    "blank": 0,
+                    "code": 3,
+                    "comment": 0,
+                    "filename": "Source\\CSS\\vendor.scss"
+                },
+                {
+                    "filename": "Source\\IMG\\favicon.ico",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "blank": 1,
+                    "code": 19,
+                    "comment": 0,
+                    "filename": "Source\\JS\\Ajax\\feedback.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 8,
+                    "comment": 0,
+                    "filename": "Source\\JS\\loader.js"
+                },
+                {
+                    "blank": 2,
+                    "code": 44,
+                    "comment": 0,
+                    "filename": "Source\\JS\\tmp_system.js"
+                },
+                {
+                    "blank": 2,
+                    "code": 14,
+                    "comment": 0,
+                    "filename": "vendor\\cookies.js"
+                }
+            ]
+        },
+        {
+            "version": "0.2.7",
+            "counttime": "2023-03-20 18:49:16",
+            "filesum": 94,
+            "codesum": 3205,
+            "commentsum": 191,
+            "blanksum": 235,
+            "statistics": {
+                ".js": {
+                    "code": 85,
+                    "comment": 0,
+                    "blank": 5
+                },
+                ".scss": {
+                    "code": 261,
+                    "comment": 4,
+                    "blank": 29
+                },
+                ".map": {
+                    "code": 6,
+                    "comment": 0,
+                    "blank": 0
+                },
+                ".css": {
+                    "code": 257,
+                    "comment": 3,
+                    "blank": 35
+                },
+                ".log": {
+                    "code": 254,
+                    "comment": 0,
+                    "blank": 6
+                },
+                ".json": {
+                    "code": 21,
+                    "comment": 0,
+                    "blank": 0
+                },
+                ".php": {
+                    "code": 2311,
+                    "comment": 184,
+                    "blank": 153
+                },
+                ".md": {
+                    "code": 9,
+                    "comment": 0,
+                    "blank": 7
+                },
+                "": {
+                    "code": 1,
+                    "comment": 0,
+                    "blank": 0
+                }
+            },
+            "filelist": [
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": ".htaccess"
+                },
+                {
+                    "filename": "a",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "blank": 11,
+                    "code": 78,
+                    "comment": 4,
+                    "filename": "Components\\Classes\\Army.php"
+                },
+                {
+                    "blank": 22,
+                    "code": 183,
+                    "comment": 0,
+                    "filename": "Components\\Classes\\Battle.php"
+                },
+                {
+                    "blank": 2,
+                    "code": 48,
+                    "comment": 23,
+                    "filename": "Components\\Classes\\Config.php"
+                },
+                {
+                    "blank": 1,
+                    "code": 28,
+                    "comment": 0,
+                    "filename": "Components\\Classes\\Database.php"
+                },
+                {
+                    "blank": 0,
+                    "code": 41,
+                    "comment": 0,
+                    "filename": "Components\\Classes\\Errors.php"
+                },
+                {
+                    "blank": 6,
+                    "code": 50,
+                    "comment": 1,
+                    "filename": "Components\\Classes\\Security.php"
+                },
+                {
+                    "blank": 8,
+                    "code": 69,
+                    "comment": 0,
+                    "filename": "Components\\Classes\\User.php"
+                },
+                {
+                    "blank": 15,
+                    "code": 90,
+                    "comment": 0,
+                    "filename": "Components\\Classes\\Warrior.php"
+                },
+                {
+                    "blank": 22,
+                    "code": 116,
+                    "comment": 18,
+                    "filename": "Components\\Classes\\World.php"
+                },
+                {
+                    "blank": 0,
+                    "code": 24,
+                    "comment": 3,
+                    "filename": "Components\\Errors\\error_messages.php"
+                },
+                {
+                    "blank": 2,
+                    "code": 29,
+                    "comment": 0,
+                    "filename": "Components\\Errors\\page_error.php"
+                },
+                {
+                    "blank": 1,
+                    "code": 10,
+                    "comment": 2,
+                    "filename": "Components\\Functions\\functions.php"
+                },
+                {
+                    "blank": 2,
+                    "code": 3,
+                    "comment": 0,
+                    "filename": "Components\\Functions\\logged_user_functions.php"
+                },
+                {
+                    "blank": 0,
+                    "code": 9,
+                    "comment": 0,
+                    "filename": "Components\\Functions\\send_feedback.php"
+                },
+                {
+                    "blank": 8,
+                    "code": 37,
+                    "comment": 9,
+                    "filename": "Components\\Profile\\Functions\\create.php"
+                },
+                {
+                    "blank": 0,
+                    "code": 11,
+                    "comment": 2,
+                    "filename": "Components\\Profile\\Functions\\log_off.php"
+                },
+                {
+                    "blank": 0,
+                    "code": 27,
+                    "comment": 8,
+                    "filename": "Components\\Profile\\Functions\\login.php"
+                },
+                {
+                    "blank": 0,
+                    "code": 51,
+                    "comment": 3,
+                    "filename": "Components\\Profile\\Page\\createAccount.php"
+                },
+                {
+                    "blank": 0,
+                    "code": 32,
+                    "comment": 0,
+                    "filename": "Components\\Templates\\Body_parts\\feedback.php"
+                },
+                {
+                    "blank": 1,
+                    "code": 6,
+                    "comment": 0,
+                    "filename": "Components\\Templates\\Body_parts\\footer.php"
+                },
+                {
+                    "blank": 2,
+                    "code": 30,
+                    "comment": 0,
+                    "filename": "Components\\Templates\\Body_parts\\head.php"
+                },
+                {
+                    "blank": 0,
+                    "code": 21,
+                    "comment": 0,
+                    "filename": "Components\\Templates\\Body_parts\\navbar.php"
+                },
+                {
+                    "blank": 0,
+                    "code": 14,
+                    "comment": 5,
+                    "filename": "Components\\Templates\\Body_parts\\normal_header.php"
+                },
+                {
+                    "blank": 1,
+                    "code": 7,
+                    "comment": 2,
+                    "filename": "Components\\Templates\\Body_parts\\php_header.php"
+                },
+                {
+                    "blank": 0,
+                    "code": 7,
+                    "comment": 4,
+                    "filename": "Components\\Templates\\Body_parts\\php_header_single_world.php"
+                },
+                {
+                    "blank": 0,
+                    "code": 18,
+                    "comment": 0,
+                    "filename": "Components\\Templates\\Body_parts\\sidebar.php"
+                },
+                {
+                    "blank": 0,
+                    "code": 21,
+                    "comment": 0,
+                    "filename": "Components\\Templates\\Body_parts\\sidebar_world.php"
+                },
+                {
+                    "blank": 0,
+                    "code": 21,
+                    "comment": 7,
+                    "filename": "Components\\Templates\\Body_parts\\world_header.php"
+                },
+                {
+                    "blank": 0,
+                    "code": 19,
+                    "comment": 1,
+                    "filename": "Components\\Templates\\list_of_users.php"
+                },
+                {
+                    "blank": 1,
+                    "code": 6,
+                    "comment": 0,
+                    "filename": "Components\\Templates\\loader.php"
+                },
+                {
+                    "blank": 1,
+                    "code": 27,
+                    "comment": 2,
+                    "filename": "Components\\Wall\\information.php"
+                },
+                {
+                    "blank": 0,
+                    "code": 6,
+                    "comment": 2,
+                    "filename": "Components\\Wall\\profile.php"
+                },
+                {
+                    "blank": 2,
+                    "code": 23,
+                    "comment": 2,
+                    "filename": "Components\\Wall\\tutorial.php"
+                },
+                {
+                    "blank": 1,
+                    "code": 15,
+                    "comment": 2,
+                    "filename": "Components\\Wall\\wall.php"
+                },
+                {
+                    "blank": 3,
+                    "code": 9,
+                    "comment": 0,
+                    "filename": "Components\\Wall\\Wall_Components\\brief_wall.php"
+                },
+                {
+                    "blank": 1,
+                    "code": 22,
+                    "comment": 4,
+                    "filename": "Components\\Wall\\Wall_Components\\your_world.php"
+                },
+                {
+                    "blank": 2,
+                    "code": 47,
+                    "comment": 3,
+                    "filename": "Components\\Wall\\warriors.php"
+                },
+                {
+                    "blank": 0,
+                    "code": 30,
+                    "comment": 3,
+                    "filename": "Components\\Wall\\worlds.php"
+                },
+                {
+                    "blank": 7,
+                    "code": 48,
+                    "comment": 6,
+                    "filename": "Components\\World\\Functions\\Battle\\battle.php"
+                },
+                {
+                    "blank": 2,
+                    "code": 23,
+                    "comment": 3,
+                    "filename": "Components\\World\\Functions\\check_warrior.php"
+                },
+                {
+                    "blank": 2,
+                    "code": 49,
+                    "comment": 14,
+                    "filename": "Components\\World\\Functions\\create_world.php"
+                },
+                {
+                    "blank": 1,
+                    "code": 52,
+                    "comment": 1,
+                    "filename": "Components\\World\\Functions\\register_warrior.php"
+                },
+                {
+                    "blank": 1,
+                    "code": 31,
+                    "comment": 9,
+                    "filename": "Components\\World\\Functions\\remove_permission.php"
+                },
+                {
+                    "blank": 1,
+                    "code": 28,
+                    "comment": 7,
+                    "filename": "Components\\World\\Functions\\remove_warrior.php"
+                },
+                {
+                    "blank": 5,
+                    "code": 31,
+                    "comment": 7,
+                    "filename": "Components\\World\\Functions\\update_world.php"
+                },
+                {
+                    "blank": 0,
+                    "code": 31,
+                    "comment": 4,
+                    "filename": "Components\\World\\Functions\\write_permission.php"
+                },
+                {
+                    "blank": 0,
+                    "code": 46,
+                    "comment": 2,
+                    "filename": "Components\\World\\Page\\page_battle.php"
+                },
+                {
+                    "blank": 3,
+                    "code": 70,
+                    "comment": 5,
+                    "filename": "Components\\World\\Page\\page_create_battle.php"
+                },
+                {
+                    "blank": 2,
+                    "code": 162,
+                    "comment": 2,
+                    "filename": "Components\\World\\Page\\page_create_warrior.php"
+                },
+                {
+                    "blank": 0,
+                    "code": 73,
+                    "comment": 2,
+                    "filename": "Components\\World\\Page\\page_new_world.php"
+                },
+                {
+                    "blank": 1,
+                    "code": 97,
+                    "comment": 2,
+                    "filename": "Components\\World\\Page\\page_permissions.php"
+                },
+                {
+                    "blank": 1,
+                    "code": 57,
+                    "comment": 2,
+                    "filename": "Components\\World\\Page\\page_settings.php"
+                },
+                {
+                    "blank": 8,
+                    "code": 95,
+                    "comment": 1,
+                    "filename": "Components\\World\\Page\\page_single_battle.php"
+                },
+                {
+                    "blank": 0,
+                    "code": 18,
+                    "comment": 2,
+                    "filename": "Components\\World\\Page\\page_single_world.php"
+                },
+                {
+                    "blank": 1,
+                    "code": 40,
+                    "comment": 2,
+                    "filename": "Components\\World\\Page\\page_warriors.php"
+                },
+                {
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0,
+                    "filename": "Files\\battle.json"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "Files\\battle4B5SJ9ed8wFk2QGN2KBwTwtUbe22dx.json"
+                },
+                {
+                    "blank": 2,
+                    "code": 141,
+                    "comment": 0,
+                    "filename": "Files\\battle4B5SJ9ed8wFk2QGN2KBwTwtUbe22dx.log"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "Files\\battleS6A6AjvcTE8IEdfITIKdElN1oGauGU.json"
+                },
+                {
+                    "blank": 2,
+                    "code": 86,
+                    "comment": 0,
+                    "filename": "Files\\battleS6A6AjvcTE8IEdfITIKdElN1oGauGU.log"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "Files\\battleydXMaU1aayP4mPp4lDQdgjTNxGiaMC.json"
+                },
+                {
+                    "blank": 2,
+                    "code": 26,
+                    "comment": 0,
+                    "filename": "Files\\battleydXMaU1aayP4mPp4lDQdgjTNxGiaMC.log"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "Files\\log.log"
+                },
+                {
+                    "blank": 0,
+                    "code": 18,
+                    "comment": 0,
+                    "filename": "Files\\temp.json"
+                },
+                {
+                    "blank": 3,
+                    "code": 62,
+                    "comment": 2,
+                    "filename": "index.php"
+                },
+                {
+                    "blank": 7,
+                    "code": 9,
+                    "comment": 0,
+                    "filename": "README.md"
+                },
+                {
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0,
+                    "filename": "Restapi\\v1\\check_world.php"
+                },
+                {
+                    "blank": 0,
+                    "code": 13,
+                    "comment": 1,
+                    "filename": "Restapi\\v1\\get_user_by_name.php"
+                },
+                {
+                    "blank": 0,
+                    "code": 6,
+                    "comment": 0,
+                    "filename": "Source\\CSS\\all.css"
+                },
+                {
+                    "blank": 0,
+                    "code": 25,
+                    "comment": 0,
+                    "filename": "Source\\CSS\\animations.css"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "Source\\CSS\\animations.css.map"
+                },
+                {
+                    "blank": 1,
+                    "code": 25,
+                    "comment": 0,
+                    "filename": "Source\\CSS\\animations.scss"
+                },
+                {
+                    "blank": 1,
+                    "code": 10,
+                    "comment": 0,
+                    "filename": "Source\\CSS\\layout.css"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "Source\\CSS\\layout.css.map"
+                },
+                {
+                    "blank": 2,
+                    "code": 10,
+                    "comment": 0,
+                    "filename": "Source\\CSS\\layout.scss"
+                },
+                {
+                    "blank": 30,
+                    "code": 180,
+                    "comment": 2,
+                    "filename": "Source\\CSS\\style.css"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "Source\\CSS\\style.css.map"
+                },
+                {
+                    "blank": 20,
+                    "code": 188,
+                    "comment": 3,
+                    "filename": "Source\\CSS\\style.scss"
+                },
+                {
+                    "blank": 3,
+                    "code": 27,
+                    "comment": 1,
+                    "filename": "Source\\CSS\\templates.css"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "Source\\CSS\\templates.css.map"
+                },
+                {
+                    "blank": 6,
+                    "code": 27,
+                    "comment": 1,
+                    "filename": "Source\\CSS\\templates.scss"
+                },
+                {
+                    "blank": 1,
+                    "code": 6,
+                    "comment": 0,
+                    "filename": "Source\\CSS\\typography.css"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "Source\\CSS\\typography.css.map"
+                },
+                {
+                    "blank": 0,
+                    "code": 8,
+                    "comment": 0,
+                    "filename": "Source\\CSS\\typography.scss"
+                },
+                {
+                    "blank": 0,
+                    "code": 3,
+                    "comment": 0,
+                    "filename": "Source\\CSS\\vendor.css"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "Source\\CSS\\vendor.css.map"
+                },
+                {
+                    "blank": 0,
+                    "code": 3,
+                    "comment": 0,
+                    "filename": "Source\\CSS\\vendor.scss"
+                },
+                {
+                    "filename": "Source\\IMG\\favicon.ico",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "blank": 1,
+                    "code": 19,
+                    "comment": 0,
+                    "filename": "Source\\JS\\Ajax\\feedback.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 8,
+                    "comment": 0,
+                    "filename": "Source\\JS\\loader.js"
+                },
+                {
+                    "blank": 2,
+                    "code": 44,
+                    "comment": 0,
+                    "filename": "Source\\JS\\tmp_system.js"
+                },
+                {
+                    "blank": 2,
+                    "code": 14,
+                    "comment": 0,
+                    "filename": "vendor\\cookies.js"
+                }
+            ]
+        },
+        {
+            "version": "0.2.7",
+            "counttime": "2023-03-21 22:06:51",
+            "filesum": 89,
+            "codesum": 3033,
+            "commentsum": 191,
+            "blanksum": 238,
+            "statistics": {
+                ".js": {
+                    "code": 85,
+                    "comment": 0,
+                    "blank": 5
+                },
+                ".map": {
+                    "code": 6,
+                    "comment": 0,
+                    "blank": 0
+                },
+                ".css": {
+                    "code": 257,
+                    "comment": 3,
+                    "blank": 35
+                },
+                ".scss": {
+                    "code": 261,
+                    "comment": 4,
+                    "blank": 29
+                },
+                ".md": {
+                    "code": 9,
+                    "comment": 0,
+                    "blank": 7
+                },
+                ".php": {
+                    "code": 2395,
+                    "comment": 184,
+                    "blank": 162
+                },
+                ".json": {
+                    "code": 18,
+                    "comment": 0,
+                    "blank": 0
+                },
+                "": {
+                    "code": 1,
+                    "comment": 0,
+                    "blank": 0
+                },
+                ".log": {
+                    "code": 1,
+                    "comment": 0,
+                    "blank": 0
+                }
+            },
+            "filelist": [
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": ".htaccess"
+                },
+                {
+                    "filename": "a",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "blank": 11,
+                    "code": 78,
+                    "comment": 4,
+                    "filename": "Components\\Classes\\Army.php"
+                },
+                {
+                    "blank": 29,
+                    "code": 218,
+                    "comment": 0,
+                    "filename": "Components\\Classes\\Battle.php"
+                },
+                {
+                    "blank": 2,
+                    "code": 48,
+                    "comment": 23,
+                    "filename": "Components\\Classes\\Config.php"
+                },
+                {
+                    "blank": 1,
+                    "code": 28,
+                    "comment": 0,
+                    "filename": "Components\\Classes\\Database.php"
+                },
+                {
+                    "blank": 0,
+                    "code": 41,
+                    "comment": 0,
+                    "filename": "Components\\Classes\\Errors.php"
+                },
+                {
+                    "blank": 6,
+                    "code": 50,
+                    "comment": 1,
+                    "filename": "Components\\Classes\\Security.php"
+                },
+                {
+                    "blank": 8,
+                    "code": 69,
+                    "comment": 0,
+                    "filename": "Components\\Classes\\User.php"
+                },
+                {
+                    "blank": 15,
+                    "code": 90,
+                    "comment": 0,
+                    "filename": "Components\\Classes\\Warrior.php"
+                },
+                {
+                    "blank": 22,
+                    "code": 116,
+                    "comment": 18,
+                    "filename": "Components\\Classes\\World.php"
+                },
+                {
+                    "blank": 0,
+                    "code": 24,
+                    "comment": 3,
+                    "filename": "Components\\Errors\\error_messages.php"
+                },
+                {
+                    "blank": 2,
+                    "code": 29,
+                    "comment": 0,
+                    "filename": "Components\\Errors\\page_error.php"
+                },
+                {
+                    "blank": 1,
+                    "code": 10,
+                    "comment": 2,
+                    "filename": "Components\\Functions\\functions.php"
+                },
+                {
+                    "blank": 2,
+                    "code": 3,
+                    "comment": 0,
+                    "filename": "Components\\Functions\\logged_user_functions.php"
+                },
+                {
+                    "blank": 0,
+                    "code": 9,
+                    "comment": 0,
+                    "filename": "Components\\Functions\\send_feedback.php"
+                },
+                {
+                    "blank": 8,
+                    "code": 37,
+                    "comment": 9,
+                    "filename": "Components\\Profile\\Functions\\create.php"
+                },
+                {
+                    "blank": 0,
+                    "code": 11,
+                    "comment": 2,
+                    "filename": "Components\\Profile\\Functions\\log_off.php"
+                },
+                {
+                    "blank": 0,
+                    "code": 27,
+                    "comment": 8,
+                    "filename": "Components\\Profile\\Functions\\login.php"
+                },
+                {
+                    "blank": 0,
+                    "code": 51,
+                    "comment": 3,
+                    "filename": "Components\\Profile\\Page\\createAccount.php"
+                },
+                {
+                    "blank": 0,
+                    "code": 32,
+                    "comment": 0,
+                    "filename": "Components\\Templates\\Body_parts\\feedback.php"
+                },
+                {
+                    "blank": 1,
+                    "code": 6,
+                    "comment": 0,
+                    "filename": "Components\\Templates\\Body_parts\\footer.php"
+                },
+                {
+                    "blank": 2,
+                    "code": 30,
+                    "comment": 0,
+                    "filename": "Components\\Templates\\Body_parts\\head.php"
+                },
+                {
+                    "blank": 0,
+                    "code": 21,
+                    "comment": 0,
+                    "filename": "Components\\Templates\\Body_parts\\navbar.php"
+                },
+                {
+                    "blank": 0,
+                    "code": 14,
+                    "comment": 5,
+                    "filename": "Components\\Templates\\Body_parts\\normal_header.php"
+                },
+                {
+                    "blank": 1,
+                    "code": 7,
+                    "comment": 2,
+                    "filename": "Components\\Templates\\Body_parts\\php_header.php"
+                },
+                {
+                    "blank": 0,
+                    "code": 7,
+                    "comment": 4,
+                    "filename": "Components\\Templates\\Body_parts\\php_header_single_world.php"
+                },
+                {
+                    "blank": 0,
+                    "code": 18,
+                    "comment": 0,
+                    "filename": "Components\\Templates\\Body_parts\\sidebar.php"
+                },
+                {
+                    "blank": 0,
+                    "code": 21,
+                    "comment": 0,
+                    "filename": "Components\\Templates\\Body_parts\\sidebar_world.php"
+                },
+                {
+                    "blank": 0,
+                    "code": 21,
+                    "comment": 7,
+                    "filename": "Components\\Templates\\Body_parts\\world_header.php"
+                },
+                {
+                    "blank": 0,
+                    "code": 19,
+                    "comment": 1,
+                    "filename": "Components\\Templates\\list_of_users.php"
+                },
+                {
+                    "blank": 1,
+                    "code": 6,
+                    "comment": 0,
+                    "filename": "Components\\Templates\\loader.php"
+                },
+                {
+                    "blank": 1,
+                    "code": 27,
+                    "comment": 2,
+                    "filename": "Components\\Wall\\information.php"
+                },
+                {
+                    "blank": 0,
+                    "code": 6,
+                    "comment": 2,
+                    "filename": "Components\\Wall\\profile.php"
+                },
+                {
+                    "blank": 2,
+                    "code": 23,
+                    "comment": 2,
+                    "filename": "Components\\Wall\\tutorial.php"
+                },
+                {
+                    "blank": 1,
+                    "code": 15,
+                    "comment": 2,
+                    "filename": "Components\\Wall\\wall.php"
+                },
+                {
+                    "blank": 3,
+                    "code": 9,
+                    "comment": 0,
+                    "filename": "Components\\Wall\\Wall_Components\\brief_wall.php"
+                },
+                {
+                    "blank": 1,
+                    "code": 22,
+                    "comment": 4,
+                    "filename": "Components\\Wall\\Wall_Components\\your_world.php"
+                },
+                {
+                    "blank": 2,
+                    "code": 47,
+                    "comment": 3,
+                    "filename": "Components\\Wall\\warriors.php"
+                },
+                {
+                    "blank": 0,
+                    "code": 30,
+                    "comment": 3,
+                    "filename": "Components\\Wall\\worlds.php"
+                },
+                {
+                    "blank": 6,
+                    "code": 57,
+                    "comment": 6,
+                    "filename": "Components\\World\\Functions\\Battle\\battle.php"
+                },
+                {
+                    "blank": 2,
+                    "code": 23,
+                    "comment": 3,
+                    "filename": "Components\\World\\Functions\\check_warrior.php"
+                },
+                {
+                    "blank": 3,
+                    "code": 45,
+                    "comment": 14,
+                    "filename": "Components\\World\\Functions\\create_world.php"
+                },
+                {
+                    "blank": 1,
+                    "code": 51,
+                    "comment": 1,
+                    "filename": "Components\\World\\Functions\\register_warrior.php"
+                },
+                {
+                    "blank": 1,
+                    "code": 31,
+                    "comment": 9,
+                    "filename": "Components\\World\\Functions\\remove_permission.php"
+                },
+                {
+                    "blank": 1,
+                    "code": 28,
+                    "comment": 7,
+                    "filename": "Components\\World\\Functions\\remove_warrior.php"
+                },
+                {
+                    "blank": 5,
+                    "code": 31,
+                    "comment": 7,
+                    "filename": "Components\\World\\Functions\\update_world.php"
+                },
+                {
+                    "blank": 0,
+                    "code": 31,
+                    "comment": 4,
+                    "filename": "Components\\World\\Functions\\write_permission.php"
+                },
+                {
+                    "blank": 0,
+                    "code": 46,
+                    "comment": 2,
+                    "filename": "Components\\World\\Page\\page_battle.php"
+                },
+                {
+                    "blank": 4,
+                    "code": 85,
+                    "comment": 4,
+                    "filename": "Components\\World\\Page\\page_create_battle.php"
+                },
+                {
+                    "blank": 3,
+                    "code": 175,
+                    "comment": 3,
+                    "filename": "Components\\World\\Page\\page_create_warrior.php"
+                },
+                {
+                    "blank": 0,
+                    "code": 73,
+                    "comment": 2,
+                    "filename": "Components\\World\\Page\\page_new_world.php"
+                },
+                {
+                    "blank": 1,
+                    "code": 97,
+                    "comment": 2,
+                    "filename": "Components\\World\\Page\\page_permissions.php"
+                },
+                {
+                    "blank": 1,
+                    "code": 57,
+                    "comment": 2,
+                    "filename": "Components\\World\\Page\\page_settings.php"
+                },
+                {
+                    "blank": 8,
+                    "code": 95,
+                    "comment": 1,
+                    "filename": "Components\\World\\Page\\page_single_battle.php"
+                },
+                {
+                    "blank": 0,
+                    "code": 18,
+                    "comment": 2,
+                    "filename": "Components\\World\\Page\\page_single_world.php"
+                },
+                {
+                    "blank": 1,
+                    "code": 40,
+                    "comment": 2,
+                    "filename": "Components\\World\\Page\\page_warriors.php"
+                },
+                {
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0,
+                    "filename": "Files\\battle.json"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "Files\\log.log"
+                },
+                {
+                    "blank": 0,
+                    "code": 18,
+                    "comment": 0,
+                    "filename": "Files\\temp.json"
+                },
+                {
+                    "blank": 3,
+                    "code": 62,
+                    "comment": 2,
+                    "filename": "index.php"
+                },
+                {
+                    "blank": 7,
+                    "code": 9,
+                    "comment": 0,
+                    "filename": "README.md"
+                },
+                {
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0,
+                    "filename": "Restapi\\v1\\check_world.php"
+                },
+                {
+                    "blank": 0,
+                    "code": 13,
+                    "comment": 1,
+                    "filename": "Restapi\\v1\\get_user_by_name.php"
+                },
+                {
+                    "blank": 0,
+                    "code": 17,
+                    "comment": 0,
+                    "filename": "Restapi\\v1\\World\\Warriors\\all_warriors.php"
+                },
+                {
+                    "blank": 0,
+                    "code": 6,
+                    "comment": 0,
+                    "filename": "Source\\CSS\\all.css"
+                },
+                {
+                    "blank": 0,
+                    "code": 25,
+                    "comment": 0,
+                    "filename": "Source\\CSS\\animations.css"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "Source\\CSS\\animations.css.map"
+                },
+                {
+                    "blank": 1,
+                    "code": 25,
+                    "comment": 0,
+                    "filename": "Source\\CSS\\animations.scss"
+                },
+                {
+                    "blank": 1,
+                    "code": 10,
+                    "comment": 0,
+                    "filename": "Source\\CSS\\layout.css"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "Source\\CSS\\layout.css.map"
+                },
+                {
+                    "blank": 2,
+                    "code": 10,
+                    "comment": 0,
+                    "filename": "Source\\CSS\\layout.scss"
+                },
+                {
+                    "blank": 30,
+                    "code": 180,
+                    "comment": 2,
+                    "filename": "Source\\CSS\\style.css"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "Source\\CSS\\style.css.map"
+                },
+                {
+                    "blank": 20,
+                    "code": 188,
                     "comment": 3,
                     "filename": "Source\\CSS\\style.scss"
                 },

@@ -11,6 +11,7 @@ if (!class_exists("World")) {
       public $list_of_warriors = array();
       public $list_of_permissions = array();
       public $id, $name, $desc, $id_owner, $warrior_count, $user_count, $date, $admin;
+
       /**
        * @param mixed $input_id Id světa, od kterého chceme info
        * @return
@@ -19,59 +20,128 @@ if (!class_exists("World")) {
       function  __construct($id)
       {
          $this->id = $id;
-         $this->get_world($id);
       }
-      
-      function get_world($input_id)
+
+      function get_instance()
       {
-         require_once "../../../config.php";
+         require_once "Config.php";
          $config = (new Config())->get_instance();
+         $id = $this->getId();
          $con = $config["db"];
-         $sql_world_info = "select * from world where id = $input_id";
+         $sql_world_info = "select * from world where id = $id";
          $result_world = $con->query($sql_world_info);
          while ($row = $result_world->fetch_assoc()) {
-            $this->id = $row["id"]; //Id světa
-            $this->name = $row["name"]; //Jméno světa
-            $this->desc = $row["description"]; //Popisek
-            $this->id_owner = $row["id_owner"]; //Id vlastníka
-            $this->warrior_count = $row["warrior_count"]; //Počet válečníků
-            $this->user_count = $row["user_count"]; //Počet uživatelů
-            $this->date = $row["date"]; //Datum vzniku
-            $this->admin = $row["id_owner"]; //Id administrátora
+            $this->setId($row["id"]); //Id světa
+            $this->setName ($row["name"]); //Jméno světa
+            $this->setDesc($row["description"]); //Popisek
+            $this->setIdOwner($row["id_owner"]); //Id vlastníka
+            $this->setWarriorCount($row["warrior_count"]); //Počet válečníků
+            $this->setUserCount($row["user_count"]); //Počet uživatelů
+            $this->setUserDate($row["date"]); //Datum vzniku
+            $this->setIdOwner($row["id_owner"]); //Id administrátora
          }
-         $sql_warriors_info = "select * from warrior where id_world = $input_id";
+         $sql_warriors_info = "select * from warrior where id_world = $id";
          $result_warriors = $con->query($sql_warriors_info);
          while ($row = $result_warriors->fetch_assoc()) {
             array_push($this->list_of_warriors, $row); //Naplní pole válečníkami, kteří existují
          }
-      }
-      function get_id() {
-         return $this->id;
-      }
-      function get_name() {
-         return $this->name;
-      }
-      function get_desc() {
-         return $this->desc;
-      }
-      function get_id_owner() {
-         return $this->id_owner;
-      }
-      function get_user_count() {
-         return $this->user_count;
-      }
-      function get_user_date() {
-         return $this->date;
-      }
-      function get_admin() {
-         return $this->admin;
-      }
-      function get_warriors() {
-         return $this->list_of_warriors;
-      }
-      function get_permissions() {
-         return $this->list_of_permissions;
+         return $this;
       }
 
+      function getId()
+      {
+         return $this->id;
+      }
+
+      function setId($id)
+      {
+         return $this->id = $id;
+      }
+
+      function getName()
+      {
+         return $this->name;
+      }
+
+      function setName($name)
+      {
+         return $this->name = $name;
+      }
+
+      function getDesc()
+      {
+         return $this->desc;
+      }
+
+      function setDesc($desc)
+      {
+         return $this->desc = $desc;
+      }
+      function getIdOwner()
+      {
+         return $this->id_owner;
+      }
+
+      function setIdOwner($id_owner)
+      {
+         return $this->id_owner = $id_owner;
+      }
+
+      function getUserCount()
+      {
+         return $this->user_count;
+      }
+
+      function setUserCount($count)
+      {
+         return $this->user_count = $count;
+      }
+      function getUserDate()
+      {
+         return $this->date;
+      }
+
+      function setUserDate($date)
+      {
+         return $this->date = $date;
+      }
+
+      function getAdmin()
+      {
+         return $this->admin;
+      }
+
+      function setAdmin($admin)
+      {
+         return $this->admin = $admin;
+      }
+
+      function getWarriors()
+      {
+         return $this->list_of_warriors;
+      }
+
+      function setWarriors($list)
+      {
+         return $this->list_of_warriors = $list;
+      }
+
+      function getPermissions()
+      {
+         return end($this->list_of_permissions);
+      }
+
+      function setPermissions($perm)
+      {
+         return $this->list_of_permissions = $perm;
+      }
+
+      function getWarriorCount() {
+         return $this->warrior_count;
+      }
+
+      function setWarriorCount($count) {
+         return $this->warrior_count = $count;
+      }
    }
 }

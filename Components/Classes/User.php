@@ -10,66 +10,66 @@ if (!class_exists("User")) {
       function __construct($id)
       {
          $this->id = $id;
-         $this->world_count = $this->get_world_count();
-         $this->username = $this->get_username();
-         $this->permissions = $this->get_permissions();
+         $this->world_count = $this->getWorldCount();
+         $this->username = $this->getUsername();
+         $this->permissions = $this->getPermissions();
       }
 
-      function get_id()
+      function getId()
       {
          return $this->id;
       }
-      function set_id($id)
+      function setId($id)
       {
          $this->id = $id;
       }
 
-      function get_username()
+      function getUsername()
       {
          global $config;
          $con = $config["db"];
-         $result = $con->query("select nickname from users where id = " . $this->get_id());
+         $result = $con->query("select nickname from users where id = " . $this->getId());
          $row = $result->fetch_row();
-         $this->set_username($row[0]);
+         $this->setUsername($row[0]);
          return $this->username;
       }
 
-      function set_username($username)
+      function setUsername($username)
       {
          return $this->username = $username;
       }
 
-      function set_permissions($permission)
+      function setPermissions($permission)
       {
          return $this->permissions = $permission;
       }
-      function get_permissions()
+      function getPermissions()
       {
          global $config;
          $perms = array();
          $con = $config["db"];
-         $sql = "select id_world, type_of_permission from permissions where id_owner = " . $this->get_id();
+         $sql = "select id_world, type_of_permission from permissions where id_owner = " . $this->getId();
          $result = $con->query($sql);
 
          while ($row = $result->fetch_assoc()) {
             $obj = [$row['id_world'], $row['type_of_permission']];
             array_push($perms, $obj);
          }
-         $this->set_permissions($perms);
+         $this->setPermissions($perms);
          return $this->permissions;
       }
 
-      function get_world_count()
+      function getWorldCount()
       {
          global $config;
          $con = $config["db"];
-         $sql = "select count(id) from world where id_owner = " . $this->get_id();
+         $sql = "select count(id) from world where id_owner = " . $this->getId();
          $row = $con->query($sql)->fetch_row();
-         $this->set_world_count($row[0]);
+         $this->setWorldCount($row[0]);
          return $this->world_count;
       }
 
-      function set_world_count($world_count)
+      function setWorldCount($world_count)
       {
          $this->world_count = $world_count;
       }

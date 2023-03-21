@@ -1,23 +1,9 @@
 <?php
 /* Konfigurační soubory */
-require_once "../../../config.php";
-$config = (new Config()) -> get_instance();
-require_once "../../Classes/User.php";
-/* Založení session */
-session_start();
-/* Security */ 
-require_once $config['root_path_require_once'] . "Components/Security/security_functions.php";
-/* Kontrola přihlášení  */
-if (check_login() == False) {
-  header("location: " . $config['root_path_url'] . "index.php");
-  exit();
-}
-/* Require s ostatními require_onces */
-require_once $config['root_path_require_once'] . "/Components/Templates/Body_Parts/php_header.php";
-/* Proměnné */
-$user = unserialize($_SESSION['logged_user']);
-$nickname = $user->get_username();
-$world_count = $user->get_world_count();
+require_once "../Classes/Config.php";
+$config = (new Config())->get_instance();
+/* Celá hlavička */
+require_once $config['root_path_require_once'] . "/Components/Templates/Body_parts/normal_header.php";
 ?>
 <main id="main" class="main wall_main">
   <div id="content">
@@ -36,7 +22,7 @@ $world_count = $user->get_world_count();
         </div>
         <?php
         /* Výpis všech uživatelových světů */
-        require_once "./Wall_Components/your_world.php";
+        require_once "Wall_Components/your_world.php";
         ?>
       </div>
     </div>

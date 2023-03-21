@@ -1,12 +1,11 @@
 <?php
 /* Konfigurační soubor */
-include("../../../config.php");
+include("../../../Components/Classes/Config.php");
 $config = (new Config())->get_instance();
 /* Hlavička */
 require_once $config['root_path_require_once'] . "Components/Templates/Body_parts/head.php";
 session_start();
 /* Kontrola přihlášení */
-require_once $config['root_path_require_once'] . "Components/Security/security_functions.php";
 ?>
 <main>
   <div class="container">
@@ -30,7 +29,6 @@ require_once $config['root_path_require_once'] . "Components/Security/security_f
                 <label for="email" class="form-label">E-mail</label>
                 <input type="email" class="form-control" id="email" name="email">
               </div>
-
               <?php
               if (isset($_SESSION['error_mess_register'])) { ?>
                 <div class="error_message pb-3 alert alert-danger" id="error_mess_register">
