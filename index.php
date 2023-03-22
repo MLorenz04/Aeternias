@@ -3,7 +3,7 @@
 include("Components/Classes/Config.php");
 $config = (new Config())->get_instance();
 /* Hlavička */
-require_once "Components/Templates/Body_Parts/head.php";
+require_once "Components/Templates/Body_parts/head.php";
 require_once "Components/Classes/Security.php";
 require_once "Components/Classes/User.php";
 ?>

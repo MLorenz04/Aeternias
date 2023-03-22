@@ -29,5 +29,5 @@ require_once $config['root_path_require_once'] . "/Components/Templates/Body_par
   </div>
 </main>
 <?php
-require_once $config['root_path_require_once'] . "Components/Templates/Body_Parts/footer.php";
+require_once $config['root_path_require_once'] . "Components/Templates/Body_parts/footer.php";
 ?>

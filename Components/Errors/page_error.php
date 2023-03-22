@@ -27,5 +27,5 @@ if (!isset($_GET["id"])) {
 </body>
 
 <?php
-require_once $config['root_path_require_once'] . "Components/Templates/Body_Parts/footer.php";
+require_once $config['root_path_require_once'] . "Components/Templates/Body_parts/footer.php";
 ?>

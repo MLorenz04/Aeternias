@@ -25,4 +25,4 @@ $id_world = $_GET["id"];
 $security->security($id_world, $user);
 $world = (new World($id_world))->get_instance();
 /* Require s ostatními require_onces */
-require_once $config['root_path_require_once'] . "/Components/Templates/Body_Parts/php_header_single_world.php";
+require_once $config['root_path_require_once'] . "/Components/Templates/Body_parts/php_header_single_world.php";
