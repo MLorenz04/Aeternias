@@ -12,7 +12,7 @@ if ($security->check_login() == False) {
   exit();
 }
 /* Require s ostatními require_onces */
-require_once $config['root_path_require_once'] . "/Components/Templates/Body_Parts/php_header.php";
+require_once $config['root_path_require_once'] . "/Components/Templates/Body_parts/php_header.php";
 /* Proměnné */
 $user = unserialize($_SESSION['logged_user']);
 $nickname = $user->getUsername();

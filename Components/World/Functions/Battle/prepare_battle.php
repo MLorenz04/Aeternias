@@ -49,7 +49,6 @@ foreach ($warriors2 as $id => $count) {
 /* Vytvoření armád */
 $a1 = new Army($first_army);
 $a2 = new Army($second_army);
-$error = false;
 /* Vytvoření bitvy */
 
 $total_health_first_army = $a1->getTotalAttack();
@@ -64,6 +63,3 @@ if ((($total_health_first_army > $total_health_second_army) && $total_health_sec
    echo "Armáda nemá s kým bojovat :/";
    exit;
 }
-
-$battle = new Battle($a1, $a2, $slug, $id_world, $id);
-$battle->start_battle();
