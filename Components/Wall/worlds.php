@@ -15,7 +15,7 @@ require_once $config['root_path_require_once'] . "/Components/Templates/Body_par
         <div class="card m-4" style="width: 18rem;">
           <div class="card-body body-add-world">
             <h5 class="card-title text-center">Vytvořit svět</h5>
-            <a class="new-world-href" href="<?php echo $config['root_path_url'] . "Components" ?>/World/Page/page_new_world.php">
+            <a class="new-world-href" href="<?php echo $config['root_path_url'] . "Components" ?>/Wall/page_new_world.php">
               <i class="bi bi-plus text-dark-always text-center d-flex justify-content-center" style="max-height:100px; font-size:6rem; color:#2d2d2d; cursor:pointer"></i>
             </a>
           </div>

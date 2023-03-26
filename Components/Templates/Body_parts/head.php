@@ -24,6 +24,7 @@
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
    <script src="<?php echo $config['root_path_url'] ?>Source/JS/loader.js"></script>
    <script src="<?php echo $config['root_path_url'] ?>vendor/cookies.js"></script>
+   <script src="<?php echo $config['root_path_url'] ?>Source/JS/functions.js"> </script>
 </head>
 <?php
 require_once $config['root_path_require_once'] . "Components/Templates/loader.php";

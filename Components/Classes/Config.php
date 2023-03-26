@@ -34,7 +34,7 @@ if (!class_exists('Config')) {
                     'db' => $this->database //Připojení do databáze
                 );
             }
-                return self::$instance;
+            return self::$instance;
         }
         /**
          * Konstruktor na vytvoření a nastavení proměnných 
@@ -52,8 +52,7 @@ if (!class_exists('Config')) {
                 $this->db_user = "root";
                 $this->db_password = "";
             }
-            /* Pokud je projekt na serveru, nastaví se přístupy do databáze */
-            if ($_SERVER['DOCUMENT_ROOT'] == "/3w/users/a/aeternias.cz/web/") {
+           else {
                 $this->document_root = $_SERVER['DOCUMENT_ROOT'] . "/";
                 $this->document_root_url = "/";
                 $this->db_server = "sql6.webzdarma.cz";

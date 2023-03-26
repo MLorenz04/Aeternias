@@ -17,8 +17,8 @@ require_once $config['root_path_require_once'] . "/Components/Templates/Body_par
          <?php foreach ($world->list_of_warriors as $warrior) {
             $id = $warrior['id']
          ?>
-            <div class="m-4 card world body-add-world" style="width: 18rem; height:auto">
-               <a href="<?php echo $config['root_path_url'] . "Components/World/Functions/remove_warrior.php?id=$id_world&id_warrior=$id" ?>"><i class="remove-warrior bi bi-x-circle position-fixed"></i> </a>
+            <div id="card-<?php echo $id ?>" class=" m-4 card world body-add-world" style="width: 18rem; height:auto">
+               <span role="button"><i id="<?php echo $id ?>" class="remove text-dark-always remove-warrior bi bi-x-circle position-fixed"></i></span>
                <a class="single-world-link" href="<?php echo $config['root_path_url'] . "Components/World/Page/single_warrior.php?" ?>">
                   <div class="card-body">
                      <span class="d-flex">
@@ -37,7 +37,29 @@ require_once $config['root_path_require_once'] . "/Components/Templates/Body_par
       </div>
    </div>
 </main>
-
+<script>
+   window.onload = function() {
+      $.ajaxSetup({
+         beforeSend: function(xhr) {
+            xhr.setRequestHeader('Api-token', '<?php echo $user->getApiToken() ?>');
+            xhr.setRequestHeader('Api-hash', '<?php echo $user->getApiHash() ?>');
+         }
+      });
+   }
+   $(".remove").click(function($e) {
+      console.log("this")
+      $id = event.target.id;
+      $.ajax({
+         url: "<?php echo $config['root_path_url'] . "Restapi/v1/warriors/$id_world/" ?>" + $id,
+         method: "DELETE",
+         async: false,
+         success: function($data) {
+            console.log($($e.target));
+            $("#card-" + $id).remove();
+         }
+      });
+   });
+</script>
 <?php
 require_once $config['root_path_require_once'] . "Components/Templates/Body_parts/footer.php";
 ?>

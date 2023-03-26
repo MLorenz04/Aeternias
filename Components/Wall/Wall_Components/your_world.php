@@ -3,7 +3,6 @@
 $user = unserialize($_SESSION['logged_user']);
 $username = $user->getUsername();
 $id_owner = $user->getId();
-echo "<script> alert(" . $id_owner . "asd" . "); </script>";
 /* Databáze a připojení do kolekce */
 $con = $config['db'];
 /* SQL příkazy */
