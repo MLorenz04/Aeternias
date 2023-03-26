@@ -1,10 +1,10 @@
 <?php
-require_once $config['root_path_require_once'] . "/Components/Templates/Body_Parts/feedback.php";
+require_once $config['root_path_require_once'] . "/Components/Templates/Body_parts/feedback.php";
 /* Hlavička */
-require_once $config['root_path_require_once'] . "/Components/Templates/Body_Parts/head.php";
+require_once $config['root_path_require_once'] . "/Components/Templates/Body_parts/head.php";
 /* Feedback */
-require_once $config['root_path_require_once'] . "/Components/Templates/Body_Parts/navbar.php";
-require_once $config['root_path_require_once'] . "/Components/Templates/Body_Parts/sidebar.php";
+require_once $config['root_path_require_once'] . "/Components/Templates/Body_parts/navbar.php";
+require_once $config['root_path_require_once'] . "/Components/Templates/Body_parts/sidebar.php";
 require_once $config['root_path_require_once'] . "/Components/Classes/User.php";
 
 ?>

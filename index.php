@@ -3,11 +3,16 @@
 include("Components/Classes/Config.php");
 $config = (new Config())->get_instance();
 /* Hlavička */
-require_once "Components/Templates/Body_Parts/head.php";
+require_once "Components/Templates/Body_parts/head.php";
 require_once "Components/Classes/Security.php";
 require_once "Components/Classes/User.php";
+if(session_status() == PHP_SESSION_NONE) {
+  session_start();
+}
+if(isset($_SESSION["logged_user"])) {
+  header("location: Components/Wall/wall.php");
+}
 ?>
-
 <body>
   <main>
     <div class="container">
@@ -56,7 +61,7 @@ require_once "Components/Classes/User.php";
                 <button type="submit" class="btn btn-primary px-4 b">Přihlásit</button>
               </form>
               <div class="">
-                Nemáte účet? <a href="<?php echo $config['root_path_url'] ?>Components/Profile/Page/createAccount.php"> Zaregistrujte se! </a>
+                Nemáte účet? <a href="<?php echo $config['root_path_url'] ?>Components/Templates/createAccount.php"> Zaregistrujte se! </a>
               </div>
             </div>
           </div>

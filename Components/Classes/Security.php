@@ -1,14 +1,17 @@
 <?php
 require_once "Config.php";
+require_once "User.php";
+require_once "Errors.php";
 class Security
 {
 
-   private $config, $con;
+   private $config, $con, $errors;
 
    public function __construct()
    {
       $this->config = (new Config())->get_instance();
       $this->con = $this->config["db"];
+      $this->errors = (new Errors(0))->getList();
    }
    function check_login()
    {
@@ -30,6 +33,26 @@ class Security
       header("location: " . $this->config['root_path_url'] . "Components/Errors/page_error.php?id=1");
       exit();
    }
+   function check_permissions($id_world, $user)
+   {
+      global $config;
+      $has_perm = False;
+      foreach ($user->getPermissions() as $single_perm) {
+         if ($single_perm[0] == $id_world) {
+            $has_perm = True;
+         }
+      }
+      return $has_perm;
+   }
+
+   function check_existing_user($user)
+   {
+      if ($user == false) {
+         return false;
+      } else {
+         return true;
+      }
+   }
    function security($id_world, $user)
    {
       global $config;
@@ -39,18 +62,10 @@ class Security
       }
 
       if (!($id_world = (int)$id_world) == 1) {
-         header("location: " . $config['root_path_url'] . "Components/Errors/page_error.php?id=3");
+         //header("location: " . $config['root_path_url'] . "Components/Errors/page_error.php?id=3");
          exit();
       }
-
-      $has_perm = False;
-      foreach ($user->getPermissions() as $single_perm) {
-         if ($single_perm[0] == $id_world) {
-            $has_perm = True;
-         }
-      }
-
-      if ($has_perm == False) {
+      if (!($this->check_permissions($id_world, $user))) {
          header("location: " . $config['root_path_url'] . "Components/Errors/page_error.php?id=1");
       }
    }

@@ -4,7 +4,7 @@ require_once "../../../Components/Classes/Config.php";
 $config = (new Config())->get_instance();
 /* Celá hlavička */
 require_once "../../Templates/Body_parts/world_header.php";
-require_once $config['root_path_require_once'] . "/Components/Templates/Body_Parts/php_header_single_world.php";
+require_once $config['root_path_require_once'] . "/Components/Templates/Body_parts/php_header_single_world.php";
 ?>
 <main id="main" class="main wall_main">
    <div class="px-4 py-2" id="content">
@@ -25,36 +25,40 @@ require_once $config['root_path_require_once'] . "/Components/Templates/Body_Par
 </main>
 
 <script>
-   $("#update_world").click(function() {
-      $name = $("#name").val();
-      $desc = $("#desc").val();
-      $.ajax({
-         url: "<?php echo $config['root_path_url'] ?>Components/World/Functions/update_world.php",
-         method: "POST",
-         async: false,
-         data: {
-            id: <?php echo $id_world ?>,
-            name: $name,
-            desc: $desc,
-         },
-         success: function($result) {
-            if ($result != "") {
-               Swal.fire({
-                  icon: 'error',
-                  title: $result,
-               }).then((result) => {
-                  if (result.isConfirmed) {
-                     $("#name").val("<?php echo $world->name ?>");
-                     $("#desc").val("<?php echo $world->desc ?>");
-                  }
-               })
-            } else {
-               location.reload();
-            }
+   window.onload = function() {
+      $.ajaxSetup({
+         beforeSend: function(xhr) {
+            xhr.setRequestHeader('Api-token', '<?php echo $user->getApiToken() ?>');
+            xhr.setRequestHeader('Api-hash', '<?php echo $user->getApiHash() ?>');
          }
-      })
-   });
+      });
+
+      $("#update_world").click(function() {
+         $name = $("#name").val();
+         $desc = $("#desc").val();
+         if (isEmpty($name) || isEmpty($desc)) {
+            showErrorMess(
+               "Zadejte, prosím, údaje"
+            )
+            return;
+         }
+         $.ajax({
+            url: "<?php echo $config['root_path_url'] ?>Restapi/v1/worlds/<?php echo $id_world ?>/" + $name + "/" + $desc,
+            method: "PUT",
+            async: false,
+            success: function($result) {
+               showSuccessMess(
+                  $result,
+               )
+               $("#name").val($name);
+               $("#desc").val($desc);
+            }
+         }).fail(function(data) {
+            showErrorMess(data.responseText)
+         });
+      });
+   }
 </script>
 <?php
-require_once $config['root_path_require_once'] . "Components/Templates/Body_Parts/footer.php";
+require_once $config['root_path_require_once'] . "Components/Templates/Body_parts/footer.php";
 ?>

@@ -52,8 +52,8 @@ class Battle
       while (true) {
          sleep(1);
          $first_val = $second_val = "";
-         $attack_first = (($a1->getTotalAttack() * (rand(35, 115) / 100)) * (1 - $a2->getTotalDefense()) * 0.2);
-         $attack_second = (($a2->getTotalAttack() * (rand(35, 115) / 100)) * (1 - $a1->getTotalDefense()) * 0.2);
+         $attack_first = (($a1->getTotalAttack() * (rand(35, 185) / 100)) * (1 - $a2->getTotalDefense()) * 0.2);
+         $attack_second = (($a2->getTotalAttack() * (rand(35, 185) / 100)) * (1 - $a1->getTotalDefense()) * 0.2);
          if ($attack_first <= 0) $attack_first = 1;
          if ($attack_second <= 0) $attack_second = 1;
 
@@ -71,14 +71,14 @@ class Battle
                $first_val = range(0, $this->getChangeOnDodgeSecond());
                $second_val = range($this->getChangeOnDodgeFirst(), 100);
             }
-
-            if (in_array(random_int(0, 100), $first_val)) {
+            $rand = random_int(0, 100);
+            if (in_array($rand, $first_val)) {
                fwrite($this->getLog(), "První armáda uhnula!" . PHP_EOL);
-               $attack_second = $attack_second * (rand(15, 45) / 100);
+               $attack_second = $attack_second * (rand(15, 25) / 100);
             }
-            if (in_array(random_int(0, 100), $second_val)) {
+            if (in_array($rand, $second_val)) {
                fwrite($this->getLog(), "Druhá armáda uhnula!" . PHP_EOL);
-               $attack_first = $attack_first * (rand(15, 45) / 100);
+               $attack_first = $attack_first * (rand(15, 25) / 100);
             }
          }
          $this->get_random_action(random_int(0, count($this->getListOfActions())));

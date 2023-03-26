@@ -1,10 +1,10 @@
 <?php
 /* Konfigurační soubory */
-require_once "../../Classes/Config.php";
+require_once "../Classes/Config.php";
 $config = (new Config())->get_instance();
 /* Celá hlavička */
-require_once "../../Templates/Body_parts/normal_header.php";
-require_once $config['root_path_require_once'] . "/Components/Templates/Body_Parts/php_header_single_world.php";
+require_once "../Templates/Body_parts/normal_header.php";
+require_once $config['root_path_require_once'] . "/Components/Templates/Body_Parts/php_header.php";
 ?>
 <main id="main" class="main wall_main">
    <div class="container">
@@ -39,35 +39,34 @@ require_once $config['root_path_require_once'] . "/Components/Templates/Body_Par
    </div>
 </main>
 <script>
+   window.onload = function() {
+      $.ajaxSetup({
+         beforeSend: function(xhr) {
+            xhr.setRequestHeader('Api-token', '<?php echo $user->getApiToken() ?>');
+            xhr.setRequestHeader('Api-hash', '<?php echo $user->getApiHash() ?>');
+         }
+      });
+   }
    $("#create_world").click(function() {
       $name = $("#world_name").val();
       $desc = $("#desc").val();
       if ($name == "" || $desc == "") {
-         Swal.fire({
-            icon: 'error',
-            title: 'Zadejte, prosím, údaje',
-         })
+         showErrorMess(
+            'Zadejte, prosím, údaje',
+         );
          return 0;
       }
       $.ajax({
-         url: "<?php echo $config['root_path_url'] ?>Components/World/Functions/create_world.php",
+         url: "<?php echo $config['root_path_url'] ?>Restapi/v1/worlds/" + $name + "/" + $desc,
          method: "POST",
          async: false,
-         data: {
-            name: $name,
-            desc: $desc,
-         },
          success: function($result) {
-            if ($result != "") {
-               Swal.fire({
-                  icon: 'error',
-                  title: $result,
-               })
-            } else {
-               window.location.href = "<?php echo $config['root_path_url'] ?>Components/Wall/worlds.php"
-            }
+            showSuccessMess($result);
+
          }
-      });
+      }).fail(function(data) {
+         showErrorMess(data.responseText);
+      })
    });
 </script>
 <?php
