@@ -27,8 +27,17 @@ require_once $config['root_path_require_once'] . "/Components/Templates/Body_par
       </div>
 </main>
 <script>
+   window.onload = function() {
+      $.ajaxSetup({
+         beforeSend: function(xhr) {
+            xhr.setRequestHeader('Api-token', '<?php echo $user->getApiToken() ?>');
+            xhr.setRequestHeader('Api-hash', '<?php echo $user->getApiHash() ?>');
+         }
+      });
+   }
    $id = "";
    $("#submit").click(function() {
+      $username = $("#user").val();
       if ($("#user").val() == "") {
          Swal.fire({
             icon: 'error',
@@ -36,62 +45,29 @@ require_once $config['root_path_require_once'] . "/Components/Templates/Body_par
          })
          return 0;
       }
-      $username = $("#user").val();
       $.ajax({
-         url: "<?php echo $config['root_path_url'] ?>Restapi/v1/get_user_by_name.php",
+         url: "<?php echo $config['root_path_url'] ?>Restapi/v1/permissions/<?php echo $id_world ?>/" + $username + "",
          type: "POST",
          async: false,
-         data: {
-            username: $username
-         },
-         success: function(result) {
-            $id = result;
-            if ($id == "error") {
-               return 0;
-            }
-         },
-      })
-      $.ajax({
-         url: "<?php echo $config['root_path_url'] ?>Components/World/Functions/write_permission.php",
-         method: "POST",
-         async: false,
-         data: {
-            id: $id,
-            current_open_world: <?php echo $id_world ?>
-         },
          success: function($result) {
-            if ($result != "") {
-               Swal.fire({
-                  icon: 'error',
-                  title: $result,
-               })
-            } else {
-               location.reload();
-            }
+            showSuccessMessAndReload($result);
          }
-      })
+      }).fail(function(data) {
+         showErrorMess(data.responseText);
+      });
    })
    $(".remove_permission").click(function() {
+      $username = $("#user").val();
       $id_warrior = this.id;
-
       $.ajax({
-         url: "<?php echo $config['root_path_url'] ?>Components/World/Functions/remove_permission.php",
-         method: "POST",
+         url: "<?php echo $config['root_path_url'] ?>Restapi/v1/permissions/<?php echo $id_world ?>/" + $id_warrior,
+         method: "DELETE",
          async: false,
-         data: {
-            id: $id_warrior,
-            id_world: <?php echo $id_world ?>
-         },
          success: function($result) {
-            if ($result != "") {
-               Swal.fire({
-                  icon: 'error',
-                  title: $result,
-               })
-            } else {
-               location.reload();
-            }
+            showSuccessMessAndReload($result);
          }
+      }).fail(function(data) {
+         showErrorMess(data.responseText);
       });
    });
 </script>

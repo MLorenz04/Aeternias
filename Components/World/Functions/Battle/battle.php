@@ -9,9 +9,7 @@ require $config["root_path_require_once"] . "Components/Classes/World.php";
 require $config["root_path_require_once"] . "Components/Classes/Warrior.php";
 
 /* Vytváření slugu pro bitvu - battle831mxAíy.php například. Funguje místo ID */
-if (session_status() === PHP_SESSION_NONE) {
-   session_start();
-}
+session_start();
 $user = unserialize($_SESSION['logged_user']);
 $id = $user->getId();
 $slug = $_POST["slug"];
@@ -51,6 +49,7 @@ foreach ($warriors2 as $id => $count) {
 /* Vytvoření armád */
 $a1 = new Army($first_army);
 $a2 = new Army($second_army);
+$error = false;
 /* Vytvoření bitvy */
 
 $total_health_first_army = $a1->getTotalAttack();
@@ -65,3 +64,6 @@ if ((($total_health_first_army > $total_health_second_army) && $total_health_sec
    echo "Armáda nemá s kým bojovat :/";
    exit;
 }
+
+$battle = new Battle($a1, $a2, $slug, $id_world, $id);
+$battle->start_battle();

@@ -32,7 +32,7 @@ if (!class_exists("World")) {
          $result_world = $con->query($sql_world_info);
          while ($row = $result_world->fetch_assoc()) {
             $this->setId($row["id"]); //Id světa
-            $this->setName ($row["name"]); //Jméno světa
+            $this->setName($row["name"]); //Jméno světa
             $this->setDesc($row["description"]); //Popisek
             $this->setIdOwner($row["id_owner"]); //Id vlastníka
             $this->setWarriorCount($row["warrior_count"]); //Počet válečníků
@@ -42,9 +42,11 @@ if (!class_exists("World")) {
          }
          $sql_warriors_info = "select * from warrior where id_world = $id";
          $result_warriors = $con->query($sql_warriors_info);
+         $warrior_list = array();
          while ($row = $result_warriors->fetch_assoc()) {
-            array_push($this->list_of_warriors, $row); //Naplní pole válečníkami, kteří existují
+            array_push($warrior_list, $row); //Naplní pole válečníkami, kteří existují
          }
+         $this->setWarriors($warrior_list);
          return $this;
       }
 
@@ -136,11 +138,13 @@ if (!class_exists("World")) {
          return $this->list_of_permissions = $perm;
       }
 
-      function getWarriorCount() {
+      function getWarriorCount()
+      {
          return $this->warrior_count;
       }
 
-      function setWarriorCount($count) {
+      function setWarriorCount($count)
+      {
          return $this->warrior_count = $count;
       }
    }

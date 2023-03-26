@@ -2,16 +2,17 @@
 /* Konfigurační soubory */
 include("../../../Components/Classes/Config.php");
 $config = (new Config())->get_instance();
-require_once "../../Errors/error_messages.php";
 require_once "../../Classes/User.php";
-session_start();
+if (session_status() === PHP_SESSION_NONE) {
+   session_start();
+}
 /* Připojení do databáze */
 $con = $config['db'];
 /* Proměnné */
 $nickname = $_POST['username'];
 $password = $_POST['password'];
 /* Sql příkazy */
-$sql_get_users = "select id,nickname, password from users where nickname='$nickname'";
+$sql_get_users = "select * from users where nickname='$nickname'";
 /* Přihlášení do stránky */
 $result = $con->query($sql_get_users);
 if (mysqli_num_rows($result) > 0) {

@@ -5,7 +5,9 @@ require_once $config['root_path_require_once'] . "Components/Classes/Security.ph
 $config = (new Config())->get_instance();
 $security = (new Security());
 /* Založení session */
-session_start();
+if (session_status() === PHP_SESSION_NONE) {
+   session_start();
+}
 /* Kontrola přihlášení  */
 if ($security->check_login() == False) {
   header("location: " . $config['root_path_url'] . "index.php");
@@ -17,3 +19,4 @@ require_once $config['root_path_require_once'] . "/Components/Templates/Body_par
 $user = unserialize($_SESSION['logged_user']);
 $nickname = $user->getUsername();
 $world_count = $user->getWorldCount();
+

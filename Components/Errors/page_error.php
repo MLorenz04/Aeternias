@@ -4,7 +4,7 @@ $config = (new Config())->get_instance();
 require_once $config['root_path_require_once'] . 'Components/Templates/Body_parts/head.php';
 require_once $config["root_path_require_once"] . 'Components/Classes/Errors.php';
 if (!isset($_GET["id"])) {
-   $error = new Errors(0);
+   $error = new Errors(-1);
 } else {
    $error = new Errors($_GET["id"]);
 }
