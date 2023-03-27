@@ -12,16 +12,20 @@ if (!class_exists("World")) {
       public $list_of_permissions = array();
       public $id, $name, $desc, $id_owner, $warrior_count, $user_count, $date, $admin;
 
-      /**
-       * @param mixed $input_id Id světa, od kterého chceme info
-       * @return
-       */
 
+      /**
+       * Konstruktor
+       *
+       * @param int $id
+       * @return void
+       */
       function  __construct($id)
       {
          $this->id = $id;
       }
-
+      /**
+       * Získá instanci světa
+       */
       function get_instance()
       {
          require_once "Config.php";
@@ -49,103 +53,165 @@ if (!class_exists("World")) {
          $this->setWarriors($warrior_list);
          return $this;
       }
-
+      /**
+       * Metoda vracející id světa
+       * @return int Id světa
+       */
       function getId()
       {
          return $this->id;
       }
-
+      /**
+       * Metoda nastavující id
+       * @param int Id
+       */
       function setId($id)
       {
          return $this->id = $id;
       }
-
+      /**
+       * Metoda vracející název světa
+       * @return string Název světa
+       */
       function getName()
       {
          return $this->name;
       }
-
+      /**
+       * Metoda vracející jméno světa
+       * @param string Jméno světa
+       */
       function setName($name)
       {
-         return $this->name = $name;
+         $this->name = $name;
       }
-
+      /**
+       * Metoda vracející popisek světa
+       * @return string Popisek světa
+       */
       function getDesc()
       {
          return $this->desc;
       }
-
+      /**
+       * Metoda nastavující popis
+       * @param string Popis
+       */
       function setDesc($desc)
       {
-         return $this->desc = $desc;
+         $this->desc = $desc;
       }
+      /**
+       * Metoda vracející id vlastníka
+       * @return int Id vlastníka
+       */
       function getIdOwner()
       {
          return $this->id_owner;
       }
-
+      /**
+       * Metoda nastavující id vlastníka
+       * @param int Id vlastníka
+       */
       function setIdOwner($id_owner)
       {
-         return $this->id_owner = $id_owner;
+         $this->id_owner = $id_owner;
       }
-
+      /**
+       * Metoda vracející počet uživatelů
+       * @return int Počet uživatelů
+       */
       function getUserCount()
       {
          return $this->user_count;
       }
-
+      /**
+       * Metoda nastavující den registrace
+       * @param string Den registrace
+       */
       function setUserCount($count)
       {
-         return $this->user_count = $count;
+         $this->user_count = $count;
       }
+      /**
+       * Metoda vracející datum registrace
+       * @return int  datum registrace
+       */
       function getUserDate()
       {
          return $this->date;
       }
-
+      /**
+       * Metoda nastavující den registrace
+       * @param string Den registrace
+       */
       function setUserDate($date)
       {
-         return $this->date = $date;
+         $this->date = $date;
       }
-
+      /**
+       * Metoda vracející vlasntíka světa
+       * @return mixed vlasntíka světa
+       */
       function getAdmin()
       {
          return $this->admin;
       }
-
+      /**
+       * Metoda nastavující admina
+       * @param mixed Admin
+       */
       function setAdmin($admin)
       {
-         return $this->admin = $admin;
+         $this->admin = $admin;
       }
-
+      /**
+       * Metoda vracející pole válečníků světa
+       * @return array Pole válečníků světa
+       */
       function getWarriors()
       {
          return $this->list_of_warriors;
       }
-
+      /**
+       * Metoda nastavující pole válečníků světa
+       * @param int pole válečníků světa
+       */
       function setWarriors($list)
       {
-         return $this->list_of_warriors = $list;
+         $this->list_of_warriors = $list;
       }
-
+      /**
+       * Metoda vracející pole pravomocí světa
+       * @return array Pole pravomocí světa
+       */
       function getPermissions()
       {
          return end($this->list_of_permissions);
       }
-
+      /**
+       * Metoda nastavující počet pravomocí světa
+       * @param array počet pravomocí světa
+       */
       function setPermissions($perm)
       {
-         return $this->list_of_permissions = $perm;
+         $this->list_of_permissions = $perm;
       }
-
+      /**
+       * Metoda vracející počet válečníků světa
+       * @return array Počet válečníků světa
+       */
       function getWarriorCount()
       {
          return $this->warrior_count;
       }
-
+      /**
+       * Metoda nastavující počet válečníků světa
+       * @param array počet válečníků světa
+       */
       function setWarriorCount($count)
       {
-         return $this->warrior_count = $count;
+         $this->warrior_count = $count;
       }
    }
 }

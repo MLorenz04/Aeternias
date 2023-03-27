@@ -1,5 +1,10 @@
 <?php
 if (!class_exists("Errors")) {
+   /**
+    * Třída na handle Errorů
+    * 
+    * @author Matyáš Lorenz
+    */
    class Errors
    {
       private $error_message = "";
@@ -9,7 +14,8 @@ if (!class_exists("Errors")) {
          "error_page" => array('error_id' => -1, 'error_name' => 'Chyba stránky na stránky', 'error_desc' => 'Podařilo se vám rozbít stránku na chyby!', 'code_of_error' => 404),
          "permissions" => array('error_id' => 1, 'error_name' => 'Chybějí vám pravomoce', 'error_desc' => 'K tomé části stránky nemáte přístup!', 'code_of_error' => 403),
          "non_existing_world" => array('error_id' => 2,  'error_name' => 'Neexistující svět', 'error_desc' => 'Tento svět neexistuje! Nejspíše byl tento svět smazán.', 'code_of_error' => 404),
-         "error_no_world_id" => array('error_id' => 3, 'error_name' => 'Není poznat, v jakém jste světě', 'error_desc' => 'Ve vaší adrese bohužel není zadán svět, do kterého byste rádi. <br>', 'code_of_error' => 404)
+         "error_no_world_id" => array('error_id' => 3, 'error_name' => 'Není poznat, v jakém jste světě', 'error_desc' => 'Ve vaší adrese bohužel není zadán svět, do kterého byste rádi. <br>', 'code_of_error' => 404),
+         "error_no_existing_world" => array('error_id' => 4, 'error_name' => 'Neznámý uživatel', 'error_desc' => 'Tento uživatel neexistuje', 'code_of_error' => 404),
       ];
       private $list_error_messages = array(
          //Proměnné s regulérními výrazy 
@@ -41,7 +47,9 @@ if (!class_exists("Errors")) {
          "info_mess_success_register" => "Váš účet byl úspěšně vytvořen!",
          "info_mess_success_warrior_creation" => "Vaše jednotka byla úspěšně vytvořena!"
       );
-
+      /**
+       * Konstruktor tvořící objekt a nastavuje hlášku a stavový kód
+       */
       public function __construct($id)
       {
          if ($id != 0) {
@@ -54,29 +62,53 @@ if (!class_exists("Errors")) {
             }
          }
       }
+      /**
+       * Vrací instanci třídy
+       * @return Errors Třída errorů 
+       */
       public function getInstance()
       {
          return $this;
       }
+      /**
+       * Vrací errorovou hlášku třídy
+       * @return string error 
+       */
       public function getErrorMessage()
       {
          return $this->error_message;
       }
+      /**
+       * Vrací nadpis erroru
+       * @return string Název errorů 
+       */
       public function getErrorHeader()
       {
          return $this->error_header;
       }
+      /**
+       * Vrací http kód error
+       * @return string Kód erroru
+       */
       public function getCodeOfError()
       {
          return $this->code_of_error;
       }
+      /**
+       * Vrací list s proměnnými a typy errorů
+       * @return array List errorů 
+       */
       public function getList()
       {
          return $this->list_error_messages;
       }
+      /**
+       * Nastavení list s proměnnými a typy errorů
+       * @param array List errorů 
+       */
       public function setList($list_error_messages)
       {
-         return $this->list_error_messages = $list_error_messages;
+         $this->list_error_messages = $list_error_messages;
       }
    }
 }

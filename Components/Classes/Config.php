@@ -51,8 +51,7 @@ if (!class_exists('Config')) {
                 $this->db_name = "Aeternias";
                 $this->db_user = "root";
                 $this->db_password = "";
-            }
-           else {
+            } else {
                 $this->document_root = $_SERVER['DOCUMENT_ROOT'] . "/";
                 $this->document_root_url = "/";
                 $this->db_server = "sql6.webzdarma.cz";

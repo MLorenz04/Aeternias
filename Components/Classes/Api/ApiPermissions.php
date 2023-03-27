@@ -1,10 +1,20 @@
 <?php
 require "Api.php";
+/**
+ * Odděděná třída API pro zpracování požadavků ohledně světa
+ * @author Matyáš Lorenz
+ * @extends Api
+ */
 class ApiPermissions extends Api
 {
-
+   /**
+    * API metoda sloužící k vytváření pravomocí 
+    *
+    * @return err Informační hláška a stavový kód
+    */
    function create_permission()
    {
+
       $username = strip_tags($_GET['username']);
       $id_world = strip_tags($_GET['id_world']);
       $con = $this->config["db"];
@@ -47,13 +57,19 @@ class ApiPermissions extends Api
       header("HTTP/1.1 200 Ok");
       return "Pravomoce uživateli " . $username . " byly přidány";
    }
+   /**
+    * API metoda sloužící k odebrání pravomocí 
+    *
+    * @return err Informační hláška a stavový kód
+    *
+    */
    function remove_permission()
    {
       $id_owner = strip_tags($_GET['username']);
       $id_world = strip_tags($_GET['id_world']);
       $world = (new World($id_world))->get_instance();
       if (!($this->user->getId() == $world->id_owner)) {
-         header("HTTP/1.1 400 Bad Request");
+         header("HTTP/1.1 403 Forbidden");
          return "Na toto nemáte pravomoce!";
          exit();
       }
@@ -73,6 +89,12 @@ class ApiPermissions extends Api
          exit();
       }
    }
+   /**
+    * API metoda sloužící k získání pravomoce
+    *
+    * @return err Informační hláška a stavový kód
+    *
+    */
    function get_permission()
    {
       $id_permission = strip_tags($_GET["user_id"]);

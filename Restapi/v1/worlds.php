@@ -17,7 +17,7 @@ switch ($_SERVER["REQUEST_METHOD"]) {
    case "PUT":
       print($api_private->update_world());
       break;
-   /*case "DELETE":
+   case "DELETE":
       print($api_private->remove_world());
-      break; */
+      break;
 }

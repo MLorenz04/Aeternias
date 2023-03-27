@@ -8,6 +8,9 @@ if (!class_exists("Database")) {
       public $db_user;
       public $db_password;
       public $db_name;
+      /**
+       * Konstruktor
+       */
       function __construct($db_server, $db_user, $db_password, $db_name)
       {
          $this->db_server = $db_server;
@@ -15,7 +18,9 @@ if (!class_exists("Database")) {
          $this->db_password = $db_password;
          $this->db_name = $db_name;
       }
-
+      /**
+       * Funkce, která vytvoří instanci třídy Database, ovšem nastaví $instance s připojením do ní pouze jednou
+       */
       function get_instance()
       {
          if (is_null(self::$instance)) {

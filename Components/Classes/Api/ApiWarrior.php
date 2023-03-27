@@ -1,13 +1,23 @@
 <?php
 require "Api.php";
+/**
+ * Odděděná třída API pro zpracování požadavků ohledně válečníka
+ * 
+ * @author Matyáš Lorenz
+ * @extends Api
+ */
 class ApiWarrior extends Api
 {
-
+   /**
+    * API metoda vytvářející válečníka
+    *
+    * @return err Informace o konečném stavu požadavku
+    */
    public function create_warrior()
    {
       $id_world = $_GET["id_world"];
       if (!($this->security->check_permissions($id_world, $this->user))) {
-         header("HTTP/1.1 400 Bad Request");
+         header("HTTP/1.1 403 Forbidden");
          return $this->errors["error_api_permission"];
          exit();
       }
@@ -58,8 +68,14 @@ class ApiWarrior extends Api
          $statement->bind_param("ssiiiii", $name, $desc, $attack, $defense, $agility, $health, $id_world);
          $statement->execute();
       }
-      return ($this->isUsingWebsite()) ? true : "Úspěšně vloženo!";
+      header("HTTP/1.1 201 Created");
+      return  "Úspěšně vloženo!";
    }
+   /**
+    * API metoda odstraňující válečníka
+    *
+    * @return err Informace o konečném stavu požadavku
+    */
    public function remove_warrior()
    {
 
@@ -67,7 +83,7 @@ class ApiWarrior extends Api
       $id_warrior = $_GET['id_warrior'];
 
       if (!($this->security->check_permissions($id_world, $this->user))) {
-         header("HTTP/1.1 400 Bad Request");
+         header("HTTP/1.1 403 Forbiddent");
          return $this->errors["error_api_permission"];
          exit();
       }
@@ -82,7 +98,14 @@ class ApiWarrior extends Api
       $statement->execute();
       $con->commit();
       exit();
+      header("HTTP/1.1 200 Ok");
+      return "Úspěšně smazáno";
    }
+   /**
+    * API metoda kontrolující, zdali je válečník v pořádku
+    *
+    * @return warriors_json JSON objekt válečníků
+    */
    function check_warrior()
    {
 
@@ -111,6 +134,11 @@ class ApiWarrior extends Api
       header("HTTP/1.1 200 Ok");
       return "Vše v pořádku";
    }
+   /**
+    * API metoda na získání všech existující válečníků
+    *
+    * @return warriors_json JSON objekt válečníků
+    */
    function get_all_warriors()
    {
       $con = $this->config['db'];
@@ -118,7 +146,6 @@ class ApiWarrior extends Api
       $warriors = new stdClass();
       $warriors->array = array();
       $result = $this->config["db"]->query($sql);
-      $con->execute();
       while ($row = $result->fetch_assoc()) {
          array_push($warriors->array, $row);
       }
