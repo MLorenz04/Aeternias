@@ -1,11 +1,21 @@
 <?php
 require "Api.php";
+/**
+ * Odděděná třída API pro zpracování požadavků ohledně světa
+ * @author Matyáš Lorenz
+ * @extends Api
+ */
 class ApiWorld extends Api
 {
+   /**
+    * API metoda updatující svět
+    *
+    * @return err Informační hláška a stavový kód
+    */
    function create_world()
    {
       if (!($this->security->check_existing_user($this->user))) {
-         header("HTTP/1.1 400 Bad Request");
+         header("HTTP/1.1 403 Forbidden");
          return $this->errors["error_api_permission"];
          exit();
       }
@@ -52,6 +62,7 @@ class ApiWorld extends Api
       $this->user->setWorldCount($this->user->getWorldCount() + 1);
       /* Pokud je uživatel přihlášení a na stránce, updatne se jeho session. */
       if (isset($_SESSION["logged_user"])) {
+         $this->user->setPermissionsFromDb();
          $_SESSION["logged_user"] = serialize($this->user);
       }
       $con->commit();
@@ -59,6 +70,11 @@ class ApiWorld extends Api
       return "Úspěšně vloženo!";
       exit();
    }
+   /**
+    * API metoda na získání všech světů
+    *
+    * @return err Informační hláška a stavový kód
+    */
    function get_all_worlds()
    {
       $sql = "select * from world";
@@ -72,7 +88,11 @@ class ApiWorld extends Api
       header("HTTP/1.1 200 Ok");
       return $worlds_json;
    }
-
+   /**
+    * API metoda updatující svět
+    *
+    * @return err Informační hláška a stavový kód
+    */
    function update_world()
    {
       $world_name = $_GET['name'];
@@ -81,13 +101,13 @@ class ApiWorld extends Api
       /* Kontrola pravomocí */
 
       if (!($this->security->check_existing_user($this->user))) {
-         header("HTTP/1.1 400 Bad Request");
+         header("HTTP/1.1 403 Forbidden");
          return $this->errors["error_api_permission"];
          exit();
       }
 
       if (!($this->security->check_permissions($world_id, $this->user))) {
-         header("HTTP/1.1 400 Bad Request");
+         header("HTTP/1.1 403 Forbidden");
          return $this->errors["error_api_permission"];
          exit();
       }
@@ -119,7 +139,7 @@ class ApiWorld extends Api
       $statement->execute();
       $result = $statement->get_result();
       $row = $result->fetch_array(MYSQLI_NUM);
-      if($row != null) {
+      if ($row != null) {
          header("HTTP/1.1 400 Bad Request");
          return "Tento název světa již existuje";
       }
@@ -130,5 +150,41 @@ class ApiWorld extends Api
       header("HTTP/1.1 200 Ok");
       return "Úspěšně updatováno!";
       exit();
+   }
+   /**
+    * API metoda mazající svět
+    *
+    * @return err Informační hláška a stavový kód
+    */
+   function remove_world()
+   {
+      $id = $_GET["id"];
+      $token = $this->getToken();
+      $hash = $this->getHash();
+
+      $id_owner = $this->user->getId();
+      $this->config["db"]->begin_transaction();
+      $sql = "select id_owner from world where `id`=?";
+      $statement = $this->config["db"]->prepare($sql);
+      $statement->bind_param("i", $id);
+      $statement->execute();
+      $result = $statement->get_result();
+      $row = $result->fetch_assoc();
+      if ($row == 0) {
+         header("HTTP/1.1 400 Not Found");
+         return "Tento svět neexistuje";
+      }
+      $id_owner = $row["id_owner"];
+      if ($this->user->getId() != $id_owner) {
+         header("HTTP/1.1 400 Not Found");
+         return "K tomuto světu nemáte pravomoce";
+      }
+      $sql = "delete from world where `id`=?";
+      $statement = $this->config["db"]->prepare($sql);
+      $statement->bind_param("i", $id);
+      $statement->execute();
+      $this->config["db"]->commit();
+      header("HTTP/1.1 200 Ok");
+      return "Svět úspěšně odstraněn!";
    }
 }

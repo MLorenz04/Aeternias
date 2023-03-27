@@ -8,7 +8,7 @@ require_once $config['root_path_require_once'] . "/Components/Templates/Body_par
 <main id="main" class="main wall_main">
   <div id="content">
     <div class="container px-4 pb-4">
-      <h1 class="text-center wall-header"> Světy </h1>
+      <h1 class="text-center wall-header"> Vaše Světy </h1>
       <h3 class="text-center"> Vytvořte si svůj vlastní svět a generujte epické bitvy! </h3>
       <p> Aktuálně máte vytvořeno <?php echo $world_count ?> z 10 světů.
       <div class="container-cards">
@@ -25,7 +25,16 @@ require_once $config['root_path_require_once'] . "/Components/Templates/Body_par
         require_once "Wall_Components/your_world.php";
         ?>
       </div>
+      <hr style="color:white; width:100%;"> </hr>
+      <h3 style="text-align:center"> Světy mých přátel </h3>
+      <div class="container-cards">
+        <?php
+        /* Výpis všech uživatelových světů */
+        require_once "Wall_Components/others_world.php";
+        ?>
+      </div>
     </div>
+  </div>
   </div>
 </main>
 <?php
