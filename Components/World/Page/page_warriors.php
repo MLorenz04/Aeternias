@@ -17,7 +17,7 @@ require_once $config['root_path_require_once'] . "/Components/Templates/Body_par
          <?php foreach ($world->list_of_warriors as $warrior) {
             $id = $warrior['id']
          ?>
-            <div id="card-<?php echo $id ?>" class=" m-4 card world body-add-world" style="width: 18rem; height:auto">
+            <div id="card-<?php echo $id ?>" class="m-4 card world body-add-world" style="width: 18rem; height:auto">
                <span role="button"><i id="<?php echo $id ?>" class="remove text-dark-always remove-warrior bi bi-x-circle position-fixed"></i></span>
                <a class="single-world-link" href="<?php echo $config['root_path_url'] . "Components/World/Page/single_warrior.php?" ?>">
                   <div class="card-body">

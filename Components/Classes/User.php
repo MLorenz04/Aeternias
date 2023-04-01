@@ -132,8 +132,9 @@ if (!class_exists("User")) {
          $statement->bind_param("i", $id);
          $result = $statement->execute();
          $result = $statement->get_result();
-         $rows = $result->fetch_array(MYSQLI_NUM);
-         array_push($this->worlds, $rows);
+         while($row = $result->fetch_array(MYSQLI_NUM)) {
+         array_push($this->worlds, $row);
+         }
          return $this->worlds;
       }
       /**

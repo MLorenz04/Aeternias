@@ -16,9 +16,10 @@ require_once $config['root_path_require_once'] . "Components/Templates/Body_Part
 <main id="main" class="main wall_main">
    <div class="container px-4">
       <div class="d-flex justify-content-end ">
-         <a href="<?php echo $config['root_path_url'] . "Components/Profile/Page/settings.php?id=" . $users_profile->getId() ?>"><button class="btn btn-primary my-2"> Nastavení </button> </a>
+         <a href="<?php echo $config['root_path_url'] . "Components/Profile/Page/settings.php?id=" . $users_profile->getId() ?>"><button class="btn btn-primary my-3 mx-2"> Nastavení </button> </a>
+         <a href="<?php echo $config['root_path_url'] . 'Components/Profile/Functions/log_off.php' ?>"> <button class="btn btn-primary navbar-link my-3 mx-2"> Odhlásit </button> </a>
       </div>
-      <section>
+      <section id="profile_info">
          <h1> <?php echo $users_profile->getUsername() ?> </h1>
          <p> <strong>Email:</strong> <?php echo $users_profile->getEmail() ?> </p>
          <p> <strong>Počet světů: </strong><?php echo $users_profile->getWorldCount() ?> </p>
@@ -32,21 +33,18 @@ require_once $config['root_path_require_once'] . "Components/Templates/Body_Part
       </section>
       <section>
          <h2> Vytvořené světy </h2>
-         <?php
-         foreach ($users_profile->getWorlds() as $world) { ?>
-            <div class="container-cards">
+         <div class="container-cards">
+            <?php
+            foreach ($users_profile->getWorlds() as $world) { ?>
                <a class="new-world-href" href="<?php echo $config['root_path_url']  ?>Components/World/Page/page_single_world.php?id=<?php echo $world[0] ?>">
-
-                  <div class="card m-4" style="width: 18rem;">
-                     <div class="card-body body-add-world">
-                        <h5 class="card-title text-center"><?php print_r($world[1]); ?></h5>
-
-                     </div>
+                  <div class="card body-add-world" style="width: 18rem;">
+                     <h5 style="color:black" class="text-center"><?php print_r($world[1]); ?></h5>
                   </div>
                </a>
             <?php
-         }
+            }
             ?>
+         </div>
       </section>
    </div>
 </main>
