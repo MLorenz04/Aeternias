@@ -10,12 +10,12 @@ require_once $config['root_path_require_once'] . "/Components/Templates/Body_par
    <div class="px-4 py-2" id="content">
       <h1> Správa uživatelů </h1>
       <p> Zde můžete spravovat hráče ve Vašem úžasném světě! Přidejte kohokoliv budete chtít, upravujte jim role, dejte jim přezdívky a nechte je bojovat! </p>
-      <div class="container d-flex justify-content-center">
+      <div class="container container-add-user justify-content-center">
          <div class="col-lg-5" id="list_of_users">
             <h3 class="text-center"> Seznam uživatelů </h3>
             <?php require_once $config['root_path_require_once'] . "Components/Templates/list_of_users.php" ?>
          </div>
-         <div class="container d-flex justify-content-center">
+         <div class="container justify-content-center container-permission">
             <div class="col-lg-5">
                <h3 class="text-center"> Přidejte uživatele </h3>
                <form>

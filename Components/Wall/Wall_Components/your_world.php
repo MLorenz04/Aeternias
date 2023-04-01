@@ -13,11 +13,11 @@ while ($row = $result->fetch_assoc()) {
    $current_id = $row['id'];
 ?>
 
-   <div class="m-4 card world body-add-world" style="width: 18rem;">
+   <div class="card world body-add-world">
       <a class="single-world-link" href="<?php echo $config['root_path_url'] . "Components/World/Page/page_single_world.php?id=$current_id" ?>">
          <div class="card-body">
-            <h5 class="card-text"><?php echo $row['name']; ?></h5>
-            <p class="card-text"><?php echo $row['description']; ?></p>
+            <h5 class="card-text light-text"><?php echo $row['name']; ?></h5>
+            <p class="card-text light-text"><?php echo $row['description']; ?></p>
          </div>
       </a>
    </div>

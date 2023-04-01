@@ -22,8 +22,12 @@ if ($users_profile->getEmail() == null) {
 ?>
 <main id="main" class="main wall_main">
    <div class="px-4 py-2" id="content">
-      <h1> Nastavení </h1>
-      <p> Zde si můžete upravit svůj profil </p>
+      <div class="d-flex py-4" id="container-profile">
+         <h1 class="m-auto"> Jednotky </h1>
+      </div>
+      <div>
+
+      </div>
       <form onclick="event.preventDefault()" id="form" method="POST" class="mb-3">
          <div class="mb-3">
             <label for="name" class="form-label">Jméno</label>
@@ -43,6 +47,9 @@ if ($users_profile->getEmail() == null) {
          </div>
          <button id="update_world" class="btn btn-primary"> Uložit </button>
       </form>
+      <h2 style="text-align:center"> Další nastavení </h2>
+      <hr>
+      <button onclick="toggle_dark_mode()" id="dark-mode" class="btn btn-secondary position-absolute"> Světlý mód</button>
    </div>
 </main>
 
