@@ -141,7 +141,7 @@
                     "blank": 1,
                     "code": 51,
                     "comment": 3,
-                    "filename": "Components\\Profile\\Page\\createAccount.php"
+                    "filename": "Components\\Profile\\Page\\register.php"
                 },
                 {
                     "blank": 3,
@@ -213,7 +213,7 @@
                     "blank": 1,
                     "code": 34,
                     "comment": 6,
-                    "filename": "Components\\Templates\\Wall\\information.php"
+                    "filename": "Components\\Templates\\Wall\\page_information.php"
                 },
                 {
                     "blank": 0,
@@ -225,7 +225,7 @@
                     "blank": 2,
                     "code": 30,
                     "comment": 6,
-                    "filename": "Components\\Templates\\Wall\\tutorial.php"
+                    "filename": "Components\\Templates\\Wall\\page_tutorial.php"
                 },
                 {
                     "blank": 1,
@@ -710,7 +710,7 @@
                     "blank": 1,
                     "code": 52,
                     "comment": 3,
-                    "filename": "Components\\Profile\\Page\\createAccount.php"
+                    "filename": "Components\\Profile\\Page\\register.php"
                 },
                 {
                     "blank": 6,
@@ -794,7 +794,7 @@
                     "blank": 1,
                     "code": 27,
                     "comment": 2,
-                    "filename": "Components\\Wall\\information.php"
+                    "filename": "Components\\Wall\\page_information.php"
                 },
                 {
                     "blank": 0,
@@ -806,7 +806,7 @@
                     "blank": 2,
                     "code": 23,
                     "comment": 2,
-                    "filename": "Components\\Wall\\tutorial.php"
+                    "filename": "Components\\Wall\\page_tutorial.php"
                 },
                 {
                     "blank": 1,
@@ -1298,7 +1298,7 @@
                     "blank": 1,
                     "code": 52,
                     "comment": 3,
-                    "filename": "Components\\Profile\\Page\\createAccount.php"
+                    "filename": "Components\\Profile\\Page\\register.php"
                 },
                 {
                     "blank": 0,
@@ -1376,7 +1376,7 @@
                     "blank": 1,
                     "code": 27,
                     "comment": 2,
-                    "filename": "Components\\Wall\\information.php"
+                    "filename": "Components\\Wall\\page_information.php"
                 },
                 {
                     "blank": 0,
@@ -1388,7 +1388,7 @@
                     "blank": 2,
                     "code": 23,
                     "comment": 2,
-                    "filename": "Components\\Wall\\tutorial.php"
+                    "filename": "Components\\Wall\\page_tutorial.php"
                 },
                 {
                     "blank": 1,
@@ -1868,7 +1868,7 @@
                     "blank": 1,
                     "code": 52,
                     "comment": 3,
-                    "filename": "Components\\Profile\\Page\\createAccount.php"
+                    "filename": "Components\\Profile\\Page\\register.php"
                 },
                 {
                     "blank": 0,
@@ -1946,7 +1946,7 @@
                     "blank": 1,
                     "code": 27,
                     "comment": 2,
-                    "filename": "Components\\Wall\\information.php"
+                    "filename": "Components\\Wall\\page_information.php"
                 },
                 {
                     "blank": 0,
@@ -1958,7 +1958,7 @@
                     "blank": 2,
                     "code": 23,
                     "comment": 2,
-                    "filename": "Components\\Wall\\tutorial.php"
+                    "filename": "Components\\Wall\\page_tutorial.php"
                 },
                 {
                     "blank": 1,
@@ -2467,7 +2467,7 @@
                     "blank": 0,
                     "code": 51,
                     "comment": 3,
-                    "filename": "Components\\Profile\\Page\\createAccount.php"
+                    "filename": "Components\\Profile\\Page\\register.php"
                 },
                 {
                     "blank": 0,
@@ -2545,7 +2545,7 @@
                     "blank": 1,
                     "code": 27,
                     "comment": 2,
-                    "filename": "Components\\Wall\\information.php"
+                    "filename": "Components\\Wall\\page_information.php"
                 },
                 {
                     "blank": 0,
@@ -2557,7 +2557,7 @@
                     "blank": 2,
                     "code": 23,
                     "comment": 2,
-                    "filename": "Components\\Wall\\tutorial.php"
+                    "filename": "Components\\Wall\\page_tutorial.php"
                 },
                 {
                     "blank": 1,
@@ -3054,7 +3054,7 @@
                     "blank": 0,
                     "code": 51,
                     "comment": 3,
-                    "filename": "Components\\Profile\\Page\\createAccount.php"
+                    "filename": "Components\\Profile\\Page\\register.php"
                 },
                 {
                     "blank": 0,
@@ -3132,7 +3132,7 @@
                     "blank": 1,
                     "code": 27,
                     "comment": 2,
-                    "filename": "Components\\Wall\\information.php"
+                    "filename": "Components\\Wall\\page_information.php"
                 },
                 {
                     "blank": 0,
@@ -3144,7 +3144,7 @@
                     "blank": 2,
                     "code": 23,
                     "comment": 2,
-                    "filename": "Components\\Wall\\tutorial.php"
+                    "filename": "Components\\Wall\\page_tutorial.php"
                 },
                 {
                     "blank": 1,
@@ -3677,7 +3677,7 @@
                     "blank": 0,
                     "code": 51,
                     "comment": 3,
-                    "filename": "Components\\Profile\\Page\\createAccount.php"
+                    "filename": "Components\\Profile\\Page\\register.php"
                 },
                 {
                     "blank": 0,
@@ -3755,7 +3755,7 @@
                     "blank": 1,
                     "code": 27,
                     "comment": 2,
-                    "filename": "Components\\Wall\\information.php"
+                    "filename": "Components\\Wall\\page_information.php"
                 },
                 {
                     "blank": 0,
@@ -3767,7 +3767,7 @@
                     "blank": 2,
                     "code": 23,
                     "comment": 2,
-                    "filename": "Components\\Wall\\tutorial.php"
+                    "filename": "Components\\Wall\\page_tutorial.php"
                 },
                 {
                     "blank": 1,
@@ -4282,7 +4282,7 @@
                     "blank": 0,
                     "code": 51,
                     "comment": 3,
-                    "filename": "Components\\Profile\\Page\\createAccount.php"
+                    "filename": "Components\\Profile\\Page\\register.php"
                 },
                 {
                     "blank": 0,
@@ -4360,7 +4360,7 @@
                     "blank": 1,
                     "code": 27,
                     "comment": 2,
-                    "filename": "Components\\Wall\\information.php"
+                    "filename": "Components\\Wall\\page_information.php"
                 },
                 {
                     "blank": 0,
@@ -4372,7 +4372,7 @@
                     "blank": 2,
                     "code": 23,
                     "comment": 2,
-                    "filename": "Components\\Wall\\tutorial.php"
+                    "filename": "Components\\Wall\\page_tutorial.php"
                 },
                 {
                     "blank": 1,
@@ -5073,7 +5073,7 @@
                     "blank": 0,
                     "code": 51,
                     "comment": 3,
-                    "filename": "Components\\Profile\\Page\\createAccount.php"
+                    "filename": "Components\\Profile\\Page\\register.php"
                 },
                 {
                     "blank": 0,
@@ -5151,7 +5151,7 @@
                     "blank": 1,
                     "code": 27,
                     "comment": 2,
-                    "filename": "Components\\Wall\\information.php"
+                    "filename": "Components\\Wall\\page_information.php"
                 },
                 {
                     "blank": 0,
@@ -5163,7 +5163,7 @@
                     "blank": 2,
                     "code": 23,
                     "comment": 2,
-                    "filename": "Components\\Wall\\tutorial.php"
+                    "filename": "Components\\Wall\\page_tutorial.php"
                 },
                 {
                     "blank": 1,
@@ -5870,7 +5870,7 @@
                     "blank": 0,
                     "code": 51,
                     "comment": 3,
-                    "filename": "Components\\Profile\\Page\\createAccount.php"
+                    "filename": "Components\\Profile\\Page\\register.php"
                 },
                 {
                     "blank": 0,
@@ -5948,7 +5948,7 @@
                     "blank": 1,
                     "code": 27,
                     "comment": 2,
-                    "filename": "Components\\Wall\\information.php"
+                    "filename": "Components\\Wall\\page_information.php"
                 },
                 {
                     "blank": 0,
@@ -5960,7 +5960,7 @@
                     "blank": 2,
                     "code": 23,
                     "comment": 2,
-                    "filename": "Components\\Wall\\tutorial.php"
+                    "filename": "Components\\Wall\\page_tutorial.php"
                 },
                 {
                     "blank": 1,
@@ -6721,7 +6721,7 @@
                     "blank": 0,
                     "code": 72,
                     "comment": 3,
-                    "filename": "Components\\Templates\\createAccount.php"
+                    "filename": "Components\\Templates\\register.php"
                 },
                 {
                     "blank": 0,
@@ -6739,7 +6739,7 @@
                     "blank": 1,
                     "code": 27,
                     "comment": 2,
-                    "filename": "Components\\Wall\\information.php"
+                    "filename": "Components\\Wall\\page_information.php"
                 },
                 {
                     "blank": 0,
@@ -6757,7 +6757,7 @@
                     "blank": 2,
                     "code": 23,
                     "comment": 2,
-                    "filename": "Components\\Wall\\tutorial.php"
+                    "filename": "Components\\Wall\\page_tutorial.php"
                 },
                 {
                     "blank": 1,
@@ -7458,7 +7458,7 @@
                     "blank": 2,
                     "code": 94,
                     "comment": 3,
-                    "filename": "Components\\Templates\\createAccount.php"
+                    "filename": "Components\\Templates\\register.php"
                 },
                 {
                     "blank": 0,
@@ -7476,7 +7476,7 @@
                     "blank": 1,
                     "code": 27,
                     "comment": 2,
-                    "filename": "Components\\Wall\\information.php"
+                    "filename": "Components\\Wall\\page_information.php"
                 },
                 {
                     "blank": 0,
@@ -7494,7 +7494,7 @@
                     "blank": 2,
                     "code": 23,
                     "comment": 2,
-                    "filename": "Components\\Wall\\tutorial.php"
+                    "filename": "Components\\Wall\\page_tutorial.php"
                 },
                 {
                     "blank": 1,
@@ -8147,7 +8147,7 @@
                     "blank": 0,
                     "code": 51,
                     "comment": 3,
-                    "filename": "Components\\Profile\\Page\\createAccount.php"
+                    "filename": "Components\\Profile\\Page\\register.php"
                 },
                 {
                     "blank": 0,
@@ -8213,7 +8213,7 @@
                     "blank": 2,
                     "code": 94,
                     "comment": 3,
-                    "filename": "Components\\Templates\\createAccount.php"
+                    "filename": "Components\\Templates\\register.php"
                 },
                 {
                     "blank": 0,
@@ -8231,7 +8231,7 @@
                     "blank": 1,
                     "code": 27,
                     "comment": 2,
-                    "filename": "Components\\Wall\\information.php"
+                    "filename": "Components\\Wall\\page_information.php"
                 },
                 {
                     "blank": 1,
@@ -8249,7 +8249,7 @@
                     "blank": 2,
                     "code": 23,
                     "comment": 2,
-                    "filename": "Components\\Wall\\tutorial.php"
+                    "filename": "Components\\Wall\\page_tutorial.php"
                 },
                 {
                     "blank": 1,
@@ -8824,7 +8824,7 @@
                     "blank": 0,
                     "code": 51,
                     "comment": 3,
-                    "filename": "Components\\Profile\\Page\\createAccount.php"
+                    "filename": "Components\\Profile\\Page\\register.php"
                 },
                 {
                     "blank": 0,
@@ -8890,7 +8890,7 @@
                     "blank": 2,
                     "code": 94,
                     "comment": 3,
-                    "filename": "Components\\Templates\\createAccount.php"
+                    "filename": "Components\\Templates\\register.php"
                 },
                 {
                     "blank": 0,
@@ -8908,7 +8908,7 @@
                     "blank": 1,
                     "code": 27,
                     "comment": 2,
-                    "filename": "Components\\Wall\\information.php"
+                    "filename": "Components\\Wall\\page_information.php"
                 },
                 {
                     "blank": 1,
@@ -8926,7 +8926,7 @@
                     "blank": 2,
                     "code": 23,
                     "comment": 2,
-                    "filename": "Components\\Wall\\tutorial.php"
+                    "filename": "Components\\Wall\\page_tutorial.php"
                 },
                 {
                     "blank": 1,
@@ -9501,7 +9501,7 @@
                     "blank": 0,
                     "code": 51,
                     "comment": 3,
-                    "filename": "Components\\Profile\\Page\\createAccount.php"
+                    "filename": "Components\\Profile\\Page\\register.php"
                 },
                 {
                     "blank": 0,
@@ -9567,7 +9567,7 @@
                     "blank": 2,
                     "code": 94,
                     "comment": 3,
-                    "filename": "Components\\Templates\\createAccount.php"
+                    "filename": "Components\\Templates\\register.php"
                 },
                 {
                     "blank": 0,
@@ -9585,7 +9585,7 @@
                     "blank": 1,
                     "code": 27,
                     "comment": 2,
-                    "filename": "Components\\Wall\\information.php"
+                    "filename": "Components\\Wall\\page_information.php"
                 },
                 {
                     "blank": 1,
@@ -9603,7 +9603,7 @@
                     "blank": 2,
                     "code": 23,
                     "comment": 2,
-                    "filename": "Components\\Wall\\tutorial.php"
+                    "filename": "Components\\Wall\\page_tutorial.php"
                 },
                 {
                     "blank": 1,

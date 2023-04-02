@@ -11,7 +11,7 @@ if ($users_profile->getEmail() == null) {
 
 /* Celá hlavička */
 require_once "../../Templates/Body_parts/normal_header.php";
-require_once $config['root_path_require_once'] . "Components/Templates/Body_Parts/php_header.php";
+require_once $config['root_path_require_once'] . "Components/Templates/Body_parts/php_header.php";
 ?>
 <main id="main" class="main wall_main">
    <div class="container px-4">
@@ -49,5 +49,5 @@ require_once $config['root_path_require_once'] . "Components/Templates/Body_Part
    </div>
 </main>
 <?php
-require_once $config['root_path_require_once'] . "Components/Templates/Body_Parts/footer.php";
+require_once $config['root_path_require_once'] . "Components/Templates/Body_parts/footer.php";
 ?>

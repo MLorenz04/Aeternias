@@ -14,7 +14,7 @@ if ($users_profile->getId() != $user->getId()) {
 
 /* Celá hlavička */
 require_once $config['root_path_require_once'] . "Components/Templates/Body_parts/normal_header.php";
-require_once $config['root_path_require_once'] . "Components/Templates/Body_Parts/php_header.php";
+require_once $config['root_path_require_once'] . "Components/Templates/Body_parts/php_header.php";
 if ($users_profile->getEmail() == null) {
    header("location: " . $config['root_path_url'] . "Components/Errors/page_error.php?id=4");
    exit();

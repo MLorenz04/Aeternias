@@ -141,16 +141,25 @@ class ApiWarrior extends Api
     */
    function get_all_warriors()
    {
+      $id = $_GET["id"];
       $con = $this->config['db'];
-      $sql = "select * from warrior";
+      $sql = "select * from warrior where id_world=?";
+      $statement = $con->prepare($sql);
+      $statement->bind_param("i", $id);
       $warriors = new stdClass();
       $warriors->array = array();
-      $result = $this->config["db"]->query($sql);
+      $statement->execute();
+      $result = $statement->get_result();
       while ($row = $result->fetch_assoc()) {
          array_push($warriors->array, $row);
       }
+      if(empty($warriors->array)) {
+         header("HTTP/1.1 404 Not found");
+         return;
+      }
       $warriors_json = json_encode($warriors->array);
       header("HTTP/1.1 200 Ok");
+      header('Content-Type: application/json');
       return $warriors_json;
    }
 }
