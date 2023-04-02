@@ -225,3 +225,18 @@
    align-items: end;
    display: flex;
 }
+
+.container-img {
+   display: flex;
+   justify-content: center;
+   margin-bottom: 1.5rem;
+
+   img {
+      width: 100%;
+      max-width: 520px;
+
+      @media screen and (max-width: $sxs) {
+         display: none;
+      }
+   }
+}

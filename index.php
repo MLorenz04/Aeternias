@@ -61,7 +61,7 @@ if(isset($_SESSION["logged_user"])) {
                 <button type="submit" class="btn btn-primary px-4 b">Přihlásit</button>
               </form>
               <div class="">
-                Nemáte účet? <a href="<?php echo $config['root_path_url'] ?>Components/Templates/createAccount.php"> Zaregistrujte se! </a>
+                Nemáte účet? <a href="<?php echo $config['root_path_url'] ?>Components/Templates/register.php"> Zaregistrujte se! </a>
               </div>
             </div>
           </div>

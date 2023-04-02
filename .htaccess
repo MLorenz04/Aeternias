@@ -6,7 +6,7 @@ RewriteEngine On
 RewriteRule /Restapi/v1/warriors/(.*)/(.*)/(.*)/(.*)/(.*)/(.*)/(.*)$ /Restapi/v1/warriors.php?id_world=$1&name=$2&desc=$3&attack=$4&defense=$5&agility=$6&health=$7
 RewriteRule /Restapi/v1/warriors/(.*)/(.*)/(.*)/(.*)/(.*)/(.*)$ /Restapi/v1/warriors.php?id_world=$1&name=$2&attack=$3&defense=$4&agility=$5&health=$6 
 RewriteRule /Restapi/v1/warriors/(.*)/(.*)$ /Restapi/v1/warriors.php?id_world=$1&id_warrior=$2 
-RewriteRule /Restapi/v1/warriors$ /Restapi/v1/warriors.php 
+RewriteRule /Restapi/v1/warriors/(.*)$ /Restapi/v1/warriors.php?id=$1 
 
    # API pro svět
 RewriteRule /Restapi/v1/worlds/(.*)/(.*)/(.*)$ /Restapi/v1/worlds.php?id_world=$1&name=$2&desc=$3 
@@ -26,7 +26,7 @@ RewriteRule /Restapi/v1/users/(.*)/(.*)/(.*)$ /Restapi/v1/users.php?id=$1&userna
 RewriteRule /Omega/Restapi/v1/warriors/(.*)/(.*)/(.*)/(.*)/(.*)/(.*)/(.*)$ /Omega/Restapi/v1/warriors.php?id_world=$1&name=$2&desc=$3&attack=$4&defense=$5&agility=$6&health=$7
 RewriteRule /Omega/Restapi/v1/warriors/(.*)/(.*)/(.*)/(.*)/(.*)/(.*)$ /Omega/Restapi/v1/warriors.php?id_world=$1&name=$2&attack=$3&defense=$4&agility=$5&health=$6 
 RewriteRule /Omega/Restapi/v1/warriors/(.*)/(.*)$ /Omega/Restapi/v1/warriors.php?id_world=$1&id_warrior=$2 
-RewriteRule /Omega/Restapi/v1/warriors$ /Omega/Restapi/v1/warriors.php 
+RewriteRule /Omega/Restapi/v1/warriors/(.*)$ /Omega/Restapi/v1/warriors.php?id=$1 
 
    # API pro svět
 RewriteRule /Omega/Restapi/v1/worlds/(.*)/(.*)/(.*)$ /Omega/Restapi/v1/worlds.php?id_world=$1&name=$2&desc=$3 

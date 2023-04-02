@@ -50,11 +50,10 @@ class ApiWorld extends Api
       $result = $statement->get_result();
       /* Zjištění, jestli název světa už neexistuje, případně vytvoření světa */
       if (mysqli_num_rows($result) != 0) return $this->errors["error_mess_existing_name"];
-      /* Předpřipravení příkazi kvůli SQL injection */
+      /* Předpřipravení příkazu kvůli SQL injection */
       $statement = $con->prepare($sql_insert_your_world);
       $statement->bind_param("isss", $owner_id, $world_name, $world_desc, $date);
       $statement->execute();
-      //Tady bude potřeba ještě kontrola
       $world_id = $con->insert_id;
       $statement2 = $con->prepare($sql_create_permission);
       $statement2->bind_param("ii", $owner_id, $world_id,);
@@ -86,6 +85,7 @@ class ApiWorld extends Api
       }
       $worlds_json = json_encode($worlds->array);
       header("HTTP/1.1 200 Ok");
+      header('Content-Type: application/json');
       return $worlds_json;
    }
    /**
