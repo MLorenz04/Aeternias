@@ -13,8 +13,12 @@ class Warrior
    private $name = "";
    private $count = 0;
 
-
-
+   /**
+    * Konstruktor válečníka
+    * @param int $id_world Id světa
+    * @param int $id Id válečníka
+    * @param int $count Počet vojáků
+    */
    public function __construct($id_world, $id, $count)
    {
       $this->setId($id);

@@ -12,6 +12,7 @@ class Army
    private $health;
    private $agility;
    private $defense;
+   private $count;
    /** 
     * Konstruktor
     * @param array $warriors Pole válečníků
@@ -43,11 +44,11 @@ class Army
    /**
     * Metoda na nastavení válečníků
     * @param array Válečníci
-    * @return array True/False, zdali se podařilo nastavit
     */
    public function setWarriors($field)
    {
-      return $this->warriors = $field;
+      $this->warriors = $field;
+      $this->setStats();
    }
    /**
     * Metoda na nastavení všech statistik armády
@@ -59,16 +60,27 @@ class Army
       $hp = 0;
       $agl = 0;
       $def = 0;
+      $count = 0;
       foreach ($this->getWarriors() as $warrior) {
          $pwr += $warrior->getAttack() * $warrior->getCount();
          $hp += $warrior->getHp() * $warrior->getCount();
          $agl += $warrior->getAgility() * $warrior->getCount();
          $def += $warrior->getDefense() * $warrior->getCount();
+         $count += $warrior->getCount();
       }
       $this->attack = $pwr;
       $this->health = $hp;
       $this->agility = $agl;
       $this->defense = $def;
+      $this->count = $count;
+   }
+   public function getWarriorById($id)
+   {
+      $asoc = array();
+      foreach ($this->getWarriors() as $warrior) {
+         $asoc = ($asoc + array($warrior->getId() => $warrior));
+      }
+      return $asoc[$id];
    }
    /**
     * Metoda na získání útoku armády
@@ -137,5 +149,22 @@ class Army
    public function setTotalAgility($agility)
    {
       return $this->agility = $agility;
+   }
+   /**
+    * Metoda na získání počtu vojáků v armádě
+    * @return int Počet v armádě
+    */
+   public function getTotalCount()
+   {
+      return $this->count;
+   }
+   /**
+    * Metoda na nastavení počtu vojáků v armádě
+    * @param mixed $count Počet
+    * @return boolean True/False, zdali se podařilo nastavit
+    */
+   public function setTotalCount($count)
+   {
+      return $this->count = $count;
    }
 }

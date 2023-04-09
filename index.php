@@ -12,9 +12,10 @@ if(session_status() == PHP_SESSION_NONE) {
 if(isset($_SESSION["logged_user"])) {
   header("location: Components/Wall/wall.php");
 }
+
 ?>
 <body>
-  <main>
+  <main style="margin-left:0 !important">
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-lg-3 section register min-vh-100 d-flex flex-column justify-content-center py-4">

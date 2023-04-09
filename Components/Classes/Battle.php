@@ -1,6 +1,7 @@
 <?php
 require_once "Army.php";
 require_once "Config.php";
+require_once "Battle_helpers.php";
 /**
  * Třída pro bitvy
  * @author Matyáš Lorenz
@@ -8,7 +9,7 @@ require_once "Config.php";
 class Battle
 {
 
-   private $first_army, $second_army, $path, $config, $file, $id_world, $id, $log, $result, $chance_on_win, $chance_on_dodge_first, $chance_on_dodge_second;
+   private $first_army, $second_army, $path, $config, $file, $id_world, $id, $log, $result, $chance_on_win, $chance_on_dodge_first, $chance_on_dodge_second, $helper;
    /**
     * Konstruktor pro tvorbu bitvy
     * @param mixed $first_army První armáda
@@ -25,18 +26,80 @@ class Battle
       $this->setIdWorld($id_world);
       $this->setId($id);
       $this->config = (new Config())->get_instance();
+      $this->helper = (new Battle_helpers());
    }
+
    /**
     * Metoda začínající celou bitvu
     */
    public function start_battle()
    {
-      $end = false;
       $json = new stdClass();
+      $a1 = $this->getFirstArmy();
+      //echo "Dohromady máme v první armádě" . $a1->getTotalCount() . "<br>";
+      $a2 = $this->getSecondArmy();
+      //echo "Dohromady máme v druhé armádě " . $a2->getTotalCount() . "<br> <br>";
+      $not_end = true;
+      /* Nastavení šance na výhru */
+      $this->chance_on_win = number_format((float)(($a1->getTotalHealth()) / (($a1->getTotalHealth() + $a2->getTotalHealth()) / 100)), 1, '.', '');
+      /*
+      První cyklus, který rozřadí všechny do jednotlivých skupin. 
+      */
+      while ($not_end) {
+
+         $results_from_battle = array();
+         if ($a1->getTotalCount() + $a2->getTotalCount() < 100) {
+            $groups = 1;
+         } else {
+            $groups = random_int(1, ceil(($a1->getTotalCount() +  $a2->getTotalCount()) / 5000));
+         }
+         fwrite($this->getLog(), "Počet minimálně skupin " . $groups . PHP_EOL);
+         echo "Počet skupin: " . $groups . PHP_EOL;
+         for ($i = 0; $i < $groups; $i++) {
+            $group_first_army = $this->helper->make_group($a1, $i, $groups);
+            $group_second_army = $this->helper->make_group($a2, $i, $groups);
+            $g1 = new Army($group_first_army);
+            $g2 = new Army($group_second_army);
+            fwrite($this->getLog(), "Začínám souboj pro skupinu " . $i . PHP_EOL);
+            $result = $this->simulate_fight($group_first_army, $group_second_army);
+            if ($result != false) array_push($results_from_battle, $result);
+         }
+
+         $result = ($this->helper->update_single_army($results_from_battle, $a1, 1));
+         $a1->setWarriors($result);
+         print_r($a1->getWarriors());
+         $result2 = ($this->helper->update_single_army($results_from_battle, $a2, 2));
+         $a2->setWarriors($result2);
+         print_r($a2->getWarriors());
+         fwrite($this->getLog(), "Konec programu");
+         if ($a1->getTotalCount() == 0 || $a2->getTotalCount() == 0) {
+            $not_end = false;
+            $result = floor($a1->getTotalHealth()) . ":" . floor($a2->getTotalHealth());
+            echo $result . PHP_EOL;
+            $this->setResult($result);
+            fwrite($this->getLog(), "Končím bitvu" . PHP_EOL);
+            $this->make_record();
+         }
+         $json->first_army_hp = $a1->getTotalHealth();
+         $json->second_army_hp = $a2->getTotalHealth();
+         $json->messages = [];
+         file_put_contents($this->getPath(), json_encode($json));
+         sleep(1);
+      }
+   }
+   /**
+    * Metoda začínající celou bitvu
+    */
+   public function simulate_fight($group1, $group2)
+   {
+      $a1 = new Army($group1);
+      $a2 = new Army($group2);
+      $end = false;
       $divider = "-=-=-=-=-=-=-=-=-=-=-=-=-";
       $round = 0;
-      $a1 = $this->getFirstArmy();
-      $a2 = $this->getSecondArmy();
+      if ($a1->getTotalHealth() == 0 || $a2->getTotalHealth() == 0) {
+         return array($a1->getWarriors(), $a2->getWarriors());
+      }
       /* Nastavení obrany armád na základě rozdílu */
       if ($a1->getTotalDefense() == $a2->getTotalDefense()) {
          $a1->setTotalDefense(0.1);
@@ -52,80 +115,68 @@ class Battle
          $a1->setTotalDefense(1 - $defense_first_army);
          $a2->setTotalDefense(0.1);
       }
-      /* Nastavení šance na výhru */
-      $chance_on_win = (($a1->getTotalHealth()) / (($a1->getTotalHealth() + $a2->getTotalHealth()) / 100));
-      $this->chance_on_win = number_format((float)$chance_on_win, 1, '.', '');
       /* Nastavení šance na vyhnutí */
       ($a1->getTotalagility() > 0) ? $this->setChangeOnDodgeFirst(((($a1->getTotalAgility()) / (($a1->getTotalAgility() + $a2->getTotalAgility()) / 100)))) : $this->setChangeOnDodgeFirst(0);
       ($a2->getTotalagility() > 0) ? $this->setChangeOnDodgeSecond(((($a2->getTotalAgility()) / (($a2->getTotalAgility() + $a1->getTotalAgility()) / 100)))) : $this->setChangeOnDodgeSecond(0);
-      $this->start_log();
+      $this->start_log($a1, $a2);
       /* Cyklus předstírající nekonečnou bitvu, dokud někdo nepadne  */
-      while (true) {
-         sleep(1); //Aby bitva netrvala 0,001s
-         $first_val = $second_val = "";
-         /* Náhodná hodnota poškození na základě útoku a obrany */
-         $attack_first = (($a1->getTotalAttack() * (rand(35, 185) / 100)) * (1 - $a2->getTotalDefense()) * 0.2);
-         $attack_second = (($a2->getTotalAttack() * (rand(35, 185) / 100)) * (1 - $a1->getTotalDefense()) * 0.2);
-         /*  Pokud někdo nemá útok, symbolický 1 útok */
-         if ($attack_first <= 0) $attack_first = 1;
-         if ($attack_second <= 0) $attack_second = 1;
-         /* Počítání uhýbání */
-         $are_we_dodging = (bool)rand(0, 1);
-         if ($are_we_dodging) {
-            /* Jedna z armád se vyhnula útoku */
-            if ($this->getChangeOnDodgeFirst() > $this->getChangeOnDodgeSecond()) {
-               $first_val = range(0, $this->getChangeOnDodgeFirst());
-               $second_val = range($this->getChangeOnDodgeSecond(), 100);
-            } else {
-               $first_val = range(0, $this->getChangeOnDodgeSecond());
-               $second_val = range($this->getChangeOnDodgeFirst(), 100);
-            }
-            $rand = random_int(0, 100);
-            if (in_array($rand, $first_val)) {
-               fwrite($this->getLog(), "První armáda uhnula!" . PHP_EOL);
-               $attack_second = $attack_second * (rand(15, 25) / 100);
-            }
-            if (in_array($rand, $second_val)) {
-               fwrite($this->getLog(), "Druhá armáda uhnula!" . PHP_EOL);
-               $attack_first = $attack_first * (rand(15, 25) / 100);
-            }
+      //sleep(1); //Aby bitva netrvala 0,001s
+      $first_val = $second_val = "";
+      /* Náhodná hodnota poškození na základě útoku a obrany */
+      $attack_first = (($a1->getTotalAttack() * (rand(35, 85) / 300)) * (1 - $a2->getTotalDefense()) * 0.4);
+      $attack_second = (($a2->getTotalAttack() * (rand(35, 85) / 300)) * (1 - $a1->getTotalDefense()) * 0.4);
+      /*  Pokud někdo nemá útok, symbolický 1 útok */
+      if ($attack_first <= 0) $attack_first = 1;
+      if ($attack_second <= 0) $attack_second = 1;
+      /* Počítání uhýbání */
+      $are_we_dodging = (bool)rand(0, 1);
+      if ($are_we_dodging) {
+         /* Jedna z armád se vyhnula útoku */
+         if ($this->getChangeOnDodgeFirst() > $this->getChangeOnDodgeSecond()) {
+            $first_val = range(0, $this->getChangeOnDodgeFirst());
+            $second_val = range($this->getChangeOnDodgeSecond(), 100);
+         } else {
+            $first_val = range(0, $this->getChangeOnDodgeSecond());
+            $second_val = range($this->getChangeOnDodgeFirst(), 100);
          }
-         /* Zde bude také generování událostí, bohužel není kvůli čas možnost jej pořádně vyřešit */
-         //$this->get_random_action(random_int(0, count($this->getListOfActions())));
-         /* Nastavení zdraví na základě útoku */
-         $a1->setTotalHealth($a1->getTotalHealth() - $attack_second);
-         if ($a1->getTotalHealth() <= 0) {
-            $a1->setTotalHealth(0);
-            $end = true;
+         $rand = random_int(0, 100);
+         if (in_array($rand, $first_val)) {
+            $attack_second = $attack_second * (rand(15, 25) / 100);
          }
-         if ($end != true) {
-            $a2->setTotalHealth($a2->getTotalHealth() - $attack_first);
-            if ($a2->getTotalHealth() <= 0) {
-               $a2->setTotalHealth(0);
-               $end = true;
-            }
-         }
-         /* Zaslání aktuálních dat do JSON souboru, který webová stránka bude část */
-         $json->first_army_hp = $a1->getTotalHealth();
-         $json->second_army_hp = $a2->getTotalHealth();
-         $json->messages = [];
-         file_put_contents($this->getPath(), json_encode($json));
-         $round++;
-         if ($end) {
-            $result = floor($a1->getTotalHealth()) . ":" . floor($a2->getTotalHealth());
-            $this->setResult($result);
-            $this->make_record();
-            fclose($this->getLog());
-            return;
+         if (in_array($rand, $second_val)) {
+            $attack_first = $attack_first * (rand(15, 25) / 100);
          }
       }
+      /* Zde bude také generování událostí, bohužel není kvůli čas možnost jej pořádně vyřešit */
+      //$this->get_random_action(random_int(0, count($this->getListOfActions())));
+      /* Nastavení zdraví na základě útoku */
+      $a1->setTotalHealth($a1->getTotalHealth() - $attack_second);
+      if ($a1->getTotalHealth() <= 0) {
+         $a1->setTotalHealth(0);
+         $a1->setWarriors(array());
+         $a2->setWarriors($this->helper->create_warriors_after_battle($a2, $a2->getTotalHealth()));
+         $end = true;
+      }
+      $a2->setTotalHealth($a2->getTotalHealth() - $attack_first);
+      if ($a2->getTotalHealth() <= 0) {
+         $a2->setTotalHealth(0);
+         $a2->setWarriors(array());
+         $a1->setWarriors($this->helper->create_warriors_after_battle($a1, $a1->getTotalHealth()));
+         $end = true;
+      }
+      if ($end != true) {
+         $a2->setWarriors($this->helper->create_warriors_after_battle($a2, $a2->getTotalHealth()));
+         $a1->setWarriors($this->helper->create_warriors_after_battle($a1, $a1->getTotalHealth()));
+      }
+      return array($a1->getWarriors(), $a2->getWarriors());
    }
+
    /**
     * Metoda logující informace o kolu v bitvě
     */
-   public function start_log()
+   public function start_log($a1, $a2)
    {
-      fwrite($this->getLog(), "-=-=-=-=-=-=-=-=-=-=-=-=-=-=- Začátek souboje -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-" . PHP_EOL . "Zdraví první armády na začátku: " . $this->getFirstArmy()->getTotalHealth() . PHP_EOL . "Síla první armády na začátku: " . $this->getFirstArmy()->getTotalAttack() . PHP_EOL . "Obrana první armády na začátku: " . $this->getFirstArmy()->getTotalDefense() . PHP_EOL . "Obratnost první armády na začátku: " . $this->getFirstArmy()->getTotalAgility() . PHP_EOL . "Šance na vyhnutí první armády: " . $this->getChangeOnDodgeFirst() . PHP_EOL . "-=-=-=-=-=-=-=-=-=-=-=-=-=-=-" . PHP_EOL . "Zdraví druhé armády na začátku: " . $this->getSecondArmy()->getTotalHealth() . PHP_EOL . "Síla druhé armády na začátku: " . $this->getSecondArmy()->getTotalAttack() . PHP_EOL . "Obrana druhé armády na začátku: " . $this->getSecondArmy()->getTotalDefense() . PHP_EOL . "Obratnost první armády na začátku: " . $this->getSecondArmy()->getTotalAgility() . PHP_EOL . "Šance na vyhnutí druhé armády: " . $this->getChangeOnDodgeSecond() . PHP_EOL . "-=-=-=-=-=-=-=-=-=-=-=-=-=-=- Konec souboje -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-" . PHP_EOL);
+      fwrite($this->getLog(), "-=-=-=-=-=-=-=-=-=-=-=-=-=-=- Začátek souboje -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-" . PHP_EOL . "Zdraví první armády na začátku: " . $a1->getTotalHealth() . PHP_EOL . "Síla první armády na začátku: " . $a1->getTotalAttack() . PHP_EOL . "Obrana první armády na začátku: " . $a1->getTotalDefense() . PHP_EOL . "Obratnost první armády na začátku: " . $a1->getTotalAgility() . PHP_EOL . "Šance na vyhnutí první armády: " . $this->getChangeOnDodgeFirst() . PHP_EOL . "-=-=-=-=-=-=-=-=-=-=-=-=-=-=-" . PHP_EOL . "Zdraví druhé armády na začátku: " . $a2->getTotalHealth() . PHP_EOL . "Síla druhé armády na začátku: " . $a2->getTotalAttack() . PHP_EOL . "Obrana druhé armády na začátku: " . $a2->getTotalDefense() . PHP_EOL . "Obratnost první armády na začátku: " . $a2->getTotalAgility() . PHP_EOL . "Šance na vyhnutí druhé armády: " . $this->getChangeOnDodgeSecond() . PHP_EOL . "-=-=-=-=-=-=-=-=-=-=-=-=-=-=- Konec zápisu -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-" . PHP_EOL);
    }
    /**
     * Metoda na zápis výsledku bitvy do DB
