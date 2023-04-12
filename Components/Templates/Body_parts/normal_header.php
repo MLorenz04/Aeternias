@@ -2,7 +2,7 @@
 /* Konfigurační soubory */
 require_once $config['root_path_require_once'] . "Components/Classes/User.php";
 require_once $config['root_path_require_once'] . "Components/Classes/Security.php";
-$config = (new Config())->get_instance();
+$config = Config::getInstance();
 $security = (new Security());
 /* Založení session */
 if (session_status() === PHP_SESSION_NONE) {

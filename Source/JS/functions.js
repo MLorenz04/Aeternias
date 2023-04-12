@@ -26,6 +26,14 @@ function showSuccessMessAndReload(msg) {
     window.location.reload();
   });
 }
+function showSuccessMessAndRedirect(msg, url) {
+  Swal.fire({
+    icon: "success",
+    title: msg,
+  }).then(function () {
+    window.location.href = url;
+  });
+}
 function isEmpty(value) {
   return value === null || value === undefined || value === "" || value === 0;
 }

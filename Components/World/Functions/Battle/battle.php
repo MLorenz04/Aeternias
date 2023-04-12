@@ -1,7 +1,7 @@
 <?php
 /* Requires */
 require "../../../../Components/Classes/Config.php";
-$config = (new Config())->get_instance();
+$config = Config::getInstance();
 require $config["root_path_require_once"] . "Components/Classes/Army.php";
 require $config["root_path_require_once"] . "Components/Classes/Battle.php";
 require $config["root_path_require_once"] . "Components/Classes/User.php";

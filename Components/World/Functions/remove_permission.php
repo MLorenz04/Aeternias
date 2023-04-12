@@ -2,7 +2,7 @@
 /* Konfigurační soubor */
 require_once "../../../Components/Classes/Config.php";
 require_once "../../Classes/User.php";
-$config = (new Config()) -> get_instance();
+$config = Config::getInstance();
 require_once $config['root_path_require_once'] . "Components/Classes/World.php";
 /* Začátek session */
 session_start();

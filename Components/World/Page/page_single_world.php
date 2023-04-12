@@ -1,7 +1,7 @@
 <?php
 /* Konfigurační soubory */
 require_once "../../Classes/Config.php";
-$config = (new Config())->get_instance();
+$config = Config::getInstance();
 /* Celá hlavička */
 require_once "../../Templates/Body_parts/world_header.php";
 require_once $config['root_path_require_once'] . "/Components/Templates/Body_parts/php_header_single_world.php";

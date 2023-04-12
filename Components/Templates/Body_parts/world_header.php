@@ -9,7 +9,7 @@ require_once $config['root_path_require_once'] . "Components/Classes/User.php";
 require_once $config['root_path_require_once'] . "Components/Classes/World.php";
 require_once $config['root_path_require_once'] . "Components/Classes/Security.php";
 /* Instance konfigurace a bezpečnosti */
-$config = (new Config())->get_instance();
+$config = Config::getInstance();
 $security = (new Security());
 /* Kontrola přihlášení */
 if ($security->check_login() == False) {

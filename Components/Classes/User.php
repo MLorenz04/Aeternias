@@ -24,7 +24,7 @@ if (!class_exists("User")) {
       function __construct($id)
       {
          $this->setId($id);
-         $this->config = (new Config())->get_instance();
+         $this->config = Config::getInstance();
          $this->con = $this->config["db"];
          $result = $this->con->query("select nickname, email, api_token, api_email, password from users where id = " . $this->getId());
          $row = $result->fetch_row();

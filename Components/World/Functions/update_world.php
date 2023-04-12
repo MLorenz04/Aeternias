@@ -2,7 +2,7 @@
 /* Konfigurační soubor */
 require_once "../../Errors/error_messages.php";
 require_once "../../../Components/Classes/Config.php";
-$config = (new Config())->get_instance();
+$config = Config::getInstance();
 /* Začátek session */
 session_start();
 /* Zkusí získat údaje, pokud se mu to nepodaří, hodí na index */

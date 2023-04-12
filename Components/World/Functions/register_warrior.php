@@ -1,7 +1,7 @@
 <?php
 /* Konfigurační soubor */
 require_once "../../../Components/Classes/Config.php";
-$config = (new Config())->get_instance();
+$config = Config::getInstance();
 require_once $config["root_path_require_once"] . "Components/Errors/error_messages.php";
 require_once $config["root_path_require_once"] . "Components/Classes/World.php";
 require_once $config["root_path_require_once"] . "Components/Classes/Security.php";

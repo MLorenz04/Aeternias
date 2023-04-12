@@ -1,6 +1,6 @@
 <?php
 require_once '../../Components/Classes/Config.php';
-$config = (new Config())->get_instance();
+$config = Config::getInstance();
 require_once $config['root_path_require_once'] . 'Components/Templates/Body_parts/head.php';
 require_once $config["root_path_require_once"] . 'Components/Classes/Errors.php';
 if (!isset($_GET["id"])) {

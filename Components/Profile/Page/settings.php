@@ -5,7 +5,7 @@ require_once "../../Classes/User.php";
 require_once "../../Classes/Security.php";
 session_start();
 $user = unserialize($_SESSION["logged_user"]);
-$config = (new Config())->get_instance();
+$config = Config::getInstance();
 $users_profile = new User($_GET["id"]);
 if ($users_profile->getId() != $user->getId()) {
    header("location: " . $config['root_path_url'] . "Components/Errors/page_error.php?id=4");

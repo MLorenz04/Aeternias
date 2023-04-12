@@ -1,7 +1,7 @@
 <?php
 /* Konfigurační soubory */
 require_once "../../../Components/Classes/Config.php";
-$config = (new Config())->get_instance();
+$config = Config::getInstance();
 /* Celá hlavička */
 require_once "../../Templates/Body_parts/world_header.php";
 require_once $config['root_path_require_once'] . "Components/Templates/Body_parts/php_header_single_world.php";
@@ -78,6 +78,7 @@ $world = (new World($id_world))->get_instance();
                      title: $data
                   })
                } else {
+                  window.location.replace('<?php echo $config["root_path_url"] ?>Components/World/Page/page_single_battle.php?id=<?php echo $id_world ?>&slug_battle=' + $slug); // přesměrování na single_battle.php
                   $.ajax({
                      url: '<?php echo $config["root_path_url"] ?>Components/World/Functions/Battle/start_battle.php?id=<?php echo $id_world ?>',
                      type: 'POST',
@@ -86,10 +87,8 @@ $world = (new World($id_world))->get_instance();
                         "slug": $slug
                      },
                   });
-                  window.location.replace('<?php echo $config["root_path_url"] ?>Components/World/Page/page_single_battle.php?id=' + $slug); // přesměrování na single_battle.php
                }
             }
-
          });
       });
    });

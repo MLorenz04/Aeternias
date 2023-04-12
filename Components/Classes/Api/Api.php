@@ -31,7 +31,7 @@ class Api
     */
    public function __construct($check_token)
    {
-      $this->config = (new Config())->get_instance();
+      $this->config = Config::getInstance();
       $this->errors = (new Errors(0))->getList();
       $this->security = (new Security());
       if ($check_token == true) {

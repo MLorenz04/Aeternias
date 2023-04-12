@@ -4,7 +4,7 @@ require_once "../../../Components/Classes/Config.php";
 /* Třídy */
 require_once "../../Classes/User.php";
 require_once "../../Classes/World.php";
-$config = (new Config())->get_instance();
+$config = Config::getInstance();
 require_once "../../Errors/error_messages.php";
 /* Začátek session */
 session_start();

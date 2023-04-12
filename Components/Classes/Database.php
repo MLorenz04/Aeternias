@@ -3,28 +3,27 @@ if (!class_exists("Database")) {
    class Database
    {
       public static $instance;
-      public $database;
-      public $db_server;
-      public $db_user;
-      public $db_password;
-      public $db_name;
+      public static $database;
+      public static $db_server;
+      public static $db_user;
+      public static $db_password;
+      public static $db_name;
       /**
        * Konstruktor
        */
-      function __construct($db_server, $db_user, $db_password, $db_name)
-      {
-         $this->db_server = $db_server;
-         $this->db_user = $db_user;
-         $this->db_password = $db_password;
-         $this->db_name = $db_name;
+      private function __construct() {
       }
       /**
        * Funkce, která vytvoří instanci třídy Database, ovšem nastaví $instance s připojením do ní pouze jednou
        */
-      function get_instance()
+      static function getInstance($db_server, $db_user, $db_password, $db_name)
       {
+         self::$db_server = $db_server;
+         self::$db_user = $db_user;
+         self::$db_password = $db_password;
+         self::$db_name = $db_name;
          if (is_null(self::$instance)) {
-            self::$instance = new mysqli($this->db_server, $this->db_user, $this->db_password, $this->db_name);
+            self::$instance = new mysqli(self::$db_server, self::$db_user, self::$db_password, self::$db_name);
             return self::$instance;
          } else {
             return self::$instance;

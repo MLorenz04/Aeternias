@@ -16,7 +16,7 @@ class Security
     */
    public function __construct()
    {
-      $this->config = (new Config())->get_instance();
+      $this->config = Config::getInstance();
       $this->con = $this->config["db"];
       $this->errors = (new Errors(0))->getList();
    }
