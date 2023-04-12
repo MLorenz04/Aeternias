@@ -1,7 +1,7 @@
 <?php
 /* Konfigurační soubory */
 include("../../../Components/Classes/Config.php");
-$config = (new Config())->get_instance();
+$config = Config::getInstance();
 require_once "../../Classes/User.php";
 if (session_status() === PHP_SESSION_NONE) {
    session_start();

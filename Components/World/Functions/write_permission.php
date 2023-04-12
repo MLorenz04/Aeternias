@@ -1,7 +1,7 @@
 <?php
 /* Konfigurační soubor */
 require_once "../../../Components/Classes/Config.php";
-$config = (new Config()) -> get_instance();
+$config = Config::getInstance();
 /* Databáze */
 $con = $config['db'];
 /* Zkusí získat údaje, pokud se mu to nepodaří, hodí na index */

@@ -1,7 +1,7 @@
 <?php
 
 require_once "../../Components/Classes/Config.php";
-$config = (new Config())->get_instance();
+$config = Config::getInstance();
 require_once $config["root_path_require_once"] . "Components/Classes/Api/ApiProfile.php";
 $api = new ApiProfile(false);
 $api_private = new ApiProfile(true);

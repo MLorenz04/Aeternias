@@ -6,7 +6,7 @@ require_once '../../Classes/Security.php';
 /* Začátek sessionu */
 session_start();
 /* Proměnné */
-$config = (new Config())->get_instance();
+$config = Config::getInstance();
 $s1 = (new Security());
 $user = unserialize($_SESSION['logged_user']);
 $nickname = $user->getUsername();

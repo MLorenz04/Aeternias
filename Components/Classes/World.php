@@ -29,7 +29,7 @@ if (!class_exists("World")) {
       function get_instance()
       {
          require_once "Config.php";
-         $config = (new Config())->get_instance();
+         $config = Config::getInstance();
          $id = $this->getId();
          $con = $config["db"];
          $sql_world_info = "select * from world where id = $id";

@@ -24,7 +24,7 @@ class Battle
       $this->setFiles($slug);
       $this->setIdWorld($id_world);
       $this->setId($id);
-      $this->config = (new Config())->get_instance();
+      $this->config = Config::getInstance();
    }
    /**
     * Metoda začínající celou bitvu
@@ -64,8 +64,8 @@ class Battle
          sleep(1); //Aby bitva netrvala 0,001s
          $first_val = $second_val = "";
          /* Náhodná hodnota poškození na základě útoku a obrany */
-         $attack_first = (($a1->getTotalAttack() * (rand(35, 185) / 100)) * (1 - $a2->getTotalDefense()) * 0.2);
-         $attack_second = (($a2->getTotalAttack() * (rand(35, 185) / 100)) * (1 - $a1->getTotalDefense()) * 0.2);
+         $attack_first = (($a1->getTotalAttack() * (rand(35, 585) / 300)) * (1 - $a2->getTotalDefense()) * 0.4);
+         $attack_second = (($a2->getTotalAttack() * (rand(35, 585) / 300)) * (1 - $a1->getTotalDefense()) * 0.4);
          /*  Pokud někdo nemá útok, symbolický 1 útok */
          if ($attack_first <= 0) $attack_first = 1;
          if ($attack_second <= 0) $attack_second = 1;

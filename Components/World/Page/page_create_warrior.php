@@ -3,7 +3,7 @@
 require_once "../../../Components/Classes/Config.php";
 require_once "../../Classes/Errors.php";
 $error = (new Errors(-1))->getList();
-$config = (new Config())->get_instance();
+$config = Config::getInstance();
 /* Celá hlavička */
 require_once "../../Templates/Body_parts/world_header.php";
 require_once $config['root_path_require_once'] . "/Components/Templates/Body_parts/php_header_single_world.php";

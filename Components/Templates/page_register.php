@@ -2,7 +2,7 @@
 /* Konfigurační soubor */
 require "../Classes/Config.php";
 require "../Classes/Errors.php";
-$config = (new Config())->get_instance();
+$config = Config::getInstance();
 $errors = (new Errors(-1))->getList();
 /* Hlavička */
 require_once $config['root_path_require_once'] . "Components/Templates/Body_parts/head.php";

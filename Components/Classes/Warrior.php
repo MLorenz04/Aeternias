@@ -19,7 +19,7 @@ class Warrior
    {
       $this->setId($id);
       $this->setIdWorld($id_world);
-      $config = (new Config())->get_instance();
+      $config = Config::getInstance();
       $sql = "select * from warrior where id_world =" . $this->getIdWorld($id_world) . " and id = " . $this->getId($id);
       $con = $config["db"];
       $result = $con->query($sql);

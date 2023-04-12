@@ -1,6 +1,6 @@
 <?php
 require_once "../../../Components/Classes/Config.php";
-$config = (new Config())->get_instance();
+$config = Config::getInstance();
 /* Začátek session */
 if (session_status() === PHP_SESSION_NONE) {
    session_start();

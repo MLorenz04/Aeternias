@@ -2,7 +2,7 @@
 /* Konfigurační soubory */
 require_once "../../Classes/Config.php";
 require_once "../../Classes/User.php";
-$config = (new Config())->get_instance();
+$config = Config::getInstance();
 $users_profile = new User($_GET["id"]);
 if ($users_profile->getEmail() == null) {
    header("location: " . $config['root_path_url'] . "Components/Errors/page_error.php?id=4");

@@ -1,6 +1,6 @@
 <?php
 require_once "../../Components/Classes/Config.php";
-$config = (new Config()) -> get_instance();
+$config = Config::getInstance();
 global $config;
 $username = $_POST['username'];
 $con = $config['db'];

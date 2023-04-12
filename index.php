@@ -1,20 +1,21 @@
 <?php
 /* Konfigurační soubory */
 include("Components/Classes/Config.php");
-$config = (new Config())->get_instance();
+$config = Config::getInstance();
 /* Hlavička */
 require_once "Components/Templates/Body_parts/head.php";
 require_once "Components/Classes/Security.php";
 require_once "Components/Classes/User.php";
-if(session_status() == PHP_SESSION_NONE) {
+if (session_status() == PHP_SESSION_NONE) {
   session_start();
 }
-if(isset($_SESSION["logged_user"])) {
+if (isset($_SESSION["logged_user"])) {
   header("location: Components/Wall/wall.php");
 }
 ?>
+
 <body>
-  <main>
+  <main style="margin-left:0; padding-top:0">
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-lg-3 section register min-vh-100 d-flex flex-column justify-content-center py-4">
@@ -60,9 +61,9 @@ if(isset($_SESSION["logged_user"])) {
 
                 <button type="submit" class="btn btn-primary px-4 b">Přihlásit</button>
               </form>
-              <div class="">
-                Nemáte účet? <a href="<?php echo $config['root_path_url'] ?>Components/Templates/register.php"> Zaregistrujte se! </a>
-              </div>
+              <hr>
+              <p> Nemáte účet? <a href="<?php echo $config['root_path_url'] ?>Components/Profile/Page/register.php"> Zaregistrujte se! </a> </p>
+              <a href="<?php echo $config['root_path_url'] ?>Components/Profile/Page/reset_password.php"> Zapomenuté heslo? </a>
             </div>
           </div>
         </div>

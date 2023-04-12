@@ -8,13 +8,13 @@ if (!class_exists('Config')) {
      */
     class Config
     {
-        private $document_root = "";
-        private $document_root_url = "";
-        private $db_name = "";
-        private $db_user = "";
-        private $db_password = "";
-        private $db_server = "";
-        private $database;
+        private static $document_root = "";
+        private static $document_root_url = "";
+        private static $db_name = "";
+        private static $db_user = "";
+        private static $db_password = "";
+        private static $db_server = "";
+        private static $database;
         private static $instance = null;
 
         /**
@@ -24,14 +24,32 @@ if (!class_exists('Config')) {
          * @return self::$instance Pole konfigurace
          */
 
-        function get_instance()
+        static function getInstance()
         {
             if (is_null(self::$instance)) {
+                /* Pokud na localhost */
+                if ($_SERVER['DOCUMENT_ROOT'] == "C:/xampp/htdocs") {
+                    self::$document_root = $_SERVER['DOCUMENT_ROOT'] . "/Omega/";
+                    self::$document_root_url = "/Omega/";
+                    self::$db_server = "localhost";
+                    self::$db_name = "Aeternias";
+                    self::$db_user = "root";
+                    self::$db_password = "";
+                } else {
+                    self::$document_root = $_SERVER['DOCUMENT_ROOT'] . "/";
+                    self::$document_root_url = "/";
+                    self::$db_server = "sql6.webzdarma.cz";
+                    self::$db_name = "aeterniascz9913";
+                    self::$db_user = "aeterniascz9913";
+                    self::$db_password = "StarClan1*";
+                }
+                /* Vrací pole údajů */
+                self::$database = Database::getInstance(self::$db_server, self::$db_user, self::$db_password, self::$db_name);
                 self::$instance = array(
                     'project_name' => 'Aeternias', //Jméno projektu
-                    'root_path_require_once' => $this->document_root, //Root adresář
-                    'root_path_url' => $this->document_root_url, //Protože nemůžeme přistupovat k souborům absolutní cestou na disku
-                    'db' => $this->database //Připojení do databáze
+                    'root_path_require_once' => self::$document_root, //Root adresář
+                    'root_path_url' => self::$document_root_url, //Protože nemůžeme přistupovat k souborům absolutní cestou na disku
+                    'db' => self::$database //Připojení do databáze
                 );
             }
             return self::$instance;
@@ -41,27 +59,8 @@ if (!class_exists('Config')) {
          * 
          *  Singleton Pattern
          */
-        public function __construct()
+        private function __construct()
         {
-            /* Pokud na localhost */
-            if ($_SERVER['DOCUMENT_ROOT'] == "C:/xampp/htdocs") {
-                $this->document_root = $_SERVER['DOCUMENT_ROOT'] . "/Omega/";
-                $this->document_root_url = "/Omega/";
-                $this->db_server = "localhost";
-                $this->db_name = "Aeternias";
-                $this->db_user = "root";
-                $this->db_password = "";
-            } else {
-                $this->document_root = $_SERVER['DOCUMENT_ROOT'] . "/";
-                $this->document_root_url = "/";
-                $this->db_server = "sql6.webzdarma.cz";
-                $this->db_name = "aeterniascz9913";
-                $this->db_user = "aeterniascz9913";
-                $this->db_password = "StarClan1*";
-            }
-            /* Vrací pole údajů */
-            $DBCl = new Database($this->db_server, $this->db_user, $this->db_password, $this->db_name);
-            $this->database = $DBCl->get_instance();
         }
     }
 }
